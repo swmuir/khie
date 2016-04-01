@@ -25,7 +25,7 @@
 
 		<!-- MDHT repositories. Used when we're building individual components 
 			(vs building the parent pom including everything) -->
-		<mdht.eclipse.target>neon</mdht.eclipse.target>
+		<mdht.eclipse.target>mars</mdht.eclipse.target>
 		<mdht.repo.main>${eclipse.download}/modeling/mdht/updates/nightly/${mdht.eclipse.target}</mdht.repo.main>
 
 	</properties>
