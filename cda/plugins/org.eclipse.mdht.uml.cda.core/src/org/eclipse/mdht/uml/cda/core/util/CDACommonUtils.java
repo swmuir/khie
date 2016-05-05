@@ -37,8 +37,11 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.mdht.uml.cda.core.profile.CDAFactory;
 import org.eclipse.mdht.uml.cda.core.profile.Inline;
 import org.eclipse.mdht.uml.cda.core.profile.LogicalConstraint;
+import org.eclipse.mdht.uml.cda.core.profile.PropertyValidation;
+import org.eclipse.mdht.uml.cda.core.profile.SeverityKind;
 import org.eclipse.mdht.uml.cda.core.profile.TextValue;
 import org.eclipse.mdht.uml.common.UmlPlugin;
 import org.eclipse.mdht.uml.common.util.NamedElementComparator;
@@ -48,6 +51,7 @@ import org.eclipse.mdht.uml.common.util.PropertyList;
 import org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetCode;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
+import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
 import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -65,6 +69,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.VisibilityKind;
 
 /**
@@ -1193,6 +1198,88 @@ public class CDACommonUtils {
 	}
 
 	/**
+	 * Adds a templateId property to the given class mirroring the constraints from an applied templateId stereotype including the
+	 * assigningAuthorityName attribute
+	 *
+	 * @param umlClass
+	 * @return the newly added property, or <code>null</code> if there are no constraints to be mirrored
+	 */
+	public static Property createTemplateIdProperty(Class umlClass) {
+		String templateId = CDAModelUtil.getTemplateId(umlClass);
+		if (templateId != null) {
+			Property templateIdProp = createProperty3(umlClass, "templateId", SeverityKind.ERROR);
+			if (templateIdProp != null) {
+				String templateVersion = CDAModelUtil.getTemplateVersion(umlClass);
+				String assigningAuthorityName = CDAModelUtil.getAssigningAuthorityName(umlClass);
+
+				// created nested class
+				Class nestedClass = UMLFactory.eINSTANCE.createClass();
+				Generalization gen = UMLFactory.eINSTANCE.createGeneralization();
+				Classifier type = (Classifier) templateIdProp.getType();
+				gen.setGeneral(type);
+				nestedClass.getGeneralizations().add(gen);
+				nestedClass.setName(type.getName() + "_for_" + templateIdProp.getName());
+				umlClass.getNestedClassifiers().add(nestedClass);
+				templateIdProp.setType(nestedClass);
+
+				// directly constrain properties
+				createProperty2(nestedClass, "root", templateId, SeverityKind.ERROR);
+				createProperty2(nestedClass, "extension", templateVersion, SeverityKind.ERROR);
+				createProperty2(nestedClass, "assigningAuthorityName", assigningAuthorityName, SeverityKind.WARNING);
+				return templateIdProp;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 *
+	 * Creates a property for the given class deriving from a base property of the given name and sets the given default value and the given severity
+	 *
+	 * @param cls
+	 * @param name
+	 * @param defaultValue
+	 * @param severity
+	 */
+	private static void createProperty2(Class cls, String name, String defaultValue, SeverityKind severity) {
+		if (defaultValue == null) {
+			return;
+		}
+		Property property = CDACommonUtils.createProperty3(cls, name, severity);
+		if (property != null) {
+			property.setDefault(defaultValue);
+		}
+	}
+
+	/**
+	 *
+	 * Creates a property for the given class deriving from a base property of the given name and sets the given severity
+	 *
+	 * @param cls
+	 * @param name
+	 * @param value
+	 * @return
+	 */
+	private static Property createProperty3(Class cls, String name, SeverityKind severity) {
+		Property existing = CDACommonUtils.findAttribute(cls, name);
+		if (existing != null && existing.eContainer() != cls) {
+			Property derivedProperty = UMLFactory.eINSTANCE.createProperty();
+			derivedProperty.setName(existing.getName());
+			derivedProperty.setType(existing.getType());
+			if (severity == SeverityKind.WARNING) {
+				derivedProperty.setLower(0);
+			}
+			cls.getOwnedAttributes().add(derivedProperty);
+			PropertyValidation pv = CDAFactory.eINSTANCE.createPropertyValidation();
+			pv.setBase_Property(derivedProperty);
+			pv.setSeverity(severity);
+			cls.eResource().getContents().add(pv);
+			return derivedProperty;
+		}
+		return null;
+	}
+
+	/**
 	 * @param element
 	 *            MDHT model element
 	 * @return the MDHT clinical document
@@ -1213,4 +1300,119 @@ public class CDACommonUtils {
 		return codeSystemConstraint.getIdentifier();
 	}
 
+	/**
+	 * Replace recursively all constraints implied by the Terminology tab by equivalent constraints operating directly on attributes
+	 *
+	 * @param umlClass
+	 * @param alreadyHandled
+	 */
+	public static void printTerminologyConstraintAsList(Class umlClass, Set<Class> alreadyHandled) {
+		if (!alreadyHandled.add(umlClass)) {
+			return;
+		}
+
+		if (CDAModelUtil.isCDAModel(umlClass) || CDAModelUtil.isDatatypeModel(umlClass)) {
+			return;
+		}
+
+		for (Property property : umlClass.getOwnedAttributes()) {
+			if (property.getType() instanceof Class) {
+				Class codeClass = (Class) property.getType();
+				CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+				if (codeSystemConstraint != null) {
+
+					if (codeClass.eContainer() != umlClass) {
+						// created nested class
+						Class nestedClass = UMLFactory.eINSTANCE.createClass();
+						Generalization gen = UMLFactory.eINSTANCE.createGeneralization();
+						gen.setGeneral(codeClass);
+						nestedClass.getGeneralizations().add(gen);
+						nestedClass.setName(codeClass.getName() + "_for_" + property.getName());
+						umlClass.getNestedClassifiers().add(nestedClass);
+						property.setType(nestedClass);
+						codeClass = nestedClass;
+					}
+
+					// retrieve values from terminology tab and put them into new attributes
+					String codeSystem = null;
+					String codeSystemName = null;
+					@SuppressWarnings("unused")
+					String codeSystemVersion = null;
+					String code = null;
+					String displayName = null;
+
+					if (codeSystemConstraint.getReference() != null) {
+						codeSystem = codeSystemConstraint.getReference().getIdentifier();
+						codeSystemName = codeSystemConstraint.getReference().getEnumerationName();
+						codeSystemVersion = codeSystemConstraint.getReference().getVersion();
+					} else {
+						codeSystem = codeSystemConstraint.getIdentifier();
+						codeSystemName = codeSystemConstraint.getName();
+						codeSystemVersion = codeSystemConstraint.getVersion();
+					}
+					code = codeSystemConstraint.getCode();
+					displayName = codeSystemConstraint.getDisplayName();
+
+					createProperty(codeClass, "code", code, SeverityKind.ERROR);
+					createProperty(codeClass, "codeSystem", codeSystem, SeverityKind.ERROR);
+					createProperty(codeClass, "codeSystemName", codeSystemName, SeverityKind.WARNING);
+					createProperty(codeClass, "displayName", displayName, SeverityKind.WARNING);
+
+					// don't create traditional terminology dita
+					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+						property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+					if (stereotype != null) {
+						property.unapplyStereotype(stereotype);
+					}
+				}
+				printTerminologyConstraintAsList(codeClass, alreadyHandled);
+			}
+		}
+
+		for (Generalization generalization : umlClass.getGeneralizations()) {
+			if (generalization.getGeneral() instanceof Class) {
+				printTerminologyConstraintAsList((Class) generalization.getGeneral(), alreadyHandled);
+			}
+		}
+
+	}
+
+	/**
+	 *
+	 * Creates a property for the given class deriving from a base property of the given name and sets it default value to the given value and the
+	 * severity to SHALL
+	 *
+	 * @param parentClass
+	 * @param name
+	 * @param value
+	 */
+	private static void createProperty(Class cls, String name, String value, SeverityKind severity) {
+		Property existing = CDACommonUtils.findAttribute(cls, name);
+		if (existing != null && existing.eContainer() != cls && value != null) {
+			Property derivedProperty = UMLFactory.eINSTANCE.createProperty();
+			derivedProperty.setName(existing.getName());
+			derivedProperty.setType(existing.getType());
+			derivedProperty.setDefault(value);
+			if (severity == SeverityKind.WARNING) {
+				derivedProperty.setLower(0);
+			}
+			cls.getOwnedAttributes().add(derivedProperty);
+			PropertyValidation pv = CDAFactory.eINSTANCE.createPropertyValidation();
+			pv.setBase_Property(derivedProperty);
+			pv.setSeverity(severity);
+			derivedProperty.eResource().getContents().add(pv);
+		}
+	}
+
+	/**
+	 * See {@link #printTerminologyConstraintAsList(Class, Set)}, applied to a general set of EMF resources
+	 *
+	 * @param emfObjects
+	 */
+	public static void printTerminologyConstraintAsList(Collection<?> emfObjects) {
+		Set<Class> alreadyHandledForPrintTerminologyConstraintAsList = new HashSet<Class>();
+		for (Class cls : CDACommonUtils.getAllContents(emfObjects, Class.class)) {
+			CDACommonUtils.printTerminologyConstraintAsList(cls, alreadyHandledForPrintTerminologyConstraintAsList);
+		}
+	}
 }
