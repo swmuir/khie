@@ -638,7 +638,7 @@ public class CDAModelUtil {
 				message.append(showXref
 						? "<xref " + format + "href=\"" + xref + "\">"
 						: "");
-				message.append(prefix).append(UMLUtil.splitName(endType));
+				message.append(prefix).append(UMLUtil.getAnchorText(endType));
 				message.append(showXref
 						? "</xref>"
 						: "");
@@ -778,9 +778,7 @@ public class CDAModelUtil {
 					: " ");
 			message.append("Conforms to ");
 
-			String prefix = !UMLUtil.isSameModel(xrefSource, endType)
-					? getModelPrefix(endType) + " "
-					: "";
+			String prefix = "";
 			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html")
@@ -814,6 +812,10 @@ public class CDAModelUtil {
 						? "</tt>"
 						: "");
 				message.append(")");
+			}
+
+			if (!UMLUtil.isSameModel(xrefSource, endType)) {
+				message.append(" from " + getModelPrefix(endType));
 			}
 
 			message.append(markup
@@ -998,7 +1000,7 @@ public class CDAModelUtil {
 			if (value != null && value.length() > 0) {
 				SeverityKind level = (SeverityKind) property.getValue(
 					textValue, ICDAProfileConstants.VALIDATION_SEVERITY);
-				message.append(" and ").append(markup
+				message.append(" which ").append(markup
 						? "<b>"
 						: "").append(
 							level != null
@@ -1022,9 +1024,21 @@ public class CDAModelUtil {
 			// if the datatype is not different from the immediate parent, then the xsi:type shouldn't be printed
 			if (propertyCdaType != null && cdaPropertyType != null && propertyCdaType != cdaPropertyType &&
 					propertyCdaType.getName() != null && !propertyCdaType.getName().isEmpty()) {
-				message.append(" with " + "@xsi:type=\"");
+				message.append(" with ");
+				message.append(markup
+						? "<tt><b>"
+						: "");
+				message.append("@xsi:type");
+				message.append(markup
+						? "</b>"
+						: "");
+				message.append("=\"");
+
 				message.append(propertyCdaType.getName());
 				message.append("\"");
+				message.append(markup
+						? "</tt>"
+						: "");
 			}
 		}
 
@@ -1335,6 +1349,9 @@ public class CDAModelUtil {
 
 		// XML attributes
 		for (Property property : propertyList.getAttributes()) {
+			if (!CDAModelUtil.hasOwnPDFSection(property)) {
+				continue;
+			}
 			hasRules = hasRules | appendPropertyList(
 				umlClass, property, markup, ol, sb, prefix, li, constraintMap, unprocessedConstraints,
 				subConstraintMap);
@@ -1356,6 +1373,37 @@ public class CDAModelUtil {
 			appendB.append(sb);
 			appendB.append(ol[1]);
 		}
+	}
+
+	/**
+	 * @param property
+	 * @return whether the given property has an independent section in the PDF file (<code>true</code>) or is only printed in context of a
+	 *         logical constraint (<code>false</code>)
+	 */
+	public static boolean hasOwnPDFSection(Property property) {
+		Class clazz = (Class) property.eContainer();
+		for (Constraint constraint : clazz.getOwnedRules()) {
+			if (constraint.getConstrainedElements().contains(property)) {
+				LogicalConstraint logicConstraint = CDAProfileUtil.getLogicalConstraint(constraint);
+				if (logicConstraint != null) {
+					if (logicConstraint.getOperation() == LogicalOperator.IFTHEN &&
+							constraint.getConstrainedElements().indexOf(property) == 1) {
+						// for a (IF A THEN B) constraint, B hasn't its own section
+						Validation cv = CDAProfileUtil.getValidation(property);
+						if (cv != null) {
+							// print if severity is given
+							return true;
+						}
+						return false;
+					}
+					if (logicConstraint.getOperation() == LogicalOperator.XOR) {
+						// a XOR constraint has no own section
+						return false;
+					}
+				}
+			}
+		}
+		return true;
 	}
 
 	private static boolean appendPropertyList(Element umlClass, Property property, boolean markup, String[] ol,
@@ -1910,12 +1958,14 @@ public class CDAModelUtil {
 
 			String propertyKeyword = getValidationKeyword(constraint.getConstrainedElements().get(0));
 
+			String conformanceMessage = computeConformanceMessage(constraint.getConstrainedElements().get(0), markup);
 			if (propertyKeyword != null) {
-				message.append(
-					computeConformanceMessage(constraint.getConstrainedElements().get(0), markup).replace(
-						propertyKeyword, ""));
+				conformanceMessage = conformanceMessage.replace(
+					"<b>" + propertyKeyword + "</b> contain", "there is contained");
+				conformanceMessage = conformanceMessage.replace(propertyKeyword, "");
+				message.append(conformanceMessage);
 			} else {
-				message.append(computeConformanceMessage(constraint.getConstrainedElements().get(0), markup));
+				message.append(conformanceMessage);
 			}
 
 			message.append(" then it ").append(markup
@@ -1940,6 +1990,21 @@ public class CDAModelUtil {
 			for (Element element : constraint.getConstrainedElements()) {
 				message.append(LI[0]);
 				message.append(computeConformanceMessage(element, markup));
+				String propertyRules = "";
+				if (element instanceof Property) {
+					Property property = (Property) element;
+					propertyRules = appendPropertyRules(message, property);
+				}
+				if (propertyRules.length() > 0) {
+					message.append(propertyRules);
+				} else if (element instanceof Property) {
+					String computeAssociationConstraintsMsg = computeAssociationConstraints((Property) element, markup);
+					if (!computeAssociationConstraintsMsg.isEmpty()) {
+						message.append("<ol>");
+						message.append(computeAssociationConstraintsMsg);
+						message.append("</ol>");
+					}
+				}
 				message.append(LI[1]);
 			}
 			if (markup) {
@@ -1950,6 +2015,51 @@ public class CDAModelUtil {
 		appendConformanceRuleIds(constraint, message, markup);
 
 		return message.toString();
+	}
+
+	/**
+	 * @param message
+	 * @param property
+	 */
+	private static String appendPropertyRules(StringBuffer message, Property property) {
+		Class umlClass = property.getClass_();
+
+		// categorize constraints by constrainedElement name
+		List<Constraint> unprocessedConstraints = new ArrayList<Constraint>();
+		// propertyName -> constraints
+		Map<String, List<Constraint>> constraintMap = new HashMap<String, List<Constraint>>();
+		// constraint -> sub-constraints
+		Map<Constraint, List<Constraint>> subConstraintMap = new HashMap<Constraint, List<Constraint>>();
+
+		for (Constraint constraint : umlClass.getOwnedRules()) {
+			unprocessedConstraints.add(constraint);
+
+			for (Element element : constraint.getConstrainedElements()) {
+				if (CDAProfileUtil.getLogicalConstraint(constraint) == null) {
+					if (element instanceof Property) {
+						String name = ((Property) element).getName();
+						List<Constraint> rules = constraintMap.get(name);
+						if (rules == null) {
+							rules = new ArrayList<Constraint>();
+							constraintMap.put(name, rules);
+						}
+						rules.add(constraint);
+					} else if (element instanceof Constraint) {
+						Constraint subConstraint = (Constraint) element;
+						List<Constraint> rules = subConstraintMap.get(subConstraint);
+						if (rules == null) {
+							rules = new ArrayList<Constraint>();
+							subConstraintMap.put(subConstraint, rules);
+						}
+						rules.add(constraint);
+					}
+				}
+			}
+		}
+
+		StringBuilder sb = new StringBuilder();
+		appendPropertyRules(sb, property, constraintMap, subConstraintMap, unprocessedConstraints, true, true);
+		return sb.toString();
 	}
 
 	private static boolean containsSeverityWord(String text) {
