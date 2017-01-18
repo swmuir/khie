@@ -10,15 +10,20 @@
  *******************************************************************************/
 package org.eclipse.mdht.uml.cda.impl;
 
+import java.util.HashMap;
+import java.util.Stack;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.mdht.uml.cda.CDAPackage;
 import org.eclipse.mdht.uml.cda.StrucDocText;
 import org.eclipse.mdht.uml.cda.operations.StrucDocTextOperations;
@@ -150,12 +155,54 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	}
 
 	/**
+	 * @generated NOT;
+	 */
+	private HashMap<String, AnyType> textHash = new HashMap<String, AnyType>();
+
+	/**
+	 * @generated NOT;
+	 */
+	boolean parsed = false;
+
+	/**
+	 * @generated NOT;
+	 */
+	private void parse() {
+
+		Stack<FeatureMap> stack = new Stack<FeatureMap>();
+		stack.push(this.mixed);
+		while (!stack.isEmpty()) {
+			FeatureMap featureMap = stack.pop();
+			for (FeatureMap.Entry entry : featureMap) {
+				if (entry.getEStructuralFeature() instanceof EReference) {
+					AnyType anyType = (AnyType) entry.getValue();
+					String x = StrucDocTextOperations.getAttributeValue(anyType.getAnyAttribute(), "ID");
+					if (x != null) {
+						textHash.put(x, anyType);
+					}
+					stack.push(anyType.getMixed());
+				}
+			}
+		}
+
+		parsed = true;
+
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getText(String id) {
-		return StrucDocTextOperations.getText(this, id);
+		if (!parsed) {
+			parse();
+		}
+		if (textHash.containsKey(id)) {
+			return StrucDocTextOperations.getText(textHash.get(id).getMixed());
+		}
+
+		return null;
 	}
 
 	/**

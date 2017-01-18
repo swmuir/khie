@@ -49,6 +49,20 @@ import org.eclipse.ocl.expressions.OCLExpression;
  */
 public class PlaceOperations extends EntityOperations {
 	/**
+	 * The cached environment for evaluating OCL expressions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ThreadLocal<OCL> EOCL_ENV = new ThreadLocal<OCL>() {
+		@Override
+		public OCL initialValue() {
+			return OCL.newInstance();
+		}
+	};
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -75,7 +89,7 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static ThreadLocal<Constraint> VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = new ThreadLocal<Constraint>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,17 +102,20 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 */
 	public static boolean validateClassCode(Place place, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.Literals.PLACE);
-			try {
-				VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
-					VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		if (VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV.get() == null) {
+
+			synchronized (EOCL_ENV) {
+				OCL.Helper helper = EOCL_ENV.get().createOCLHelper();
+				helper.setContext(CDAPackage.Literals.PLACE);
+				try {
+					VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV.set(
+						helper.createInvariant(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP));
+				} catch (ParserException pe) {
+					throw new UnsupportedOperationException(pe.getLocalizedMessage());
+				}
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(place)) {
+		if (!EOCL_ENV.get().createQuery(VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV.get()).check(place)) {
 			if (diagnostics != null) {
 				diagnostics.add(
 					new BasicDiagnostic(
@@ -133,7 +150,7 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static Constraint VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
+	protected static ThreadLocal<Constraint> VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = new ThreadLocal<Constraint>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,17 +164,20 @@ public class PlaceOperations extends EntityOperations {
 	 */
 	public static boolean validateDeterminerCode(Place place, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		if (VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setContext(CDAPackage.Literals.PLACE);
-			try {
-				VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(
-					VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		if (VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV.get() == null) {
+
+			synchronized (EOCL_ENV) {
+				OCL.Helper helper = EOCL_ENV.get().createOCLHelper();
+				helper.setContext(CDAPackage.Literals.PLACE);
+				try {
+					VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV.set(
+						helper.createInvariant(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP));
+				} catch (ParserException pe) {
+					throw new UnsupportedOperationException(pe.getLocalizedMessage());
+				}
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(place)) {
+		if (!EOCL_ENV.get().createQuery(VALIDATE_DETERMINER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_INV.get()).check(place)) {
 			if (diagnostics != null) {
 				diagnostics.add(
 					new BasicDiagnostic(
@@ -192,7 +212,7 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_NAMES__EOCL_QRY;
+	protected static ThreadLocal<OCLExpression<EClassifier>> GET_NAMES__EOCL_QRY = new ThreadLocal<OCLExpression<EClassifier>>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,17 +220,19 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 */
 	public static EList<EN> getNames(Place place) {
-		if (GET_NAMES__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(
-				CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(16));
-			try {
-				GET_NAMES__EOCL_QRY = helper.createQuery(GET_NAMES__EOCL_EXP);
-			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		if (GET_NAMES__EOCL_QRY.get() == null) {
+			synchronized (EOCL_ENV) {
+				OCL.Helper helper = EOCL_ENV.get().createOCLHelper();
+				helper.setOperationContext(
+					CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(16));
+				try {
+					GET_NAMES__EOCL_QRY.set(helper.createQuery(GET_NAMES__EOCL_EXP));
+				} catch (ParserException pe) {
+					throw new UnsupportedOperationException(pe.getLocalizedMessage());
+				}
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_NAMES__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.get().createQuery(GET_NAMES__EOCL_QRY.get());
 		@SuppressWarnings("unchecked")
 		Collection<EN> result = (Collection<EN>) query.evaluate(place);
 		return new BasicEList.UnmodifiableEList<EN>(result.size(), result.toArray());
@@ -234,7 +256,7 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static OCLExpression<EClassifier> GET_ADDRS__EOCL_QRY;
+	protected static ThreadLocal<OCLExpression<EClassifier>> GET_ADDRS__EOCL_QRY = new ThreadLocal<OCLExpression<EClassifier>>();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,17 +264,19 @@ public class PlaceOperations extends EntityOperations {
 	 * @generated
 	 */
 	public static EList<AD> getAddrs(Place place) {
-		if (GET_ADDRS__EOCL_QRY == null) {
-			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(
-				CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(17));
-			try {
-				GET_ADDRS__EOCL_QRY = helper.createQuery(GET_ADDRS__EOCL_EXP);
-			} catch (ParserException pe) {
-				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+		if (GET_ADDRS__EOCL_QRY.get() == null) {
+			synchronized (EOCL_ENV) {
+				OCL.Helper helper = EOCL_ENV.get().createOCLHelper();
+				helper.setOperationContext(
+					CDAPackage.Literals.PLACE, CDAPackage.Literals.PLACE.getEAllOperations().get(17));
+				try {
+					GET_ADDRS__EOCL_QRY.set(helper.createQuery(GET_ADDRS__EOCL_EXP));
+				} catch (ParserException pe) {
+					throw new UnsupportedOperationException(pe.getLocalizedMessage());
+				}
 			}
 		}
-		OCL.Query query = EOCL_ENV.createQuery(GET_ADDRS__EOCL_QRY);
+		OCL.Query query = EOCL_ENV.get().createQuery(GET_ADDRS__EOCL_QRY.get());
 		@SuppressWarnings("unchecked")
 		Collection<AD> result = (Collection<AD>) query.evaluate(place);
 		return new BasicEList.UnmodifiableEList<AD>(result.size(), result.toArray());
