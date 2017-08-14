@@ -134,4 +134,6 @@ public interface ITermProfileConstants {
 
 	public static final String CONTEXT = "Context";
 
+	public static final String CODED_TYPE = "CodedType";
+
 }

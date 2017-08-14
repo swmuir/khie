@@ -1,0 +1,9 @@
+# 8/3/17 2:20:16 PM EDT
+# Eclipse Compiler for Java(TM) v20160829-0950, 3.12.1, Copyright IBM Corp 2000, 2015. All rights reserved.
+----------
+1. WARNING in /Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.ant/tasks/org/eclipse/mdht/uml/cda/ant/taskdefs/LoggingDiagnosticChain.java (at line 18)
+	import org.eclipse.emf.common.util.DiagnosticChain;
+	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The import org.eclipse.emf.common.util.DiagnosticChain is never used
+----------
+1 problem (1 warning)

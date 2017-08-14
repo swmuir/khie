@@ -29,7 +29,6 @@ import org.eclipse.mdht.uml.term.core.profile.ValueSetConstraints;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetContextBinding;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetType;
 import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
-import org.eclipse.uml2.types.TypesPackage;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -1428,7 +1427,6 @@ public class TermPackageImpl extends EPackageImpl implements TermPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 
 		// Create type parameters
@@ -1441,113 +1439,113 @@ public class TermPackageImpl extends EPackageImpl implements TermPackage {
 		initEClass(cdEClass, org.eclipse.mdht.uml.term.core.profile.CD.class, "CD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCD_Qualifier(), this.getCR(), null, "qualifier", null, 0, -1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCD_Translation(), this.getCD(), null, "translation", null, 0, -1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCD_Code(), theTypesPackage.getString(), "code", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCD_CodeSystem(), theTypesPackage.getString(), "codeSystem", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCD_CodeSystemName(), theTypesPackage.getString(), "codeSystemName", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCD_CodeSystemVersion(), theTypesPackage.getString(), "codeSystemVersion", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCD_DisplayName(), theTypesPackage.getString(), "displayName", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCD_Code(), ecorePackage.getEString(), "code", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCD_CodeSystem(), ecorePackage.getEString(), "codeSystem", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCD_CodeSystemName(), ecorePackage.getEString(), "codeSystemName", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCD_CodeSystemVersion(), ecorePackage.getEString(), "codeSystemVersion", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCD_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(crEClass, org.eclipse.mdht.uml.term.core.profile.CR.class, "CR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCR_Name(), this.getCD(), null, "name", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCR_Value(), this.getCD(), null, "value", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCR_Inverted(), theTypesPackage.getBoolean(), "inverted", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCR_Inverted(), ecorePackage.getEBoolean(), "inverted", null, 0, 1, org.eclipse.mdht.uml.term.core.profile.CR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(conceptDomainConstraintEClass, ConceptDomainConstraint.class, "ConceptDomainConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConceptDomainConstraint_Reference(), this.getConceptDomain(), null, "reference", null, 0, 1, ConceptDomainConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConceptDomainConstraint_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, ConceptDomainConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConceptDomainConstraint_Name(), theTypesPackage.getString(), "name", null, 0, 1, ConceptDomainConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConceptDomainConstraint_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, ConceptDomainConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConceptDomainConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, ConceptDomainConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getConceptDomainConstraint_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ConceptDomainConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(conceptDomainEClass, ConceptDomain.class, "ConceptDomain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConceptDomain_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConceptDomain_FullName(), theTypesPackage.getString(), "fullName", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConceptDomain_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConceptDomain_FullName(), ecorePackage.getEString(), "fullName", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConceptDomain_Status(), this.getStatusKind(), "status", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConceptDomain_StatusDate(), theTypesPackage.getString(), "statusDate", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getConceptDomain_StatusDate(), ecorePackage.getEString(), "statusDate", null, 0, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getConceptDomain_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ConceptDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(codeSystemConstraintEClass, CodeSystemConstraint.class, "CodeSystemConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodeSystemConstraint_Reference(), this.getCodeSystemVersion(), null, "reference", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemConstraint_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemConstraint_Name(), theTypesPackage.getString(), "name", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemConstraint_Version(), theTypesPackage.getString(), "version", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemConstraint_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemConstraint_Version(), ecorePackage.getEString(), "version", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCodeSystemConstraint_Binding(), this.getBindingKind(), "binding", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemConstraint_Code(), theTypesPackage.getString(), "code", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemConstraint_DisplayName(), theTypesPackage.getString(), "displayName", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemConstraint_Code(), ecorePackage.getEString(), "code", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemConstraint_DisplayName(), ecorePackage.getEString(), "displayName", null, 0, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCodeSystemConstraint_Qualifier(), this.getCR(), null, "qualifier", null, 0, -1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCodeSystemConstraint_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, CodeSystemConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(codeSystemVersionEClass, CodeSystemVersion.class, "CodeSystemVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCodeSystemVersion_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_Version(), theTypesPackage.getString(), "version", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_FullName(), theTypesPackage.getString(), "fullName", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_Source(), theTypesPackage.getString(), "source", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_Url(), theTypesPackage.getString(), "url", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_EffectiveDate(), theTypesPackage.getString(), "effectiveDate", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_ReleaseDate(), theTypesPackage.getString(), "releaseDate", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_Version(), ecorePackage.getEString(), "version", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_FullName(), ecorePackage.getEString(), "fullName", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_Source(), ecorePackage.getEString(), "source", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_Url(), ecorePackage.getEString(), "url", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_EffectiveDate(), ecorePackage.getEString(), "effectiveDate", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_ReleaseDate(), ecorePackage.getEString(), "releaseDate", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCodeSystemVersion_Status(), this.getStatusKind(), "status", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCodeSystemVersion_StatusDate(), theTypesPackage.getString(), "statusDate", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCodeSystemVersion_StatusDate(), ecorePackage.getEString(), "statusDate", null, 0, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCodeSystemVersion_Base_Enumeration(), theUMLPackage.getEnumeration(), null, "base_Enumeration", null, 1, 1, CodeSystemVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		addEOperation(codeSystemVersionEClass, theTypesPackage.getString(), "getEnumerationName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(codeSystemVersionEClass, ecorePackage.getEString(), "getEnumerationName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		EOperation op = addEOperation(codeSystemVersionEClass, null, "setEnumerationName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(codeSystemVersionEClass, theTypesPackage.getString(), "getEnumerationQualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(codeSystemVersionEClass, ecorePackage.getEString(), "getEnumerationQualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(valueSetConstraintEClass, ValueSetConstraint.class, "ValueSetConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getValueSetConstraint_Reference(), this.getValueSetVersion(), null, "reference", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetConstraint_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetConstraint_Name(), theTypesPackage.getString(), "name", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetConstraint_Version(), theTypesPackage.getString(), "version", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetConstraint_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetConstraint_Version(), ecorePackage.getEString(), "version", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSetConstraint_Binding(), this.getBindingKind(), "binding", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetConstraint_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSetConstraint_Extensibility(), this.getExtensibility(), "extensibility", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSetConstraint_Guidance(), this.getGuidance(), "guidance", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetConstraint_Uri(), theTypesPackage.getString(), "uri", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetConstraint_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, ValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(valueSetVersionEClass, ValueSetVersion.class, "ValueSetVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValueSetVersion_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_Version(), theTypesPackage.getString(), "version", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_FullName(), theTypesPackage.getString(), "fullName", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_Source(), theTypesPackage.getString(), "source", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_Url(), theTypesPackage.getString(), "url", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_Definition(), theTypesPackage.getString(), "definition", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_EffectiveDate(), theTypesPackage.getString(), "effectiveDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_ExpirationDate(), theTypesPackage.getString(), "expirationDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_ReleaseDate(), theTypesPackage.getString(), "releaseDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_RevisionDate(), theTypesPackage.getString(), "revisionDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_Version(), ecorePackage.getEString(), "version", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_FullName(), ecorePackage.getEString(), "fullName", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_Source(), ecorePackage.getEString(), "source", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_Url(), ecorePackage.getEString(), "url", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_EffectiveDate(), ecorePackage.getEString(), "effectiveDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_ExpirationDate(), ecorePackage.getEString(), "expirationDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_ReleaseDate(), ecorePackage.getEString(), "releaseDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_RevisionDate(), ecorePackage.getEString(), "revisionDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSetVersion_Status(), this.getStatusKind(), "status", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetVersion_StatusDate(), theTypesPackage.getString(), "statusDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetVersion_StatusDate(), ecorePackage.getEString(), "statusDate", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSetVersion_Type(), this.getValueSetType(), "type", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSetVersion_Binding(), this.getBindingKind(), "binding", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetVersion_CodeSystem(), this.getCodeSystemVersion(), null, "codeSystem", null, 0, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetVersion_Base_Enumeration(), theUMLPackage.getEnumeration(), null, "base_Enumeration", null, 1, 1, ValueSetVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		addEOperation(valueSetVersionEClass, theTypesPackage.getString(), "getEnumerationName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(valueSetVersionEClass, ecorePackage.getEString(), "getEnumerationName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = addEOperation(valueSetVersionEClass, null, "setEnumerationName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		addEOperation(valueSetVersionEClass, theTypesPackage.getString(), "getEnumerationQualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEOperation(valueSetVersionEClass, ecorePackage.getEString(), "getEnumerationQualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(valueSetCodeEClass, ValueSetCode.class, "ValueSetCode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValueSetCode_ConceptName(), theTypesPackage.getString(), "conceptName", null, 0, 1, ValueSetCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getValueSetCode_UsageNote(), theTypesPackage.getString(), "usageNote", null, 0, 1, ValueSetCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetCode_ConceptName(), ecorePackage.getEString(), "conceptName", null, 0, 1, ValueSetCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetCode_UsageNote(), ecorePackage.getEString(), "usageNote", null, 0, 1, ValueSetCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetCode_CodeSystem(), this.getCodeSystemVersion(), null, "codeSystem", null, 0, 1, ValueSetCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetCode_Base_EnumerationLiteral(), theUMLPackage.getEnumerationLiteral(), null, "base_EnumerationLiteral", null, 1, 1, ValueSetCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(valueSetContextBindingEClass, ValueSetContextBinding.class, "ValueSetContextBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValueSetContextBinding_EffectiveDate(), theTypesPackage.getString(), "effectiveDate", null, 0, 1, ValueSetContextBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSetContextBinding_EffectiveDate(), ecorePackage.getEString(), "effectiveDate", null, 0, 1, ValueSetContextBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetContextBinding_ConceptDomain(), this.getConceptDomain(), null, "conceptDomain", null, 1, 1, ValueSetContextBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetContextBinding_ValueSet(), this.getValueSetVersion(), null, "valueSet", null, 1, 1, ValueSetContextBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetContextBinding_UsageContext(), this.getUsageContext(), null, "usageContext", null, 1, 1, ValueSetContextBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getValueSetContextBinding_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ValueSetContextBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(usageContextEClass, UsageContext.class, "UsageContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUsageContext_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, UsageContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUsageContext_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, UsageContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUsageContext_Status(), this.getStatusKind(), "status", null, 0, 1, UsageContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getUsageContext_StatusDate(), theTypesPackage.getString(), "statusDate", null, 0, 1, UsageContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUsageContext_StatusDate(), ecorePackage.getEString(), "statusDate", null, 0, 1, UsageContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getUsageContext_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, UsageContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(valueSetConstraintsEClass, ValueSetConstraints.class, "ValueSetConstraints", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1555,14 +1553,14 @@ public class TermPackageImpl extends EPackageImpl implements TermPackage {
 		initEReference(getValueSetConstraints_Constraints(), this.getContextToValueSet(), null, "constraints", null, 0, -1, ValueSetConstraints.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(contextToValueSetEClass, ContextToValueSet.class, "ContextToValueSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContextToValueSet_Key(), theTypesPackage.getString(), "key", null, 1, 1, ContextToValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getContextToValueSet_Value(), theTypesPackage.getString(), "value", null, 0, 1, ContextToValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContextToValueSet_Key(), ecorePackage.getEString(), "key", null, 1, 1, ContextToValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContextToValueSet_Value(), ecorePackage.getEString(), "value", null, 0, 1, ContextToValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(nullValueSetConstraintEClass, NullValueSetConstraint.class, "NullValueSetConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNullValueSetConstraint_Reference(), this.getValueSetVersion(), null, "reference", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNullValueSetConstraint_Identifier(), theTypesPackage.getString(), "identifier", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNullValueSetConstraint_Name(), theTypesPackage.getString(), "name", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNullValueSetConstraint_Version(), theTypesPackage.getString(), "version", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNullValueSetConstraint_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNullValueSetConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNullValueSetConstraint_Version(), ecorePackage.getEString(), "version", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNullValueSetConstraint_Binding(), this.getBindingKind(), "binding", null, 0, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getNullValueSetConstraint_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, NullValueSetConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1602,32 +1600,6 @@ public class TermPackageImpl extends EPackageImpl implements TermPackage {
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.eclipse.org/uml2/2.0.0/UML
-		createUMLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "originalName", "Terminology"
-		   });	
-		addAnnotation
-		  (guidanceEEnum, 
-		   source, 
-		   new String[] {
-			 "originalName", "Guidance "
-		   });
 	}
 
 } // TermPackageImpl

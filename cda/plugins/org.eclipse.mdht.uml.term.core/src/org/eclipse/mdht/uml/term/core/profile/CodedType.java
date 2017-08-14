@@ -13,10 +13,10 @@ import org.eclipse.uml2.uml.Classifier;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodedType#getBase_Classifier <em>Base Classifier</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodedType()
  * @model

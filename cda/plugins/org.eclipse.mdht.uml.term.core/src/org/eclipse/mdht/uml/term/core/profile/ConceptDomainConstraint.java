@@ -22,13 +22,13 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomainConstraint#getReference <em>Reference</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomainConstraint#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomainConstraint#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomainConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint()
  * @model
@@ -60,7 +60,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Identifier()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();
@@ -75,7 +75,7 @@ public interface ConceptDomainConstraint extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomainConstraint_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getName();

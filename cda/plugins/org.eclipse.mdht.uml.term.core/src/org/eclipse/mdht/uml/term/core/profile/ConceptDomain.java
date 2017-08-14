@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomain#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomain#getFullName <em>Full Name</em>}</li>
@@ -29,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomain#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ConceptDomain#getBase_Class <em>Base Class</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomain()
  * @model
@@ -60,7 +60,7 @@ public interface ConceptDomain extends EObject {
 	 * @return the value of the '<em>Full Name</em>' attribute.
 	 * @see #setFullName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomain_FullName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getFullName();
@@ -75,7 +75,7 @@ public interface ConceptDomain extends EObject {
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomain_Identifier()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();
@@ -107,7 +107,7 @@ public interface ConceptDomain extends EObject {
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getConceptDomain_StatusDate()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getStatusDate();

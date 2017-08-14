@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="org.eclipse.mdht.uml.cda.ant" default="build.jars" basedir=".">
+
+	<property name="p2.build.repo" value="file:${buildDirectory}/buildRepo"/>
+	<property name="basews" value="${ws}"/>
+	<property name="baseos" value="${os}"/>
+	<property name="basearch" value="${arch}"/>
+	<property name="basenl" value="${nl}"/>
+	<property name="bundleId" value="org.eclipse.mdht.uml.cda.ant"/>
+	<property name="bundleVersion" value="3.0.0.201708021142"/>
+	<property name="p2.publishonerror" value="false"/>
+
+	<!-- Compiler settings. -->
+	<property name="javacFailOnError" value="false"/>
+	<property name="javacDebugInfo" value="on"/>
+	<property name="javacVerbose" value="false"/>
+	<property name="logExtension" value=".log"/>
+	<property name="compilerArg" value=""/>
+	<property name="compilation.prereq.log" value="${buildDirectory}/prereqErrors.log"/>
+	<property name="javacSource" value="1.3"/>
+	<property name="javacTarget" value="1.2"/>
+	<condition property="dir_bootclasspath" value="${java.home}/../Classes">
+		<and>
+			<os family="mac"/>
+			<available file="${java.home}/../Classes" type="dir"/>
+		</and>
+	</condition>
+	<property name="dir_bootclasspath" value="${java.home}/lib"/>
+	<path id="path_bootclasspath">
+		<fileset dir="${dir_bootclasspath}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<property name="bootclasspath" refid="path_bootclasspath"/>
+	<condition property="bundleBootClasspath" value="${JavaSE-1.7}"	>
+		<isset property="JavaSE-1.7"/>
+	</condition>
+	<condition property="bundleJavacSource" value="1.7"	>
+		<isset property="JavaSE-1.7"/>
+	</condition>
+	<condition property="bundleJavacTarget" value="1.7"	>
+		<isset property="JavaSE-1.7"/>
+	</condition>
+	<property name="bundleJavacSource" value="${javacSource}"/>
+	<property name="bundleJavacTarget" value="${javacTarget}"/>
+	<property name="bundleBootClasspath" value="${bootclasspath}"/>
+
+	<target name="init" depends="properties">
+		<condition property="pluginTemp" value="${buildTempFolder}/plugins"		>
+			<isset property="buildTempFolder"/>
+		</condition>
+		<property name="pluginTemp" value="${basedir}"/>
+		<condition property="build.result.folder" value="${pluginTemp}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"		>
+			<isset property="buildTempFolder"/>
+		</condition>
+		<property name="build.result.folder" value="${basedir}"/>
+		<property name="temp.folder" value="${basedir}/temp.folder"/>
+		<property name="plugin.destination" value="${basedir}"/>
+		<condition property="p2.publish.parts" value="true"		>
+			<istrue value="${p2.gathering}"/>
+		</condition>
+		<property name="compilation.problem.marker" value="${build.result.folder}/compilation.problem"/>
+		<condition property="compilation.problem.marker.exists" value="true"		>
+			<and>
+			<available file="${compilation.problem.marker}"/>
+			<isfalse value="${p2.publishonerror}"/>
+			</and>
+		</condition>
+	</target>
+
+	<target name="properties" if="eclipse.running">
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+
+	</target>
+
+	<target name="build.update.jar" depends="init" description="Build the plug-in: org.eclipse.mdht.uml.cda.ant for an update site.">
+		<delete dir="${temp.folder}"/>
+		<mkdir dir="${temp.folder}"/>
+		<antcall target="build.jars"/>
+		<antcall target="gather.bin.parts">
+			<param name="destination.temp.folder" value="${temp.folder}/"/>
+		</antcall>
+		<jar destfile="${plugin.destination}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142.jar" basedir="${temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" filesetmanifest="merge"/>
+		<delete dir="${temp.folder}"/>
+	</target>
+
+	<target name="ant_tasks/cdatools.ant.tasks.jar.nestedJars">
+	</target>
+	<target name="ant_tasks/cdatools.ant.tasks.jar" depends="init,ant_tasks/cdatools.ant.tasks.jar.nestedJars" unless="ant_tasks/cdatools.ant.tasks.jar" description="Create jar: org.eclipse.mdht.uml.cda.ant ant_tasks/cdatools.ant.tasks.jar.">
+		<delete dir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin"/>
+		<mkdir dir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin"/>
+		<path id="ant_tasks/cdatools.ant.tasks.jar.classpath">
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.inject_1.0.0.v20091030.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi.compatibility.state_1.0.200.v20160504-1419.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.jsdt.nashorn.extension_1.0.0.v201605131737.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.jobs_3.8.0.v20160509-0411.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.preferences_3.6.1.v20160815-1406.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.app_1.3.400.v20150715-1528.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi.services_3.5.100.v20160504-1419.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.servlet_3.1.0.v201410161800.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-antlr.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-bcel.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-bsf.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-log4j.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-oro.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-regexp.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-resolver.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-xalan2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-commons-logging.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-commons-net.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jai.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-javamail.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jdepend.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jmf.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jsch.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-junit.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-junit4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-launcher.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-netrexx.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-swing.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-testutil.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ant.core_3.4.100.v20160505-0642.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.variables_3.3.0.v20160419-1720.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml_5.2.1.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore_2.12.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.cdo.ecore.retrofit_4.2.300.v20160301-1326.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.common_2.12.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.resources_3.11.0.v20160503-1608.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.expressions_3.5.100.v20160418-1621.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.filesystem_1.6.0.v20160503-1608.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.filesystem.macosx_1.3.0.v20140124-1940.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.xmi_2.12.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.common_2.1.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.types_2.0.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.mapping.ecore2xml_2.9.0.v20160526-0356.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.lang_2.6.0.v201404270220.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.core/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.core/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl.ecore_3.6.0.v20160523-1914.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl_3.6.0.v20160523-1914.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/com.ibm.icu_56.1.0.v201601250100.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl.common_1.4.0.v20160521-2033.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.resources/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.resources/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.core/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.core/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.validation/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.validation/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.edit_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.change_2.11.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.validation_1.8.0.201606071713.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl.uml_5.2.0.v20160521-2033.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.resources_5.2.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.profile.standard_1.0.100.v20160822-0739.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/bin"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/schema/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.datatypes/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.datatypes/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.vocab/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.vocab/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.rim/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.rim/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.transform/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.transform/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.io_2.2.0.v201405211200.jar"/>
+			<pathelement path="../../../dita/plugins/org.eclipse.mdht.dita.ui/bin/"/>
+			<pathelement path="../../../dita/plugins/org.eclipse.mdht.dita.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui_3.108.0.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.cocoa_1.1.100.v20151202-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.swt_3.105.1.v20160907-0248.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.105.1.v20160907-0248.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jface_3.12.0.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.commands_3.8.0.v20160316-1921.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.bidi_1.0.0.v20160307-1318.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.workbench_3.108.1.v20160819-2118.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.commands_0.11.100.v20160506-0804.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.contexts_1.5.0.v20160504-0909.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.di_1.6.1.v20160712-0927.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.di.annotations_1.5.0.v20151127-1241.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.services_2.0.100.v20160509-1032.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench_1.4.0.v20160517-1624.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.model.workbench_1.2.0.v20160229-1459.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.emf.xpath_0.1.200.v20160506-0804.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.jxpath_1.3.0.v200911051830.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.services_1.2.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.di_1.1.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.di.extensions_0.14.0.v20160211-1614.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.renderers.swt_0.14.0.v20160525-0940.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.renderers.swt.cocoa_0.11.300.v20160330-1418.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.swt_0.14.1.v20160829-0832.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.databinding_1.6.0.v20160412-0910.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.databinding.observable_1.6.0.v20160511-1747.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.databinding.property_1.6.0.v20160427-0852.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jface.databinding_1.8.0.v20160420-2231.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.css.core_0.12.0.v20160505-1310.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.xml_1.3.4.v201005080400.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.css.sac_1.3.1.v200903091627.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.batik.css_1.7.0.v201011041433.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.batik.util_1.7.0.v201011041433.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.batik.util.gui_1.7.0.v200903091627.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.css.swt_0.12.100.v20160517-1505.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.bindings_0.11.100.v20160509-1025.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench3_0.13.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.css.swt.theme_0.10.100.v20160523-0836.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.widgets_1.1.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.event_1.3.200.v20160324-1850.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.help_3.7.0.v20160602-1307.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.addons.swt_1.2.100.v20160831-1151.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.launching_3.8.100.v20160505-0636.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.core_3.12.1.v20160829-0950.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.compiler.apt_1.2.100.v20160418-1457.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.compiler.tool_1.1.100.v20160418-1457.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.text_3.6.0.v20160503-1849.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.team.core_3.8.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.compare.core_3.6.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.debug.core_3.10.100.v20160419-1720.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug_3.10.1.v20160811-0441/jdi.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug_3.10.1.v20160811-0441/jdimodel.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug_3.10.1.v20160811-0441/tools.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.debug.ui_3.11.201.v20160825-1412.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.forms_3.7.0.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.console_3.6.200.v20160518-1858.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jface.text_3.11.1.v20160819-1517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.workbench.texteditor_3.10.1.v20160818-1626.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.ide_3.12.1.v20160823-0925.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.views_3.8.101.v20160816-1954.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.engine_2.4.100.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.core_2.4.100.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.metadata_2.3.100.v20160427-2220.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.300.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.repository_2.3.200.v20160421-0324.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.security_1.2.200.v20150715-1528.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.security.macosx_1.100.200.v20130327-1442.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.tukaani.xz_1.3.0.v201308270617.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.editors_3.10.0.v20160505-0931.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.filebuffers_3.6.0.v20160503-1849.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ant.launching_1.1.200.v20160418-1631.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.externaltools_1.0.400.v20160509-1057.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.compare_3.6.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.xerces_2.9.0.v201101211617.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.transaction_1.9.0.201606071900.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.workspace_1.5.1.201606071900.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.diagram.ui.properties_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui_1.8.1.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.views.properties.tabbed_3.7.0.v20160310-0903.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.commands.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.edit_2.9.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.clipboard.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.ui_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.action_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.services.action_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.services_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.type.core_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.ui.properties_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.edit.ui_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.common.ui_2.11.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.services.properties_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.diagram.ui_1.8.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.draw2d_3.10.100.201606061308.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gef_3.11.0.201606061308.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.gef.ui_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.draw2d.ui_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.notation_1.8.0.201606071631.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.diagram.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.edit_5.2.1.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.common.edit_2.1.0.v20160822-0739.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.navigator_3.6.100.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.workspace.ui_1.3.0.201606071900.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.ui/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.codegen_2.11.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.codegen.ecore_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.codegen.ecore_2.2.0.v20160822-0739.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.ecore.importer_3.1.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.importer_2.9.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.converter_2.7.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ant_2.8.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.ui_3.9.1.v20160813-1107.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.core_3.11.0.v20160510-1223.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.update.configurator_3.3.400.v20160506-0750.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.200.v20160204-0642/pdebuild.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.frameworkadmin_2.0.300.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.200.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.700.v20160102-2223.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.simpleconfigurator_1.1.200.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.updatesite_1.0.600.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.artifact.repository_1.1.500.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.jarprocessor_1.0.500.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.2.100.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.publisher_1.4.100.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.repository.tools_2.1.300.v20160421-0324.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.director_2.3.300.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.sat4j.core_2.3.5.v201308161310.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.sat4j.pb_2.3.5.v201404071733.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.director.app_1.0.500.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.garbagecollector_1.0.300.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.touchpoint.eclipse_2.1.400.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug.ui_3.7.201.v20160811-0450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.ui_3.12.1.v20160822-0645.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.search_3.11.0.v20160519-1501.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ltk.core.refactoring_3.7.0.v20160419-0705.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ltk.ui.refactoring_3.8.0.v20160518-1817.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.team.ui_3.8.0.v20160518-1906.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.navigator.resources_3.5.100.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.core.manipulation_1.7.0.v20160419-0705.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ant.ui_3.6.200.v20160525-1820.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.externaltools_3.3.100.v20160518-1858.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.junit_3.9.0.v20160421-1701.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.junit.runtime_3.4.600.v20160505-0715.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.junit.core_3.8.0.v20160421-1701.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.intro_3.5.1.v20160829-1558.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.help.base_4.1.0.v20160907-1200.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.http.jetty_3.3.0.v20160324-1850.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.http.servlet_1.3.1.v20160808-1329.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.http_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.util_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.slf4j.api_1.7.10.v20170224-1220.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/ch.qos.logback.slf4j_1.1.2.v20160301-0943.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/ch.qos.logback.classic_1.1.2.v20160208-0839.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.logback.appender_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/ch.qos.logback.core_1.1.2.v20160208-0839.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.mail_1.4.0.v201005080615.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.activation_1.1.0.v201211130549.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.core.ui_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.core_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-core-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-model-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-settings-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-settings-builder-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-builder-support-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-repository-metadata-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-artifact-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-plugin-api-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-model-builder-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-aether-provider-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-api-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-util-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/guice-4.0-no_aop.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-interpolation-1.21.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-utils-3.0.22.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-component-annotations-1.6.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-sec-dispatcher-1.3.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/commons-lang3-3.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-embedder-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-cipher-1.7.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/commons-cli-1.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-compat-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/wagon-provider-api-2.10.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/org.eclipse.sisu.plexus-0.3.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/cdi-api-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/jsr250-api-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/org.eclipse.sisu.inject-0.3.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/guava-18.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-build-api-0.0.7.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-impl-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-spi-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-connector-okhttp-0.16.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/okhttp-2.5.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/okio-1.6.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-connector-basic-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-transport-wagon-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/wagon-file-2.10.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/commons-lang-2.6.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime.slf4j.simple_1.7.0.20160603-1931"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime.slf4j.simple_1.7.0.20160603-1931/jars/slf4j-simple-1.7.5.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-common-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-catalog-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-descriptor-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-registry-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/maven-invoker-2.1.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/commons-collections-3.2.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/commons-io-2.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/commons-lang-2.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/dom4j-1.6.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/jchardet-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/jdom-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/oro-2.0.8.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/plexus-velocity-1.1.8.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/velocity-1.5.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/indexer-core-3.1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/indexer-artifact-3.1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/lucene-core-2.4.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/lucene-highlighter-2.4.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.workspace.cli_0.3.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.model.edit_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.emf_1.2.400.v201505132009.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.frameworks_1.2.200.v201304241450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.environment_1.0.400.v200912181831.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi.util_3.3.100.v20150423-1351.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.core_1.2.0.v200908251833.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.sse.core_1.1.1000.v201608061842.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.uriresolver_1.2.200.v201505132009.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.validation_1.2.700.v201508251749.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.project.facet.core_1.4.300.v201111030423.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.xml.core_1.1.1000.v201605120036.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jem.util_2.1.200.v201404021757.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.emfworkbench.integration_1.2.101.v201107081800.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.xsd.core_1.1.900.v201401141857.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.xsd_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.server_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.io_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.servlet_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.security_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.lucene.analysis_3.5.0.v20120725-1805.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.lucene.core_3.5.0.v20120725-1805.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.net_1.3.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.cheatsheets_3.5.0.v20160504-0839.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.help.ui_4.0.200.v20160510-0758.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.views.log_1.2.1.v20160829-0826.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.ui_2.4.100.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.operations_2.4.200.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.security.ui_1.1.300.v20150803-1225.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.launching_3.6.400.v20160121-1248.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.trace_1.0.400.v20160509-1055.jar"/>
+		</path>
+		<!-- compile the source code -->
+		<javac destdir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="ant_tasks/cdatools.ant.tasks.jar.classpath" />
+			<src path="tasks/"			/>
+			<exclude  name="**/doc-files/**"			/>
+			<compilerarg value="@${basedir}/javaCompiler.ant_tasks_cdatools.ant.tasks.jar.args" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"			/>
+			<compilerarg line="-log &apos;${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin${logExtension}&apos;" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"			/>
+		</javac>
+		<antcall target="checkCompilationResults"/>
+		<!-- Copy necessary resources -->
+		<copy todir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin" failonerror="true" overwrite="false">
+			<fileset dir="tasks/">
+				<exclude name="**/*.java"/>
+				<exclude name="**/package.htm*"/>
+				<exclude name="**/doc-files/**"/>
+			</fileset>
+		</copy>
+		<mkdir dir="${build.result.folder}/ant_tasks"/>
+		<jar destfile="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar" basedir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin"/>
+		<delete dir="${temp.folder}/ant_tasks/cdatools.ant.tasks.jar.bin"/>
+	</target>
+
+	<target name="ant_tasks/cdatools.ant.taskssrc.zip" depends="init" unless="ant_tasks/cdatools.ant.taskssrc.zip">
+		<mkdir dir="${build.result.folder}/ant_tasks"/>
+		<antcall target="zip.ant_tasks/cdatools.ant.taskssrc.zip"/>
+	</target>
+	<target name="zip.ant_tasks/cdatools.ant.taskssrc.zip">
+		<zip destfile="${build.result.folder}/ant_tasks/cdatools.ant.taskssrc.zip" filesonly="false" whenempty="skip" update="false">
+			<fileset dir="tasks/">
+				<include name="**/*.java"/>
+			</fileset>
+		</zip>
+	</target>
+	<target name="copy.ant_tasks/cdatools.ant.taskssrc.zip">
+		<copy todir="${source.destination.folder}/ant_tasks/cdatools.ant.taskssrc" failonerror="true" overwrite="true">
+			<fileset dir="tasks/">
+				<include name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="@dot.nestedJars">
+	</target>
+	<target name="@dot" depends="init,@dot.nestedJars" unless="@dot" description="Create jar: org.eclipse.mdht.uml.cda.ant @dot.">
+		<delete dir="${build.result.folder}/@dot"/>
+		<mkdir dir="${build.result.folder}/@dot"/>
+		<path id="@dot.classpath">
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.inject_1.0.0.v20091030.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi.compatibility.state_1.0.200.v20160504-1419.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.jsdt.nashorn.extension_1.0.0.v201605131737.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.jobs_3.8.0.v20160509-0411.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.preferences_3.6.1.v20160815-1406.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.app_1.3.400.v20150715-1528.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi.services_3.5.100.v20160504-1419.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.servlet_3.1.0.v201410161800.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-antlr.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-bcel.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-bsf.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-log4j.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-oro.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-regexp.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-resolver.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-apache-xalan2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-commons-logging.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-commons-net.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jai.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-javamail.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jdepend.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jmf.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-jsch.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-junit.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-junit4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-launcher.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-netrexx.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-swing.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant-testutil.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.6.v201510161327/lib/ant.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ant.core_3.4.100.v20160505-0642.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.variables_3.3.0.v20160419-1720.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml_5.2.1.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore_2.12.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.cdo.ecore.retrofit_4.2.300.v20160301-1326.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.common_2.12.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.resources_3.11.0.v20160503-1608.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.expressions_3.5.100.v20160418-1621.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.filesystem_1.6.0.v20160503-1608.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.filesystem.macosx_1.3.0.v20140124-1940.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.xmi_2.12.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.common_2.1.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.types_2.0.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.mapping.ecore2xml_2.9.0.v20160526-0356.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.lang_2.6.0.v201404270220.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.core/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.core/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl.ecore_3.6.0.v20160523-1914.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl_3.6.0.v20160523-1914.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/com.ibm.icu_56.1.0.v201601250100.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl.common_1.4.0.v20160521-2033.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.resources/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.resources/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.core/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.core/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.validation/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.validation/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.edit_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.change_2.11.0.v20160420-0247.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.validation_1.8.0.201606071713.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ocl.uml_5.2.0.v20160521-2033.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.resources_5.2.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.profile.standard_1.0.100.v20160822-0739.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/bin"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda/schema/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.datatypes/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.datatypes/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.vocab/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.vocab/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.rim/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.hl7.rim/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.emf.runtime/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.transform/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.transform.core/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.transform/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.transform/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.transform/@dot"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.dita/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.io_2.2.0.v201405211200.jar"/>
+			<pathelement path="../../../dita/plugins/org.eclipse.mdht.dita.ui/bin/"/>
+			<pathelement path="../../../dita/plugins/org.eclipse.mdht.dita.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.xml.resolver_1.2.0.v201005080400.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.xml.serializer_2.7.1.v201005080400.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui_3.108.0.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.cocoa_1.1.100.v20151202-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.swt_3.105.1.v20160907-0248.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.105.1.v20160907-0248.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jface_3.12.0.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.commands_3.8.0.v20160316-1921.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.bidi_1.0.0.v20160307-1318.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.workbench_3.108.1.v20160819-2118.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.commands_0.11.100.v20160506-0804.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.contexts_1.5.0.v20160504-0909.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.di_1.6.1.v20160712-0927.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.di.annotations_1.5.0.v20151127-1241.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.services_2.0.100.v20160509-1032.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench_1.4.0.v20160517-1624.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.model.workbench_1.2.0.v20160229-1459.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.emf.xpath_0.1.200.v20160506-0804.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.jxpath_1.3.0.v200911051830.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.services_1.2.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.di_1.1.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.core.di.extensions_0.14.0.v20160211-1614.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.renderers.swt_0.14.0.v20160525-0940.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.renderers.swt.cocoa_0.11.300.v20160330-1418.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.swt_0.14.1.v20160829-0832.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.databinding_1.6.0.v20160412-0910.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.databinding.observable_1.6.0.v20160511-1747.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.databinding.property_1.6.0.v20160427-0852.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jface.databinding_1.8.0.v20160420-2231.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.css.core_0.12.0.v20160505-1310.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.xml_1.3.4.v201005080400.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.css.sac_1.3.1.v200903091627.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.batik.css_1.7.0.v201011041433.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.batik.util_1.7.0.v201011041433.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.batik.util.gui_1.7.0.v200903091627.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.css.swt_0.12.100.v20160517-1505.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.bindings_0.11.100.v20160509-1025.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench3_0.13.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.css.swt.theme_0.10.100.v20160523-0836.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.widgets_1.1.100.v20160506-0759.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.event_1.3.200.v20160324-1850.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.help_3.7.0.v20160602-1307.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.e4.ui.workbench.addons.swt_1.2.100.v20160831-1151.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.launching_3.8.100.v20160505-0636.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.core_3.12.1.v20160829-0950.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.compiler.apt_1.2.100.v20160418-1457.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.compiler.tool_1.1.100.v20160418-1457.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.text_3.6.0.v20160503-1849.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.team.core_3.8.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.compare.core_3.6.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.debug.core_3.10.100.v20160419-1720.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug_3.10.1.v20160811-0441/jdi.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug_3.10.1.v20160811-0441/jdimodel.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug_3.10.1.v20160811-0441/tools.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.debug.ui_3.11.201.v20160825-1412.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.forms_3.7.0.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.console_3.6.200.v20160518-1858.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jface.text_3.11.1.v20160819-1517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.workbench.texteditor_3.10.1.v20160818-1626.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.ide_3.12.1.v20160823-0925.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.views_3.8.101.v20160816-1954.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.engine_2.4.100.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.core_2.4.100.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.metadata_2.3.100.v20160427-2220.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.300.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.repository_2.3.200.v20160421-0324.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.security_1.2.200.v20150715-1528.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.security.macosx_1.100.200.v20130327-1442.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.tukaani.xz_1.3.0.v201308270617.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.editors_3.10.0.v20160505-0931.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.filebuffers_3.6.0.v20160503-1849.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ant.launching_1.1.200.v20160418-1631.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.externaltools_1.0.400.v20160509-1057.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.compare_3.6.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.xerces_2.9.0.v201101211617.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.cda.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.transaction_1.9.0.201606071900.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.workspace_1.5.1.201606071900.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.diagram.ui.properties_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui_1.8.1.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.views.properties.tabbed_3.7.0.v20160310-0903.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.commands.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.edit_2.9.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.clipboard.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.ui_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.action_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.services.action_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.services_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.type.core_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.emf.ui.properties_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.edit.ui_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.common.ui_2.11.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.common.ui.services.properties_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.diagram.ui_1.8.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.draw2d_3.10.100.201606061308.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gef_3.11.0.201606061308.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.gef.ui_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.draw2d.ui_1.9.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.notation_1.8.0.201606071631.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.diagram.core_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.7.0.201606071959.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.common.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.edit_5.2.1.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.common.edit_2.1.0.v20160822-0739.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.edit/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.properties/@dot"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui.navigator/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.navigator_3.6.100.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.workspace.ui_1.3.0.201606071900.jar"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.ui/bin/"/>
+			<pathelement path="../org.eclipse.mdht.uml.term.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.codegen_2.11.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.codegen.ecore_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.codegen.ecore_2.2.0.v20160822-0739.jar"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/bin/"/>
+			<pathelement path="../../../core/plugins/org.eclipse.mdht.uml.ui/@dot"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.uml2.uml.ecore.importer_3.1.0.v20160822-0739.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.importer_2.9.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.converter_2.7.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.codegen.ecore.ui_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ant_2.8.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.ui_3.9.1.v20160813-1107.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.core_3.11.0.v20160510-1223.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.update.configurator_3.3.400.v20160506-0750.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.200.v20160204-0642/pdebuild.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.frameworkadmin_2.0.300.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.200.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.700.v20160102-2223.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.simpleconfigurator_1.1.200.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.updatesite_1.0.600.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.artifact.repository_1.1.500.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.jarprocessor_1.0.500.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.publisher.eclipse_1.2.100.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.publisher_1.4.100.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.repository.tools_2.1.300.v20160421-0324.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.director_2.3.300.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.sat4j.core_2.3.5.v201308161310.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.sat4j.pb_2.3.5.v201404071733.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.director.app_1.0.500.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.garbagecollector_1.0.300.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.touchpoint.eclipse_2.1.400.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.debug.ui_3.7.201.v20160811-0450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.ui_3.12.1.v20160822-0645.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.search_3.11.0.v20160519-1501.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ltk.core.refactoring_3.7.0.v20160419-0705.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ltk.ui.refactoring_3.8.0.v20160518-1817.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.team.ui_3.8.0.v20160518-1906.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.navigator.resources_3.5.100.v20160518-1929.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.core.manipulation_1.7.0.v20160419-0705.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ant.ui_3.6.200.v20160525-1820.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.externaltools_3.3.100.v20160518-1858.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.junit_3.9.0.v20160421-1701.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.junit.runtime_3.4.600.v20160505-0715.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jdt.junit.core_3.8.0.v20160421-1701.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.intro_3.5.1.v20160829-1558.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.help.base_4.1.0.v20160907-1200.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.http.jetty_3.3.0.v20160324-1850.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.http.servlet_1.3.1.v20160808-1329.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.http_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.util_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.slf4j.api_1.7.10.v20170224-1220.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/ch.qos.logback.slf4j_1.1.2.v20160301-0943.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/ch.qos.logback.classic_1.1.2.v20160208-0839.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.logback.appender_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/ch.qos.logback.core_1.1.2.v20160208-0839.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.mail_1.4.0.v201005080615.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/javax.activation_1.1.0.v201211130549.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.core.ui_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.core_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-core-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-model-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-settings-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-settings-builder-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-builder-support-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-repository-metadata-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-artifact-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-plugin-api-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-model-builder-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-aether-provider-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-api-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-util-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/guice-4.0-no_aop.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-interpolation-1.21.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-utils-3.0.22.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-component-annotations-1.6.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-sec-dispatcher-1.3.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/commons-lang3-3.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-embedder-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-cipher-1.7.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/commons-cli-1.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/maven-compat-3.3.9.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/wagon-provider-api-2.10.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/org.eclipse.sisu.plexus-0.3.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/cdi-api-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/jsr250-api-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/org.eclipse.sisu.inject-0.3.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/guava-18.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-build-api-0.0.7.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-impl-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-spi-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-connector-okhttp-0.16.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/okhttp-2.5.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/okio-1.6.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-connector-basic-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/aether-transport-wagon-1.0.2.v20150114.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/wagon-file-2.10.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/commons-lang-2.6.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime.slf4j.simple_1.7.0.20160603-1931"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime.slf4j.simple_1.7.0.20160603-1931/jars/slf4j-simple-1.7.5.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-common-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-catalog-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-descriptor-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/archetype-registry-2.4.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/maven-invoker-2.1.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/commons-collections-3.2.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/commons-io-2.2.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/commons-lang-2.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/dom4j-1.6.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/jchardet-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/jdom-1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/oro-2.0.8.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/plexus-velocity-1.1.8.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.archetype.common_1.7.0.20160603-1931/velocity-1.5.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/indexer-core-3.1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/indexer-artifact-3.1.0.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/lucene-core-2.4.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.indexer_1.7.0.20160603-1931/lucene-highlighter-2.4.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.workspace.cli_0.3.1.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.model.edit_1.7.0.20160603-1933.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.emf_1.2.400.v201505132009.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.frameworks_1.2.200.v201304241450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.environment_1.0.400.v200912181831.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.osgi.util_3.3.100.v20150423-1351.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.core_1.2.0.v200908251833.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.sse.core_1.1.1000.v201608061842.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.uriresolver_1.2.200.v201505132009.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.validation_1.2.700.v201508251749.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.project.facet.core_1.4.300.v201111030423.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.xml.core_1.1.1000.v201605120036.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jem.util_2.1.200.v201404021757.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.common.emfworkbench.integration_1.2.101.v201107081800.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.wst.xsd.core_1.1.900.v201401141857.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.xsd_2.12.0.v20160526-0356.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.server_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.io_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.servlet_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.jetty.security_9.3.9.v20160517.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.lucene.analysis_3.5.0.v20120725-1805.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.apache.lucene.core_3.5.0.v20120725-1805.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.net_1.3.0.v20160418-1534.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.cheatsheets_3.5.0.v20160504-0839.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.help.ui_4.0.200.v20160510-0758.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.views.log_1.2.1.v20160829-0826.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.ui_2.4.100.v20160419-0834.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.p2.operations_2.4.200.v20160504-1450.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.equinox.security.ui_1.1.300.v20150803-1225.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.launching_3.6.400.v20160121-1248.jar"/>
+			<pathelement path="../../../../../../../Applications/neon/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.ui.trace_1.0.400.v20160509-1055.jar"/>
+			<pathelement path="bin.tasks/"/>
+			<pathelement path="${build.result.folder}/../org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/bin.tasks/"/>
+			<pathelement path="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar"/>
+			<pathelement path="${build.result.folder}/../org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/ant_tasks/cdatools.ant.tasks.jar"/>
+		</path>
+		<!-- compile the source code -->
+		<javac destdir="${build.result.folder}/@dot" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
+			<compilerarg line="${compilerArg}" compiler="${build.compiler}"/>
+			<classpath refid="@dot.classpath" />
+			<src path="src/"			/>
+			<compilerarg value="@${basedir}/javaCompiler...args" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"			/>
+			<compilerarg line="-log &apos;${build.result.folder}/@dot${logExtension}&apos;" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"			/>
+		</javac>
+		<antcall target="checkCompilationResults"/>
+		<!-- Copy necessary resources -->
+		<copy todir="${build.result.folder}/@dot" failonerror="true" overwrite="false">
+			<fileset dir="src/">
+				<exclude name="**/*.java"/>
+				<exclude name="**/package.htm*"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="src.zip" depends="init" unless="src.zip">
+		<mkdir dir="${build.result.folder}"/>
+		<antcall target="zip.src.zip"/>
+	</target>
+	<target name="zip.src.zip">
+		<zip destfile="${build.result.folder}/src.zip" filesonly="false" whenempty="skip" update="false">
+			<fileset dir="src/">
+				<include name="**/*.java"/>
+			</fileset>
+		</zip>
+	</target>
+	<target name="copy.src.zip">
+		<copy todir="${source.destination.folder}/" failonerror="true" overwrite="true">
+			<fileset dir="src/">
+				<include name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="build.jars" depends="init" description="Compile classes and build nested jars for the plug-in: org.eclipse.mdht.uml.cda.ant.">
+		<delete file="${compilation.problem.marker}" quiet="true"/>
+		<available property="ant_tasks/cdatools.ant.tasks.jar" file="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar"/>
+		<antcall target="ant_tasks/cdatools.ant.tasks.jar"/>
+		<available property="@dot" file="${build.result.folder}/@dot"/>
+		<antcall target="@dot"/>
+	</target>
+
+	<target name="checkCompilationResults" if="compilation.error.occured">
+		<echo file="${compilation.problem.marker}" message="org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142${line.separator}compilation.error.occured=${compilation.error.occured}"/>
+		<eclipse.logCompileError log="${compilation.prereq.log}" bundle="org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142">
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.term.core/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.term.core_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.ui/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.ui_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.transform.core/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.transform.core_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.term.ui/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.term.ui_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.transform/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.cda.transform_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.common/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.common_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.hl7.datatypes/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.hl7.datatypes_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.transform/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.transform_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.dita/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.cda.dita_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.hl7.vocab/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.hl7.vocab_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.ui.properties/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.ui.properties_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.emf.runtime/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.emf.runtime_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.resources/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.cda.resources_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/dita/plugins/org.eclipse.mdht.dita.ui/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.dita.ui_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.cda_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.ui/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.cda.ui_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.ui.navigator/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.ui.navigator_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.term.transform/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.term.transform_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.edit/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.edit_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.hl7.rim/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.hl7.rim_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.common.ui/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.common.ui_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/core/plugins/org.eclipse.mdht.uml.validation/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.validation_3.0.0.201708021142/compilation.problem"/>
+			<include name="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.core/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.mdht.uml.cda.core_3.0.0.201708021142/compilation.problem"/>
+		</eclipse.logCompileError>
+	</target>
+
+	<target name="build.sources" depends="init">
+		<available property="ant_tasks/cdatools.ant.taskssrc.zip" file="${build.result.folder}/ant_tasks/cdatools.ant.taskssrc.zip"/>
+		<antcall target="ant_tasks/cdatools.ant.taskssrc.zip"/>
+		<available property="src.zip" file="${build.result.folder}/src.zip"/>
+		<antcall target="src.zip"/>
+	</target>
+
+	<target name="publish.bin.parts" depends="init" if="p2.publish.parts" unless="compilation.problem.marker.exists">
+		<mkdir dir="${build.result.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"/>
+		<copy todir="${build.result.folder}" failonerror="true" overwrite="true">
+			<fileset dir="${basedir}">
+				<include name="META-INF/MANIFEST.MF"/>
+				<include name="plugin.xml"/>
+				<include name="fragment.xml"/>
+			</fileset>
+		</copy>
+		<eclipse.versionReplacer path="${build.result.folder}" version="3.0.0.201708021142"/>
+		<antcall target="apitools.generation">
+			<param name="projectLocation" value="${basedir}"/>
+			<param name="binary.folders" value="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar:${build.result.folder}/@dot"/>
+			<param name="projectName" value="${bundleId}_${bundleVersion}"/>
+			<param name="target.folder" value="${build.result.folder}"/>
+		</antcall>
+		<eclipse.gatherBundle 
+		   metadataRepository="${p2.build.repo}"
+		   artifactRepository="${p2.build.repo}"
+		   buildResultFolder="${build.result.folder}"
+		   baseDirectory="${basedir}"
+		/>
+	</target>
+
+	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
+		<mkdir dir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"/>
+		<copy todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" failonerror="true" overwrite="false">
+			<fileset dir="${build.result.folder}">
+				<include name="ant_tasks/cdatools.ant.tasks.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" failonerror="true" overwrite="false">
+			<fileset dir="${build.result.folder}/@dot">
+				<include name="**"/>
+			</fileset>
+		</copy>
+		<copy todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" failonerror="true" overwrite="true">
+			<fileset dir="${basedir}">
+				<include name="META-INF/"/>
+				<include name="plugin.properties"/>
+				<include name="plugin.xml"/>
+				<include name="ant_tasks/cdatools.ant.tasks.jar"/>
+				<include name="about.html"/>
+			</fileset>
+		</copy>
+		<eclipse.versionReplacer path="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" version="3.0.0.201708021142"/>
+		<antcall target="apitools.generation">
+			<param name="projectLocation" value="${basedir}"/>
+			<param name="binary.folders" value="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/ant_tasks/cdatools.ant.tasks.jar:${build.result.folder}/@dot"/>
+			<param name="projectName" value="${bundleId}_${bundleVersion}"/>
+			<param name="target.folder" value="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"/>
+		</antcall>
+	</target>
+
+	<target name="build.zips" depends="init">
+	</target>
+
+	<target name="gather.sources" depends="init" if="destination.temp.folder">
+		<mkdir dir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"/>
+		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" failonerror="false" overwrite="false"/>
+		<mkdir dir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/ant_tasks"/>
+		<copy file="${build.result.folder}/ant_tasks/cdatools.ant.taskssrc.zip" todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/ant_tasks" failonerror="false" overwrite="false"/>
+		<antcall target="copy.src.includes">
+			<param name="source.destination.folder" value="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"/>
+		</antcall>
+	</target>
+
+	<target name="gather.individual.sources" depends="init">
+		<antcall target="copy.src.zip">
+			<param name="source.destination.folder" value="${destination.temp.folder}"/>
+		</antcall>
+		<antcall target="copy.ant_tasks/cdatools.ant.taskssrc.zip">
+			<param name="source.destination.folder" value="${destination.temp.folder}"/>
+		</antcall>
+		<antcall target="copy.src.includes">
+			<param name="source.destination.folder" value="${destination.temp.folder}"/>
+		</antcall>
+	</target>
+
+	<target name="copy.src.includes" depends="init">
+	</target>
+
+	<target name="gather.logs" depends="init" if="destination.temp.folder">
+		<mkdir dir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142"/>
+		<copy todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142" failonerror="false" overwrite="false">
+			<fileset dir="${build.result.folder}">
+				<include name="@dot${logExtension}"/>
+			</fileset>
+		</copy>
+		<mkdir dir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/ant_tasks"/>
+		<copy todir="${destination.temp.folder}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142/ant_tasks" failonerror="false" overwrite="false">
+			<fileset dir="${temp.folder}/ant_tasks">
+				<include name="cdatools.ant.tasks.jar.bin${logExtension}"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean" depends="init" description="Clean the plug-in: org.eclipse.mdht.uml.cda.ant of all the zips, jars and logs created.">
+		<delete dir="${build.result.folder}/@dot"/>
+		<delete file="${build.result.folder}/src.zip"/>
+		<delete file="${build.result.folder}/ant_tasks/cdatools.ant.tasks.jar"/>
+		<delete file="${build.result.folder}/ant_tasks/cdatools.ant.taskssrc.zip"/>
+		<delete file="${plugin.destination}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142.jar"/>
+		<delete file="${plugin.destination}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142.zip"/>
+		<delete dir="${temp.folder}"/>
+		<delete file="${compilation.problem.marker}" quiet="true"/>
+	</target>
+
+	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
+		<eclipse.convertPath fileSystemPath="/Users/seanmuir/git/org.eclipse.mdht/cda/plugins/org.eclipse.mdht.uml.cda.ant" property="resourcePath"/>
+		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+	</target>
+
+	<target name="zip.plugin" depends="init" description="Create a zip containing all the elements for the plug-in: org.eclipse.mdht.uml.cda.ant.">
+		<delete dir="${temp.folder}"/>
+		<mkdir dir="${temp.folder}"/>
+		<antcall target="build.jars"/>
+		<antcall target="build.sources"/>
+		<antcall target="gather.bin.parts">
+			<param name="destination.temp.folder" value="${temp.folder}/"/>
+		</antcall>
+		<antcall target="gather.sources">
+			<param name="destination.temp.folder" value="${temp.folder}/"/>
+		</antcall>
+		<delete>
+			<fileset dir="${temp.folder}">
+				<include name="**/*.bin${logExtension}"/>
+			</fileset>
+		</delete>
+		<zip destfile="${plugin.destination}/org.eclipse.mdht.uml.cda.ant_3.0.0.201708021142.zip" basedir="${temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+		<delete dir="${temp.folder}"/>
+	</target>
+
+	<target name="apitools.generation" if="generateAPIDescription">
+		<apitooling.apigeneration  projectName="${projectName}" project="${projectLocation}" binary="${binary.folders}" target="${target.folder}" extramanifests="${extraManifests}" allownonapiproject="${allowNonApiProject}"		/>
+	</target>
+
+</project>

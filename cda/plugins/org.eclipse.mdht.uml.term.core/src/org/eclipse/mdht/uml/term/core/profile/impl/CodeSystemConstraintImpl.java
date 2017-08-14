@@ -34,7 +34,6 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl#getIdentifier <em>Identifier</em>}</li>
@@ -46,6 +45,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl#getQualifier <em>Qualifier</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodeSystemConstraintImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

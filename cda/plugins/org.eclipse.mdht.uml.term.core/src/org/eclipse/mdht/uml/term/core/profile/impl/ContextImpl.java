@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Enumeration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

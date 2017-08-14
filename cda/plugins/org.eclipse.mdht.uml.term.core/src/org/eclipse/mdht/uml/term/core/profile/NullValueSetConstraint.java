@@ -13,7 +13,6 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getReference <em>Reference</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getIdentifier <em>Identifier</em>}</li>
@@ -22,6 +21,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBinding <em>Binding</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint()
  * @model
@@ -65,7 +65,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Identifier()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();
@@ -91,7 +91,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getName();
@@ -117,7 +117,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Version()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getVersion();

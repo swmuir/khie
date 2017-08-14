@@ -22,13 +22,13 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetCode#getConceptName <em>Concept Name</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetCode#getUsageNote <em>Usage Note</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetCode#getCodeSystem <em>Code System</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetCode#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetCode()
  * @model
@@ -75,7 +75,7 @@ public interface ValueSetCode extends EObject {
 	 * @return the value of the '<em>Concept Name</em>' attribute.
 	 * @see #setConceptName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetCode_ConceptName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getConceptName();
@@ -90,7 +90,7 @@ public interface ValueSetCode extends EObject {
 	 * @return the value of the '<em>Usage Note</em>' attribute.
 	 * @see #setUsageNote(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetCode_UsageNote()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getUsageNote();
