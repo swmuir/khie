@@ -23,7 +23,6 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.NullValueSetConstraintImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.NullValueSetConstraintImpl#getIdentifier <em>Identifier</em>}</li>
@@ -32,6 +31,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.NullValueSetConstraintImpl#getBinding <em>Binding</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.NullValueSetConstraintImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

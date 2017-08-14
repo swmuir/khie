@@ -13,10 +13,10 @@ import org.eclipse.uml2.uml.Enumeration;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.Context#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContext()
  * @model

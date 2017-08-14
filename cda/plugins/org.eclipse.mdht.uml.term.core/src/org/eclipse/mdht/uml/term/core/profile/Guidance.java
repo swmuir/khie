@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getGuidance()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Guidance '"
+ * @model
  * @generated
  */
 public enum Guidance implements Enumerator {
