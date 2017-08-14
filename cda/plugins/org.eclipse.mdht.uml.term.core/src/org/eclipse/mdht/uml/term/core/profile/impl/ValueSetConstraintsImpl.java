@@ -21,11 +21,11 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintsImpl#getBase_Property <em>Base Property</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintsImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

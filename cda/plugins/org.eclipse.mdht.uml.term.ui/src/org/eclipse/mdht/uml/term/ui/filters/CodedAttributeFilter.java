@@ -15,13 +15,11 @@ package org.eclipse.mdht.uml.term.ui.filters;
 import java.util.List;
 
 import org.eclipse.mdht.uml.common.util.UMLUtil;
-import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
-import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
+import org.eclipse.mdht.uml.term.core.profile.CodedType;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * Selects an object if it is a UML Property where type is specialization of HL7 CD.
@@ -50,20 +48,18 @@ public class CodedAttributeFilter extends TermFilter {
 			if (isCoded) {
 				return true;
 			}
-
-			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(type, ITermProfileConstants.CODED_TYPE);
-			if (stereotype != null) {
+			CodedType codedType = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(type, CodedType.class);
+			if (codedType != null) {
 				return true;
 			}
 
 			List<Classifier> generalizations = UMLUtil.getAllGeneralizations(type);
 
 			for (Classifier generalization : generalizations) {
-				stereotype = TermProfileUtil.getAppliedStereotype(generalization, ITermProfileConstants.CODED_TYPE);
-				if (stereotype != null) {
+				codedType = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(generalization, CodedType.class);
+				if (codedType != null) {
 					return true;
 				}
-
 			}
 
 		}

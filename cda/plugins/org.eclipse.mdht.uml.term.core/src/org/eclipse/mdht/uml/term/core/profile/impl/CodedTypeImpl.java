@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Classifier;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodedTypeImpl#getBase_Classifier <em>Base Classifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

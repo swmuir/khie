@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getKey <em>Key</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet()
  * @model
@@ -33,7 +33,7 @@ public interface ContextToValueSet extends EObject {
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet_Key()
-	 * @model required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getKey();
@@ -59,7 +59,7 @@ public interface ContextToValueSet extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet_Value()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getValue();

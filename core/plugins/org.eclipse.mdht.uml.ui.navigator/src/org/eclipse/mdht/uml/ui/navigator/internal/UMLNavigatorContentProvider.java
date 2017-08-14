@@ -275,7 +275,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	public void inputChanged(final Viewer viewer, Object oldInput, Object newInput) {
 		this.viewer = (StructuredViewer) viewer;
 
-		// ModelManager.getManager().setShell(viewer.getControl().getShell());
+		ModelManager.getManager().setShell(viewer.getControl().getShell());
 
 		// gets rid of '+' expansion icons on all unopened model files
 		// only needed first time navigator is opened, but don't know where to put this...

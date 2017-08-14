@@ -14,9 +14,19 @@
 -->
 
 <plugin>
-   
+   <extension point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            location="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
+      </profile>
+   </extension>
 
-    
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package 
+         uri="http://www.openhealthtools.org/mdht/schemas/term/1" 
+         class="org.eclipse.mdht.uml.term.core.profile.TermPackage"
+         genModel="profiles/Terminology.profile.genmodel" /> 
+   </extension>
 
    <extension
          id="TermProfiles"
@@ -42,14 +52,5 @@
             class="org.eclipse.mdht.uml.term.core.profile.TermPackage"
             genModel="model/Terminology.profile.genmodel"/>
    </extension>
-
-	<extension point="org.eclipse.uml2.uml.generated_package">
-      <profile
-            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
-            location="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q">
-      </profile>
-   </extension>
-     
-  
 
 </plugin>

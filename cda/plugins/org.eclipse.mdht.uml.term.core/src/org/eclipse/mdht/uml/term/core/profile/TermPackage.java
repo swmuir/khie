@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.eclipse.mdht.uml.term.core.profile.TermFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Terminology'"
  * @generated
  */
 public interface TermPackage extends EPackage {

@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getIdentifier <em>Identifier</em>}</li>
@@ -42,7 +43,6 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getGuidance <em>Guidance</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getUri <em>Uri</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -128,7 +128,7 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 	private Property property;
 
-	private static String[] CONTEXTS = new String[] { "aaaa", "bbb" };
+	private static String[] CONTEXTS = null;
 
 	private static final String CONTEXT_PROPERTY = "context";
 
@@ -242,7 +242,7 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 			public void modify(Object element, String property, Object value) {
 				TableItem tableItem = (TableItem) element;
 				EditableTableItem data = (EditableTableItem) tableItem.getData();
-				if (CONTEXT_PROPERTY.equals(property) && enumeration != null) {
+				if (CONTEXT_PROPERTY.equals(property)) {
 					String context = CONTEXTS[(Integer) value];
 					data.context = enumeration.getOwnedLiteral(context).getName();
 				} else {
@@ -267,7 +267,7 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 		try {
 			ts = (TerminologyService) extensions[0].getConfigurationElements()[0].createExecutableExtension("service");
 		} catch (Exception e) {
-			// e.printStackTrace();
+			e.printStackTrace();
 		}
 
 		if (ts != null && !ts.getValueSets().isEmpty()) {
@@ -368,10 +368,6 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 		ValueSetConstraints valueSetConstraints = TermProfileUtil.getValueSetConstraints(property);
 
 		if (property != null) {
-			for (EObject eo : property.eResource().getContents()) {
-				System.out.println(eo);
-			}
-
 			for (Element e : property.getNearestPackage().allOwnedElements()) {
 				if (e instanceof Enumeration && TermProfileUtil.getContext((Enumeration) e) != null) {
 					enumeration = (Enumeration) e;

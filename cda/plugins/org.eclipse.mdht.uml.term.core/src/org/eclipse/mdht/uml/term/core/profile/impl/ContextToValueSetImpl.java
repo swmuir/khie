@@ -18,11 +18,11 @@ import org.eclipse.mdht.uml.term.core.profile.TermPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
