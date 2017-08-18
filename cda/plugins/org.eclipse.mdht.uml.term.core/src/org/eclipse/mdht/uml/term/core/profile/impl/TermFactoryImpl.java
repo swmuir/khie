@@ -40,12 +40,14 @@ import org.eclipse.mdht.uml.term.core.profile.ValueSetVersion;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -58,16 +60,16 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static TermFactory init() {
 		try {
-			TermFactory theTermFactory = (TermFactory)EPackage.Registry.INSTANCE.getEFactory(TermPackage.eNS_URI);
+			TermFactory theTermFactory = (TermFactory) EPackage.Registry.INSTANCE.getEFactory(TermPackage.eNS_URI);
 			if (theTermFactory != null) {
 				return theTermFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new TermFactoryImpl();
@@ -77,6 +79,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TermFactoryImpl() {
@@ -86,84 +89,112 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertBindingKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertStatusKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Extensibility createExtensibilityFromString(EDataType eDataType, String initialValue) {
 		Extensibility result = Extensibility.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertExtensibilityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Guidance createGuidanceFromString(EDataType eDataType, String initialValue) {
 		Guidance result = Guidance.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertGuidanceToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetBinding createValueSetBindingFromString(EDataType eDataType, String initialValue) {
 		ValueSetBinding result = ValueSetBinding.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertValueSetBindingToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,43 +213,64 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 			case TermPackage.VALUE_SET_BINDING:
 				return convertValueSetBindingToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertValueSetTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TermPackage.CD: return createCD();
-			case TermPackage.CR: return createCR();
-			case TermPackage.CONCEPT_DOMAIN_CONSTRAINT: return createConceptDomainConstraint();
-			case TermPackage.CONCEPT_DOMAIN: return createConceptDomain();
-			case TermPackage.CODE_SYSTEM_CONSTRAINT: return createCodeSystemConstraint();
-			case TermPackage.CODE_SYSTEM_VERSION: return createCodeSystemVersion();
-			case TermPackage.VALUE_SET_CONSTRAINT: return createValueSetConstraint();
-			case TermPackage.VALUE_SET_VERSION: return createValueSetVersion();
-			case TermPackage.VALUE_SET_CODE: return createValueSetCode();
-			case TermPackage.VALUE_SET_CONTEXT_BINDING: return createValueSetContextBinding();
-			case TermPackage.USAGE_CONTEXT: return createUsageContext();
-			case TermPackage.VALUE_SET_CONSTRAINTS: return createValueSetConstraints();
-			case TermPackage.CONTEXT_TO_VALUE_SET: return createContextToValueSet();
-			case TermPackage.NULL_VALUE_SET_CONSTRAINT: return createNullValueSetConstraint();
-			case TermPackage.CONTEXT: return createContext();
-			case TermPackage.CODED_TYPE: return createCodedType();
+			case TermPackage.CD:
+				return createCD();
+			case TermPackage.CR:
+				return createCR();
+			case TermPackage.CONCEPT_DOMAIN_CONSTRAINT:
+				return createConceptDomainConstraint();
+			case TermPackage.CONCEPT_DOMAIN:
+				return createConceptDomain();
+			case TermPackage.CODE_SYSTEM_CONSTRAINT:
+				return createCodeSystemConstraint();
+			case TermPackage.CODE_SYSTEM_VERSION:
+				return createCodeSystemVersion();
+			case TermPackage.VALUE_SET_CONSTRAINT:
+				return createValueSetConstraint();
+			case TermPackage.VALUE_SET_VERSION:
+				return createValueSetVersion();
+			case TermPackage.VALUE_SET_CODE:
+				return createValueSetCode();
+			case TermPackage.VALUE_SET_CONTEXT_BINDING:
+				return createValueSetContextBinding();
+			case TermPackage.USAGE_CONTEXT:
+				return createUsageContext();
+			case TermPackage.VALUE_SET_CONSTRAINTS:
+				return createValueSetConstraints();
+			case TermPackage.CONTEXT_TO_VALUE_SET:
+				return createContextToValueSet();
+			case TermPackage.NULL_VALUE_SET_CONSTRAINT:
+				return createNullValueSetConstraint();
+			case TermPackage.CONTEXT:
+				return createContext();
+			case TermPackage.CODED_TYPE:
+				return createCodedType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -227,17 +279,22 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BindingKind createBindingKindFromString(EDataType eDataType, String initialValue) {
 		BindingKind result = BindingKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CD createCD() {
@@ -248,6 +305,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodeSystemConstraint createCodeSystemConstraint() {
@@ -258,6 +316,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodeSystemVersion createCodeSystemVersion() {
@@ -268,6 +327,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConceptDomain createConceptDomain() {
@@ -278,6 +338,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConceptDomainConstraint createConceptDomainConstraint() {
@@ -288,6 +349,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CR createCR() {
@@ -298,6 +360,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -316,24 +379,30 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 			case TermPackage.VALUE_SET_BINDING:
 				return createValueSetBindingFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException(
+					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StatusKind createStatusKindFromString(EDataType eDataType, String initialValue) {
 		StatusKind result = StatusKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UsageContext createUsageContext() {
@@ -344,6 +413,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetConstraints createValueSetConstraints() {
@@ -354,6 +424,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ContextToValueSet createContextToValueSet() {
@@ -364,6 +435,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NullValueSetConstraint createNullValueSetConstraint() {
@@ -374,6 +446,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Context createContext() {
@@ -384,6 +457,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CodedType createCodedType() {
@@ -394,6 +468,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetCode createValueSetCode() {
@@ -404,6 +479,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetConstraint createValueSetConstraint() {
@@ -414,6 +490,7 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetContextBinding createValueSetContextBinding() {
@@ -424,17 +501,22 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetType createValueSetTypeFromString(EDataType eDataType, String initialValue) {
 		ValueSetType result = ValueSetType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetVersion createValueSetVersion() {
@@ -445,10 +527,11 @@ public class TermFactoryImpl extends EFactoryImpl implements TermFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TermPackage getTermPackage() {
-		return (TermPackage)getEPackage();
+		return (TermPackage) getEPackage();
 	}
 
 } // TermFactoryImpl

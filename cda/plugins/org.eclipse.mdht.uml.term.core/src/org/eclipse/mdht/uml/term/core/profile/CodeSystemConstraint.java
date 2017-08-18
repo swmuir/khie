@@ -24,15 +24,15 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getReference <em>Reference</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion <em>Version</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding <em>Binding</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getCode <em>Code</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getDisplayName <em>Display Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getQualifier <em>Qualifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getReference <em>Reference</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion <em>Version</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding <em>Binding</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getCode <em>Code</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getDisplayName <em>Display Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getQualifier <em>Qualifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Base_Property()
@@ -64,6 +65,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Binding</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Binding</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.BindingKind
 	 * @see #setBinding(BindingKind)
@@ -80,6 +82,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Code</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Code()
@@ -95,6 +98,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_DisplayName()
@@ -110,6 +114,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Identifier()
@@ -125,6 +130,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Name()
@@ -141,6 +147,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Qualifier</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Qualifier</em>' reference list.
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Qualifier()
 	 * @model ordered="false"
@@ -155,6 +162,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(CodeSystemVersion)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Reference()
@@ -170,6 +178,7 @@ public interface CodeSystemConstraint extends EObject {
 	 * If the meaning of the '<em>Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemConstraint_Version()
@@ -182,7 +191,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Property</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */
@@ -192,7 +203,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getBinding <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Binding</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Binding</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.BindingKind
 	 * @see #getBinding()
 	 * @generated
@@ -203,7 +216,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Code</em>' attribute.
 	 * @see #getCode()
 	 * @generated
 	 */
@@ -213,7 +228,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getDisplayName <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Display Name</em>' attribute.
 	 * @see #getDisplayName()
 	 * @generated
 	 */
@@ -223,7 +240,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -233,7 +252,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -243,7 +264,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getReference <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -253,7 +276,9 @@ public interface CodeSystemConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemConstraint#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Version</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Version</em>' attribute.
 	 * @see #getVersion()
 	 * @generated
 	 */

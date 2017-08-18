@@ -46,6 +46,7 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.mdht.uml.term.core.profile.ContextToValueSet;
 import org.eclipse.mdht.uml.term.core.profile.TermFactory;
@@ -74,7 +75,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -132,7 +132,11 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 	private static final String CONTEXT_PROPERTY = "context";
 
+	private static final String NAME_PROPERTY = "name";
+
 	private static final String URI_PROPERTY = "uri";
+
+	private static final String OID_PROPERTY = "oid";
 
 	private TableViewer viewer;
 
@@ -159,8 +163,12 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 			public String getColumnText(Object element, int columnIndex) {
 				EditableTableItem tableItem = (EditableTableItem) element;
 				switch (columnIndex) {
+					case 3:
+						return tableItem.valueSetOID;
+					case 2:
+						return tableItem.valueSetURI;
 					case 1:
-						return tableItem.constraint;
+						return tableItem.valueSetName;
 					case 0:
 						return tableItem.context;
 
@@ -203,15 +211,21 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 		PixelConverter pixelConverter = new PixelConverter(composite);
 		TableLayout layout = new TableLayout();
+		layout.addColumnData(new ColumnWeightData(10, pixelConverter.convertWidthInCharsToPixels(10), true));
+		layout.addColumnData(new ColumnWeightData(10, pixelConverter.convertWidthInCharsToPixels(40), true));
 		layout.addColumnData(new ColumnWeightData(10, pixelConverter.convertWidthInCharsToPixels(40), true));
 		layout.addColumnData(new ColumnWeightData(10, pixelConverter.convertWidthInCharsToPixels(40), true));
 
 		table.setLayout(layout);
 
-		TableColumn contextColumn = new TableColumn(table, SWT.CENTER);
+		TableColumn contextColumn = new TableColumn(table, SWT.LEFT);
 		contextColumn.setText("Context");
-		TableColumn uriColumn = new TableColumn(table, SWT.CENTER);
+		TableColumn nameColumn = new TableColumn(table, SWT.LEFT);
+		nameColumn.setText("Name");
+		TableColumn uriColumn = new TableColumn(table, SWT.LEFT);
 		uriColumn.setText("URI");
+		TableColumn descriptionColumn = new TableColumn(table, SWT.LEFT);
+		descriptionColumn.setText("OID");
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
 		return tableViewer;
@@ -225,28 +239,50 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 			public Object getValue(Object element, String property) {
 				EditableTableItem tableItem = (EditableTableItem) element;
-				if (CONTEXT_PROPERTY.equals(property)) {
-					int result = org.apache.commons.lang.ArrayUtils.indexOf(CONTEXTS, tableItem.context);
-					if (result != -1) {
-						return new Integer(result);
-					} else {
-						return new Integer(0);
-					}
-				} else {
-					return tableItem.constraint != null
-							? tableItem.constraint
-							: "xxxx";
+
+				switch (property) {
+					case CONTEXT_PROPERTY:
+						int result = org.apache.commons.lang.ArrayUtils.indexOf(CONTEXTS, tableItem.context);
+						if (result != -1) {
+							return new Integer(result);
+						} else {
+							return new Integer(0);
+						}
+					case NAME_PROPERTY:
+						return tableItem.valueSetName;
+					case URI_PROPERTY:
+						return tableItem.valueSetURI;
+					case OID_PROPERTY:
+						return tableItem.valueSetOID;
+					default:
+						return null;
+
 				}
 			}
 
 			public void modify(Object element, String property, Object value) {
 				TableItem tableItem = (TableItem) element;
 				EditableTableItem data = (EditableTableItem) tableItem.getData();
-				if (CONTEXT_PROPERTY.equals(property) && enumeration != null) {
-					String context = CONTEXTS[(Integer) value];
-					data.context = enumeration.getOwnedLiteral(context).getName();
-				} else {
-					data.constraint = (String) value;
+
+				switch (property) {
+					case CONTEXT_PROPERTY:
+						if (enumeration != null) {
+							String context = CONTEXTS[(Integer) value];
+							data.context = enumeration.getOwnedLiteral(context).getName();
+						} else {
+							data.context = value.toString();
+						}
+						break;
+					case NAME_PROPERTY:
+						data.valueSetName = (String) value;
+						break;
+					case URI_PROPERTY:
+						data.valueSetURI = (String) value;
+						break;
+					case OID_PROPERTY:
+						data.valueSetOID = (String) value;
+						break;
+
 				}
 
 				modifyFields(data);
@@ -260,13 +296,17 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 		uriComboBox.setContentProvider(ArrayContentProvider.getInstance());
 
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
+
 		IExtensionPoint ep = reg.getExtensionPoint("org.eclipse.mdht.uml.term.ui.service");
 
 		IExtension[] extensions = ep.getExtensions();
+
 		TerminologyService ts = null;
 		try {
 			ts = (TerminologyService) extensions[0].getConfigurationElements()[0].createExecutableExtension("service");
-		} catch (Exception e) {
+		} catch (
+
+		Exception e) {
 			// e.printStackTrace();
 		}
 
@@ -275,10 +315,12 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 		} else {
 			uriComboBox.setInput(new String[] { "" });
 		}
-		// new TextCellEditor(parent) new TextCellEditor(parent)
-		viewer.setCellEditors(new CellEditor[] { new ComboBoxCellEditor(parent, CONTEXTS), uriComboBox });
+		viewer.setCellEditors(
+			new CellEditor[] {
+					new ComboBoxCellEditor(parent, CONTEXTS), new TextCellEditor(parent), uriComboBox,
+					new TextCellEditor(parent) });
 
-		viewer.setColumnProperties(new String[] { CONTEXT_PROPERTY, URI_PROPERTY });
+		viewer.setColumnProperties(new String[] { CONTEXT_PROPERTY, NAME_PROPERTY, URI_PROPERTY, OID_PROPERTY });
 	}
 
 	@Override
@@ -298,15 +340,21 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 	class EditableTableItem {
 		private String context = "";
 
-		private String constraint = "";
+		protected String valueSetName = "";
+
+		private String valueSetURI = "";
+
+		protected String valueSetOID = "";
 
 		ContextToValueSet ctov;
 
 		public EditableTableItem(ContextToValueSet ctov) {
 			this.ctov = ctov;
 			if (this.ctov != null) {
-				this.context = ctov.getKey();
-				this.constraint = ctov.getValue();
+				this.context = ctov.getContext();
+				this.valueSetName = ctov.getValueSetName();
+				this.valueSetURI = ctov.getValueSetURI();
+				this.valueSetOID = ctov.getValueSetOID();
 			}
 		}
 	}
@@ -368,10 +416,6 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 		ValueSetConstraints valueSetConstraints = TermProfileUtil.getValueSetConstraints(property);
 
 		if (property != null) {
-			for (EObject eo : property.eResource().getContents()) {
-				System.out.println(eo);
-			}
-
 			for (Element e : property.getNearestPackage().allOwnedElements()) {
 				if (e instanceof Enumeration && TermProfileUtil.getContext((Enumeration) e) != null) {
 					enumeration = (Enumeration) e;
@@ -411,10 +455,6 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Profile ctsProfile = TermProfileUtil.getTerminologyProfile(property.eResource().getResourceSet());
-					if (ctsProfile == null) {
-						return Status.CANCEL_STATUS;
-					}
 					Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
 						property, ITermProfileConstants.VALUE_SET_CONSTRAINTS);
 
@@ -427,15 +467,18 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 					if (update.ctov == null) {
 						ContextToValueSet contextToValueSet = TermFactory.eINSTANCE.createContextToValueSet();
-						contextToValueSet.setKey(update.context);
-						contextToValueSet.setValue(update.constraint);
+						contextToValueSet.setContext(update.ctov.getContext());
+						contextToValueSet.setValueSetName(update.ctov.getValueSetName());
+						contextToValueSet.setValueSetURI(update.ctov.getValueSetURI());
+						contextToValueSet.setValueSetOID(update.ctov.getValueSetOID());
 						update.ctov = contextToValueSet;
 						valueSetConstraints.getConstraints().add(contextToValueSet);
 					} else {
 						int index = valueSetConstraints.getConstraints().indexOf(update.ctov);
-						valueSetConstraints.getConstraints().get(index).setKey(update.context);
-						valueSetConstraints.getConstraints().get(index).setValue(update.constraint);
-
+						valueSetConstraints.getConstraints().get(index).setContext(update.context);
+						valueSetConstraints.getConstraints().get(index).setValueSetName(update.valueSetName);
+						valueSetConstraints.getConstraints().get(index).setValueSetURI(update.valueSetURI);
+						valueSetConstraints.getConstraints().get(index).setValueSetOID(update.valueSetOID);
 					}
 
 					return Status.OK_STATUS;

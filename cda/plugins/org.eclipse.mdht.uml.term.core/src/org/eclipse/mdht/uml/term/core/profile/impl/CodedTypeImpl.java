@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Classifier;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodedTypeImpl#getBase_Classifier <em>Base Classifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.CodedTypeImpl#getBase_Classifier <em>Base Classifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	 * The cached value of the '{@link #getBase_Classifier() <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Classifier()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CodedTypeImpl() {
@@ -51,6 +53,7 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,15 +64,20 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Classifier getBase_Classifier() {
 		if (base_Classifier != null && base_Classifier.eIsProxy()) {
-			InternalEObject oldBase_Classifier = (InternalEObject)base_Classifier;
-			base_Classifier = (Classifier)eResolveProxy(oldBase_Classifier);
+			InternalEObject oldBase_Classifier = (InternalEObject) base_Classifier;
+			base_Classifier = (Classifier) eResolveProxy(oldBase_Classifier);
 			if (base_Classifier != oldBase_Classifier) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.CODED_TYPE__BASE_CLASSIFIER, oldBase_Classifier, base_Classifier));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE, TermPackage.CODED_TYPE__BASE_CLASSIFIER, oldBase_Classifier,
+							base_Classifier));
+				}
 			}
 		}
 		return base_Classifier;
@@ -78,6 +86,7 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Classifier basicGetBase_Classifier() {
@@ -87,25 +96,33 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBase_Classifier(Classifier newBase_Classifier) {
 		Classifier oldBase_Classifier = base_Classifier;
 		base_Classifier = newBase_Classifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CODED_TYPE__BASE_CLASSIFIER, oldBase_Classifier, base_Classifier));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.CODED_TYPE__BASE_CLASSIFIER, oldBase_Classifier,
+					base_Classifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TermPackage.CODED_TYPE__BASE_CLASSIFIER:
-				if (resolve) return getBase_Classifier();
+				if (resolve) {
+					return getBase_Classifier();
+				}
 				return basicGetBase_Classifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -114,13 +131,14 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.CODED_TYPE__BASE_CLASSIFIER:
-				setBase_Classifier((Classifier)newValue);
+				setBase_Classifier((Classifier) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,13 +147,14 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.CODED_TYPE__BASE_CLASSIFIER:
-				setBase_Classifier((Classifier)null);
+				setBase_Classifier((Classifier) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,6 +163,7 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,4 +175,4 @@ public class CodedTypeImpl extends EObjectImpl implements CodedType {
 		return super.eIsSet(featureID);
 	}
 
-} //CodedTypeImpl
+} // CodedTypeImpl

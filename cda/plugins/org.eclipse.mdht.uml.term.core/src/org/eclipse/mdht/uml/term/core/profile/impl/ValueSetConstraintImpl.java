@@ -32,15 +32,15 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getBinding <em>Binding</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getBase_Property <em>Base Property</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getExtensibility <em>Extensibility</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getGuidance <em>Guidance</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getUri <em>Uri</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getReference <em>Reference</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getVersion <em>Version</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getBinding <em>Binding</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getExtensibility <em>Extensibility</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getGuidance <em>Guidance</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ValueSetConstraintImpl#getUri <em>Uri</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +51,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -71,6 +73,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -81,6 +84,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -91,6 +95,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -101,6 +106,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -111,6 +117,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -121,6 +128,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -131,6 +139,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
@@ -141,6 +150,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -151,6 +161,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getExtensibility() <em>Extensibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtensibility()
 	 * @generated
 	 * @ordered
@@ -161,6 +172,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getExtensibility() <em>Extensibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtensibility()
 	 * @generated
 	 * @ordered
@@ -171,6 +183,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getGuidance() <em>Guidance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGuidance()
 	 * @generated
 	 * @ordered
@@ -181,6 +194,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getGuidance() <em>Guidance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGuidance()
 	 * @generated
 	 * @ordered
@@ -191,6 +205,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUri()
 	 * @generated
 	 * @ordered
@@ -201,6 +216,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	 * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUri()
 	 * @generated
 	 * @ordered
@@ -210,6 +226,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ValueSetConstraintImpl() {
@@ -219,6 +236,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -228,6 +246,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetVersion basicGetReference() {
@@ -237,13 +256,16 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_CONSTRAINT__REFERENCE:
-				if (resolve) return getReference();
+				if (resolve) {
+					return getReference();
+				}
 				return basicGetReference();
 			case TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER:
 				return getIdentifier();
@@ -254,7 +276,9 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 			case TermPackage.VALUE_SET_CONSTRAINT__BINDING:
 				return getBinding();
 			case TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY:
-				if (resolve) return getBase_Property();
+				if (resolve) {
+					return getBase_Property();
+				}
 				return basicGetBase_Property();
 			case TermPackage.VALUE_SET_CONSTRAINT__EXTENSIBILITY:
 				return getExtensibility();
@@ -269,6 +293,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -277,11 +302,17 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 			case TermPackage.VALUE_SET_CONSTRAINT__REFERENCE:
 				return reference != null;
 			case TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
 			case TermPackage.VALUE_SET_CONSTRAINT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case TermPackage.VALUE_SET_CONSTRAINT__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+				return VERSION_EDEFAULT == null
+						? version != null
+						: !VERSION_EDEFAULT.equals(version);
 			case TermPackage.VALUE_SET_CONSTRAINT__BINDING:
 				return binding != BINDING_EDEFAULT;
 			case TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY:
@@ -291,7 +322,9 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 			case TermPackage.VALUE_SET_CONSTRAINT__GUIDANCE:
 				return guidance != GUIDANCE_EDEFAULT;
 			case TermPackage.VALUE_SET_CONSTRAINT__URI:
-				return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
+				return URI_EDEFAULT == null
+						? uri != null
+						: !URI_EDEFAULT.equals(uri);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -299,37 +332,38 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_CONSTRAINT__REFERENCE:
-				setReference((ValueSetVersion)newValue);
+				setReference((ValueSetVersion) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER:
-				setIdentifier((String)newValue);
+				setIdentifier((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__VERSION:
-				setVersion((String)newValue);
+				setVersion((String) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__BINDING:
-				setBinding((BindingKind)newValue);
+				setBinding((BindingKind) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY:
-				setBase_Property((Property)newValue);
+				setBase_Property((Property) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__EXTENSIBILITY:
-				setExtensibility((Extensibility)newValue);
+				setExtensibility((Extensibility) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__GUIDANCE:
-				setGuidance((Guidance)newValue);
+				setGuidance((Guidance) newValue);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__URI:
-				setUri((String)newValue);
+				setUri((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,6 +372,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -348,13 +383,14 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.VALUE_SET_CONSTRAINT__REFERENCE:
-				setReference((ValueSetVersion)null);
+				setReference((ValueSetVersion) null);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER:
 				setIdentifier(IDENTIFIER_EDEFAULT);
@@ -369,7 +405,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 				setBinding(BINDING_EDEFAULT);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY:
-				setBase_Property((Property)null);
+				setBase_Property((Property) null);
 				return;
 			case TermPackage.VALUE_SET_CONSTRAINT__EXTENSIBILITY:
 				setExtensibility(EXTENSIBILITY_EDEFAULT);
@@ -387,15 +423,20 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
 			if (base_Property != oldBase_Property) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY, oldBase_Property, base_Property));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE, TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY,
+							oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -404,6 +445,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BindingKind getBinding() {
@@ -413,6 +455,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -422,6 +465,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -431,15 +475,20 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueSetVersion getReference() {
 		if (reference != null && reference.eIsProxy()) {
-			InternalEObject oldReference = (InternalEObject)reference;
-			reference = (ValueSetVersion)eResolveProxy(oldReference);
+			InternalEObject oldReference = (InternalEObject) reference;
+			reference = (ValueSetVersion) eResolveProxy(oldReference);
 			if (reference != oldReference) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference, reference));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE, TermPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference,
+							reference));
+				}
 			}
 		}
 		return reference;
@@ -448,6 +497,7 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getVersion() {
@@ -457,18 +507,24 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY, oldBase_Property, base_Property));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__BASE_PROPERTY, oldBase_Property,
+					base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Extensibility getExtensibility() {
@@ -478,18 +534,26 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setExtensibility(Extensibility newExtensibility) {
 		Extensibility oldExtensibility = extensibility;
-		extensibility = newExtensibility == null ? EXTENSIBILITY_EDEFAULT : newExtensibility;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__EXTENSIBILITY, oldExtensibility, extensibility));
+		extensibility = newExtensibility == null
+				? EXTENSIBILITY_EDEFAULT
+				: newExtensibility;
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__EXTENSIBILITY, oldExtensibility,
+					extensibility));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Guidance getGuidance() {
@@ -499,18 +563,25 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setGuidance(Guidance newGuidance) {
 		Guidance oldGuidance = guidance;
-		guidance = newGuidance == null ? GUIDANCE_EDEFAULT : newGuidance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__GUIDANCE, oldGuidance, guidance));
+		guidance = newGuidance == null
+				? GUIDANCE_EDEFAULT
+				: newGuidance;
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__GUIDANCE, oldGuidance, guidance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getUri() {
@@ -520,83 +591,109 @@ public class ValueSetConstraintImpl extends EObjectImpl implements ValueSetConst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setUri(String newUri) {
 		String oldUri = uri;
 		uri = newUri;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__URI, oldUri, uri));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBinding(BindingKind newBinding) {
 		BindingKind oldBinding = binding;
-		binding = newBinding == null ? BINDING_EDEFAULT : newBinding;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__BINDING, oldBinding, binding));
+		binding = newBinding == null
+				? BINDING_EDEFAULT
+				: newBinding;
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__BINDING, oldBinding, binding));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__IDENTIFIER, oldIdentifier, identifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setReference(ValueSetVersion newReference) {
 		ValueSetVersion oldReference = reference;
 		reference = newReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference, reference));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__REFERENCE, oldReference, reference));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__VERSION, oldVersion, version));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.VALUE_SET_CONSTRAINT__VERSION, oldVersion, version));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (identifier: ");

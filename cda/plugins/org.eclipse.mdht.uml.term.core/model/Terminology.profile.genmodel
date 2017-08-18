@@ -195,8 +195,10 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSetConstraints/constraints"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ContextToValueSet">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ContextToValueSet/key"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ContextToValueSet/value"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ContextToValueSet/context"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ContextToValueSet/valueSetName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ContextToValueSet/valueSetURI"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ContextToValueSet/valueSetOID"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//NullValueSetConstraint">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

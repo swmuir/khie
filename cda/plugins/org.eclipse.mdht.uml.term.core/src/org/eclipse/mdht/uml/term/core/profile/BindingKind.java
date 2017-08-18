@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Binding Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getBindingKind()
  * @model
  * @generated
@@ -32,6 +33,7 @@ public enum BindingKind implements Enumerator {
 	 * The '<em><b>Static</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #STATIC_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +44,7 @@ public enum BindingKind implements Enumerator {
 	 * The '<em><b>Dynamic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DYNAMIC_VALUE
 	 * @generated
 	 * @ordered
@@ -55,6 +58,7 @@ public enum BindingKind implements Enumerator {
 	 * If the meaning of '<em><b>Static</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #STATIC
 	 * @model name="Static"
 	 * @generated
@@ -69,6 +73,7 @@ public enum BindingKind implements Enumerator {
 	 * If the meaning of '<em><b>Dynamic</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DYNAMIC
 	 * @model name="Dynamic"
 	 * @generated
@@ -80,17 +85,16 @@ public enum BindingKind implements Enumerator {
 	 * An array of all the '<em><b>Binding Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final BindingKind[] VALUES_ARRAY = new BindingKind[] {
-			STATIC,
-			DYNAMIC,
-		};
+	private static final BindingKind[] VALUES_ARRAY = new BindingKind[] { STATIC, DYNAMIC, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Binding Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<BindingKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -99,14 +103,18 @@ public enum BindingKind implements Enumerator {
 	 * Returns the '<em><b>Binding Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 * 
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BindingKind get(int value) {
 		switch (value) {
-			case STATIC_VALUE: return STATIC;
-			case DYNAMIC_VALUE: return DYNAMIC;
+			case STATIC_VALUE:
+				return STATIC;
+			case DYNAMIC_VALUE:
+				return DYNAMIC;
 		}
 		return null;
 	}
@@ -115,7 +123,9 @@ public enum BindingKind implements Enumerator {
 	 * Returns the '<em><b>Binding Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 * 
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -133,7 +143,9 @@ public enum BindingKind implements Enumerator {
 	 * Returns the '<em><b>Binding Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 * 
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -150,6 +162,7 @@ public enum BindingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -157,6 +170,7 @@ public enum BindingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -164,6 +178,7 @@ public enum BindingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -172,6 +187,7 @@ public enum BindingKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private BindingKind(int value, String name, String literal) {
@@ -183,34 +199,38 @@ public enum BindingKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -28,11 +28,11 @@ import org.eclipse.mdht.uml.term.core.profile.TermPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getFullName <em>Full Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getFullName <em>Full Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getStatus <em>Status</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getStatusDate <em>Status Date</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ConceptDomainImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The default value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFullName()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The cached value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFullName()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatus()
 	 * @generated
 	 * @ordered
@@ -103,6 +109,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -113,6 +120,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The cached value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStatusDate()
 	 * @generated
 	 * @ordered
@@ -123,6 +131,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -132,6 +141,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConceptDomainImpl() {
@@ -141,6 +151,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -150,6 +161,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,7 +176,9 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 			case TermPackage.CONCEPT_DOMAIN__STATUS_DATE:
 				return getStatusDate();
 			case TermPackage.CONCEPT_DOMAIN__BASE_CLASS:
-				if (resolve) return getBase_Class();
+				if (resolve) {
+					return getBase_Class();
+				}
 				return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -173,19 +187,26 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TermPackage.CONCEPT_DOMAIN__IDENTIFIER:
-				return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+				return IDENTIFIER_EDEFAULT == null
+						? identifier != null
+						: !IDENTIFIER_EDEFAULT.equals(identifier);
 			case TermPackage.CONCEPT_DOMAIN__FULL_NAME:
-				return FULL_NAME_EDEFAULT == null ? fullName != null : !FULL_NAME_EDEFAULT.equals(fullName);
+				return FULL_NAME_EDEFAULT == null
+						? fullName != null
+						: !FULL_NAME_EDEFAULT.equals(fullName);
 			case TermPackage.CONCEPT_DOMAIN__STATUS:
 				return status != STATUS_EDEFAULT;
 			case TermPackage.CONCEPT_DOMAIN__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+				return STATUS_DATE_EDEFAULT == null
+						? statusDate != null
+						: !STATUS_DATE_EDEFAULT.equals(statusDate);
 			case TermPackage.CONCEPT_DOMAIN__BASE_CLASS:
 				return base_Class != null;
 		}
@@ -195,25 +216,26 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.CONCEPT_DOMAIN__IDENTIFIER:
-				setIdentifier((String)newValue);
+				setIdentifier((String) newValue);
 				return;
 			case TermPackage.CONCEPT_DOMAIN__FULL_NAME:
-				setFullName((String)newValue);
+				setFullName((String) newValue);
 				return;
 			case TermPackage.CONCEPT_DOMAIN__STATUS:
-				setStatus((StatusKind)newValue);
+				setStatus((StatusKind) newValue);
 				return;
 			case TermPackage.CONCEPT_DOMAIN__STATUS_DATE:
-				setStatusDate((String)newValue);
+				setStatusDate((String) newValue);
 				return;
 			case TermPackage.CONCEPT_DOMAIN__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+				setBase_Class((org.eclipse.uml2.uml.Class) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,6 +244,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -232,6 +255,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -250,7 +274,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 				setStatusDate(STATUS_DATE_EDEFAULT);
 				return;
 			case TermPackage.CONCEPT_DOMAIN__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
+				setBase_Class((org.eclipse.uml2.uml.Class) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,15 +283,20 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
 			if (base_Class != oldBase_Class) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class,
+							base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -276,6 +305,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getFullName() {
@@ -285,6 +315,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getIdentifier() {
@@ -294,6 +325,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StatusKind getStatus() {
@@ -303,6 +335,7 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getStatusDate() {
@@ -312,61 +345,82 @@ public class ConceptDomainImpl extends EObjectImpl implements ConceptDomain {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.CONCEPT_DOMAIN__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFullName(String newFullName) {
 		String oldFullName = fullName;
 		fullName = newFullName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__FULL_NAME, oldFullName, fullName));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.CONCEPT_DOMAIN__FULL_NAME, oldFullName, fullName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__IDENTIFIER, oldIdentifier, identifier));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.CONCEPT_DOMAIN__IDENTIFIER, oldIdentifier, identifier));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStatus(StatusKind newStatus) {
 		StatusKind oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS, oldStatus, status));
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS, oldStatus, status));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStatusDate(String newStatusDate) {
 		String oldStatusDate = statusDate;
 		statusDate = newStatusDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS_DATE, oldStatusDate, statusDate));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, TermPackage.CONCEPT_DOMAIN__STATUS_DATE, oldStatusDate, statusDate));
+		}
 	}
 
 	/**

@@ -14,7 +14,7 @@ import org.eclipse.uml2.uml.Classifier;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodedType#getBase_Classifier <em>Base Classifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodedType#getBase_Classifier <em>Base Classifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,6 +31,7 @@ public interface CodedType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Classifier</em>' reference.
 	 * @see #setBase_Classifier(Classifier)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodedType_Base_Classifier()
@@ -43,7 +44,9 @@ public interface CodedType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodedType#getBase_Classifier <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Classifier</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Classifier</em>' reference.
 	 * @see #getBase_Classifier()
 	 * @generated
 	 */

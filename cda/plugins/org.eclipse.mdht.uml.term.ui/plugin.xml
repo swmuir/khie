@@ -35,6 +35,7 @@
                enablesFor="1"
                id="org.eclipse.mdht.uml.term.ui.actions.ImportTerminologyAction">
          </action>
+         
       </objectContribution>
    </extension>
    

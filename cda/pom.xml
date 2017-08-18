@@ -15,34 +15,14 @@
 
 	<modules>
 		<!-- Plug-ins -->
-		<module>plugins/org.eclipse.mdht.cda.xml.ui</module>
-		<module>plugins/org.eclipse.mdht.uml.cda</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.ant</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.core</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.dita</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.resources</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.transform</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.ui</module>
-		<module>plugins/org.eclipse.mdht.uml.cda.validation</module>
-		<module>plugins/org.eclipse.mdht.uml.hl7.datatypes</module>
-		<module>plugins/org.eclipse.mdht.uml.hl7.rim</module>
-		<module>plugins/org.eclipse.mdht.uml.hl7.vocab</module>
 		<module>plugins/org.eclipse.mdht.uml.term.core</module>
-		<!-- <module>plugins/org.eclipse.mdht.uml.term.models</module> -->
-		<module>plugins/org.eclipse.mdht.uml.term.transform</module>
 		<module>plugins/org.eclipse.mdht.uml.term.ui</module>
-		<module>plugins/org.eclipse.mdht.api</module>
-		<module>plugins/org.eclipse.mdht.api.dotnet</module>
-		<module>plugins/org.eclipse.mdht.api.java</module>
-		<module>plugins/org.eclipse.mdht.api.schematron</module>
+		<module>plugins/org.eclipse.mdht.uml.term.ui.service.fhir</module>
 
-
-		<module>tests/org.eclipse.mdht.uml.cda.test</module>
-
-		<!-- Features -->
+		<!-- Features
 		<module>features/org.eclipse.mdht.uml.cda.basic-feature</module>
 		<module>features/org.eclipse.mdht.uml.cda.tooling-feature</module>
-
+ 		-->
 
 	</modules>
 

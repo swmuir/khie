@@ -14,12 +14,12 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getReference <em>Reference</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getVersion <em>Version</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBinding <em>Binding</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBase_Property <em>Base Property</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getReference <em>Reference</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getVersion <em>Version</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBinding <em>Binding</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBase_Property <em>Base Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(ValueSetVersion)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Reference()
@@ -48,7 +49,9 @@ public interface NullValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getReference <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -62,6 +65,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Identifier()
@@ -74,7 +78,9 @@ public interface NullValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -88,6 +94,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Name()
@@ -100,7 +107,9 @@ public interface NullValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -114,6 +123,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Version()
@@ -126,7 +136,9 @@ public interface NullValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Version</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Version</em>' attribute.
 	 * @see #getVersion()
 	 * @generated
 	 */
@@ -141,6 +153,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Binding</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.BindingKind
 	 * @see #setBinding(BindingKind)
@@ -154,7 +167,9 @@ public interface NullValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBinding <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Binding</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Binding</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.BindingKind
 	 * @see #getBinding()
 	 * @generated
@@ -169,6 +184,7 @@ public interface NullValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getNullValueSetConstraint_Base_Property()
@@ -178,10 +194,13 @@ public interface NullValueSetConstraint extends EObject {
 	Property getBase_Property();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBase_Property <em>Base Property</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.NullValueSetConstraint#getBase_Property <em>Base Property</em>}'
+	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Property</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */

@@ -209,9 +209,13 @@
         upperBound="-1" eType="#//ContextToValueSet" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContextToValueSet">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueSetName" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueSetURI" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueSetOID" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ValueSetBinding">

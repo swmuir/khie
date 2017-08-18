@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.mdht.uml.term.ui.service">
+      <service
+            service="org.eclipse.mdht.uml.term.ui.service.fhir.FHIRTerminologyService">
+      </service>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.eclipse.mdht.uml.term.ui.service.fhir.preferences.FHIRPreferencePage"
+            id="org.eclipse.mdht.uml.term.ui.service.fhir.preferences.FHIRPreferencePage"
+            name="MDHT Fhir Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.eclipse.mdht.uml.term.ui.service.fhir.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
