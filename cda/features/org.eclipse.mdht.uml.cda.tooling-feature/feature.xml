@@ -22,65 +22,8 @@
    </url>
 
    <requires>
-      <import feature="org.eclipse.mdht.uml.cda.basic" version="3.0.0.qualifier"/>
       <import feature="org.eclipse.mdht.uml" version="3.0.0.qualifier"/>
    </requires>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.ant"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.resources"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.transform"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.validation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.cda.xml.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.dita"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.eclipse.mdht.uml.term.core"
@@ -89,13 +32,7 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="org.eclipse.mdht.uml.term.transform"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
+   
    <plugin
          id="org.eclipse.mdht.uml.term.ui"
          download-size="0"
@@ -105,43 +42,6 @@
          
    <plugin
          id="org.eclipse.mdht.uml.term.ui.service.fhir"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-
-
-   <plugin
-         id="org.eclipse.mdht.uml.cda.test"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.api.dotnet"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.api.java"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.mdht.api.schematron"
          download-size="0"
          install-size="0"
          version="0.0.0"

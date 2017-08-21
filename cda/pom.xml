@@ -19,9 +19,10 @@
 		<module>plugins/org.eclipse.mdht.uml.term.ui</module>
 		<module>plugins/org.eclipse.mdht.uml.term.ui.service.fhir</module>
 
-		<!-- Features
-		<module>features/org.eclipse.mdht.uml.cda.basic-feature</module>
 		<module>features/org.eclipse.mdht.uml.cda.tooling-feature</module>
+		
+		<!--<module>features/org.eclipse.mdht.uml.cda.basic-feature</module>
+		 Features<module>features/org.eclipse.mdht.uml.cda.tooling-feature</module>
  		-->
 
 	</modules>

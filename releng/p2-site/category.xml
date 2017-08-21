@@ -3,9 +3,20 @@
    <feature url="core/features/org.eclipse.mdht.uml_3.0.0.qualifier.jar" id="org.eclipse.mdht.uml" version="3.0.0.qualifier">
       <category name="org.eclipse.mdht.core"/>
    </feature>
+   <feature url="features/org.eclipse.mdht.uml.cda.tooling_3.0.0.qualifier.jar" id="org.eclipse.mdht.uml.cda.tooling" version="3.0.0.qualifier">
+      <category name="org.eclipse.mdht.cda"/>
+   </feature>
+   <feature url="features/org.eclipse.mdht.dita_3.0.0.qualifier.jar" id="org.eclipse.mdht.dita" version="3.0.0.qualifier">
+      <category name="org.eclipse.mdht.cda"/>
+   </feature>
    <category-def name="org.eclipse.mdht.core" label="MDHT Core">
       <description>
          MDHT core tools for UML model editing, validation, and transformation.
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.mdht.cda" label="MDHT CDA">
+      <description>
+         MDHT tools for designing HL7 CDA models.
       </description>
    </category-def>
 </site>
