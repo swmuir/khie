@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.ContactPoint#getSystem <em>System</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.ContactPoint#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getContactPoint()
  * @model
@@ -33,7 +33,7 @@ public interface ContactPoint extends EObject {
 	 * @return the value of the '<em>System</em>' attribute.
 	 * @see #setSystem(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getContactPoint_System()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getSystem();
@@ -59,7 +59,7 @@ public interface ContactPoint extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getContactPoint_Value()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getValue();

@@ -16,7 +16,6 @@ import org.eclipse.mdht.uml.fhir.types.ContactDetail;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ConformanceResource#getUri <em>Uri</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ConformanceResource#getVersion <em>Version</em>}</li>
@@ -29,6 +28,7 @@ import org.eclipse.mdht.uml.fhir.types.ContactDetail;
  *   <li>{@link org.eclipse.mdht.uml.fhir.ConformanceResource#getUseContexts <em>Use Context</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ConformanceResource#getCopyright <em>Copyright</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource()
  * @model abstract="true"
@@ -46,7 +46,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Uri</em>' attribute.
 	 * @see #setUri(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Uri()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getUri();
@@ -72,7 +72,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Version()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getVersion();
@@ -98,7 +98,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getName();
@@ -124,7 +124,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see #setStatus(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Status()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getStatus();
@@ -150,7 +150,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Experimental</em>' attribute.
 	 * @see #setExperimental(boolean)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Experimental()
-	 * @model dataType="org.eclipse.uml2.types.Boolean" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	boolean isExperimental();
@@ -176,7 +176,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Publisher</em>' attribute.
 	 * @see #setPublisher(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Publisher()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPublisher();
@@ -260,7 +260,7 @@ public interface ConformanceResource extends Element {
 	 * @return the value of the '<em>Copyright</em>' attribute.
 	 * @see #setCopyright(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getConformanceResource_Copyright()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCopyright();

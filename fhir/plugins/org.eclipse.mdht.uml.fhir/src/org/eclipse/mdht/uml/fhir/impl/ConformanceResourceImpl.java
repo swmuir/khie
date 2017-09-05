@@ -30,7 +30,6 @@ import org.eclipse.mdht.uml.fhir.types.ContactDetail;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ConformanceResourceImpl#getUri <em>Uri</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ConformanceResourceImpl#getVersion <em>Version</em>}</li>
@@ -43,6 +42,7 @@ import org.eclipse.mdht.uml.fhir.types.ContactDetail;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ConformanceResourceImpl#getUseContexts <em>Use Context</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ConformanceResourceImpl#getCopyright <em>Copyright</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -251,6 +251,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUri() {
 		return uri;
 	}
@@ -260,6 +261,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUri(String newUri) {
 		String oldUri = uri;
 		uri = newUri;
@@ -272,6 +274,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -281,6 +284,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
@@ -293,6 +297,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -302,6 +307,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -314,6 +320,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStatus() {
 		return status;
 	}
@@ -323,6 +330,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStatus(String newStatus) {
 		String oldStatus = status;
 		status = newStatus;
@@ -335,6 +343,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isExperimental() {
 		return experimental;
 	}
@@ -344,6 +353,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExperimental(boolean newExperimental) {
 		boolean oldExperimental = experimental;
 		experimental = newExperimental;
@@ -356,6 +366,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPublisher() {
 		return publisher;
 	}
@@ -365,6 +376,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPublisher(String newPublisher) {
 		String oldPublisher = publisher;
 		publisher = newPublisher;
@@ -377,6 +389,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ContactDetail> getContacts() {
 		if (contacts == null) {
 			contacts = new EObjectContainmentEList<ContactDetail>(ContactDetail.class, this, FHIRPackage.CONFORMANCE_RESOURCE__CONTACT);
@@ -389,6 +402,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getDate() {
 		return date;
 	}
@@ -398,6 +412,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDate(Date newDate) {
 		Date oldDate = date;
 		date = newDate;
@@ -410,6 +425,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CodeableConcept> getUseContexts() {
 		if (useContexts == null) {
 			useContexts = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FHIRPackage.CONFORMANCE_RESOURCE__USE_CONTEXT);
@@ -422,6 +438,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCopyright() {
 		return copyright;
 	}
@@ -431,6 +448,7 @@ public abstract class ConformanceResourceImpl extends ElementImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCopyright(String newCopyright) {
 		String oldCopyright = copyright;
 		copyright = newCopyright;

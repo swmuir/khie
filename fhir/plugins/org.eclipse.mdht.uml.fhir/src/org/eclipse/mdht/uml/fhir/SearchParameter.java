@@ -13,7 +13,6 @@ import org.eclipse.mdht.uml.fhir.types.CodeableConcept;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.SearchParameter#getBase_Class <em>Base Class</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.SearchParameter#getJurisdictions <em>Jurisdiction</em>}</li>
@@ -32,6 +31,7 @@ import org.eclipse.mdht.uml.fhir.types.CodeableConcept;
  *   <li>{@link org.eclipse.mdht.uml.fhir.SearchParameter#getChains <em>Chain</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.SearchParameter#getComponents <em>Component</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter()
  * @model
@@ -91,7 +91,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Purpose</em>' attribute.
 	 * @see #setPurpose(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Purpose()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPurpose();
@@ -117,7 +117,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Code()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getCode();
@@ -143,7 +143,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Base()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	EList<String> getBases();
@@ -159,7 +159,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Type()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getType();
@@ -185,7 +185,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Derived From</em>' attribute.
 	 * @see #setDerivedFrom(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_DerivedFrom()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDerivedFrom();
@@ -211,7 +211,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Description()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getDescription();
@@ -237,7 +237,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Expression</em>' attribute.
 	 * @see #setExpression(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Expression()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getExpression();
@@ -263,7 +263,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Xpath</em>' attribute.
 	 * @see #setXpath(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Xpath()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getXpath();
@@ -289,7 +289,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * @return the value of the '<em>Xpath Usage</em>' attribute.
 	 * @see #setXpathUsage(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_XpathUsage()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getXpathUsage();
@@ -315,7 +315,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Target()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getTargets();
@@ -331,7 +331,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comparator</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Comparator()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getComparators();
@@ -347,7 +347,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Modifier</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Modifier()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getModifiers();
@@ -363,7 +363,7 @@ public interface SearchParameter extends ConformanceResource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Chain</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_Chain()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getChains();

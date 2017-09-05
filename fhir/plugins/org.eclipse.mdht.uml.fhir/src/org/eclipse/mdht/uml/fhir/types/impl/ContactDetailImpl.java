@@ -25,12 +25,12 @@ import org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ContactDetailImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ContactDetailImpl#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ContactDetailImpl#getId <em>Id</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -109,6 +109,7 @@ public class ContactDetailImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -118,6 +119,7 @@ public class ContactDetailImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -130,6 +132,7 @@ public class ContactDetailImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ContactPoint> getTelecoms() {
 		if (telecoms == null) {
 			telecoms = new EObjectResolvingEList<ContactPoint>(ContactPoint.class, this, FHIRTypesPackage.CONTACT_DETAIL__TELECOM);
@@ -142,6 +145,7 @@ public class ContactDetailImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -151,6 +155,7 @@ public class ContactDetailImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;

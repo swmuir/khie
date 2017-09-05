@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhir="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:validation="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fhir="http://www.eclipse.org/mdht/schema/profile/fhir/1.0.0" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:validation="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0">
   <uml:Package xmi:id="_fO7eECP_EeW3155CxDza7Q" name="FHIR US-Core Profiles">
     <packageImport xmi:id="_5qaTsIcuEeWQR6LmUoLc9w">
       <importedPackage href="pathmap://FHIR_CORE_MODEL///FHIR-Core.uml#_fO7eECP_EeW3155CxDza7Q"/>

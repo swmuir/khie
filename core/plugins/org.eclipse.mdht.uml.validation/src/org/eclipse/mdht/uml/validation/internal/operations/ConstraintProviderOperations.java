@@ -38,7 +38,7 @@ public class ConstraintProviderOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected ConstraintProviderOperations() {

@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Extension#getUrl <em>Url</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Extension#getValueString <em>Value String</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Extension#getValueInteger <em>Value Integer</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Extension#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getExtension()
  * @model
@@ -45,7 +45,7 @@ public interface Extension extends EObject {
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getExtension_Url()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getUrl();
@@ -71,7 +71,7 @@ public interface Extension extends EObject {
 	 * @return the value of the '<em>Value String</em>' attribute.
 	 * @see #setValueString(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getExtension_ValueString()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getValueString();

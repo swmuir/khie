@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="validation"
-    nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" nsPrefix="validation">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="validation" nsURI="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0"
+    nsPrefix="validation">
   <eClassifiers xsi:type="ecore:EClass" name="Diagnostic">
     <eOperations name="fail" ordered="false" lowerBound="1" eType="#//Status">
       <eParameters name="context" ordered="false" lowerBound="1" eType="#//ValidationContext"/>

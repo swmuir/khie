@@ -13,7 +13,6 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetMember#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetMember#getSystem <em>System</em>}</li>
@@ -22,6 +21,7 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetMember#getDisplay <em>Display</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetMember#getAbstract <em>Abstract</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetMember()
  * @model
@@ -65,7 +65,7 @@ public interface ValueSetMember extends EObject {
 	 * @return the value of the '<em>System</em>' attribute.
 	 * @see #setSystem(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetMember_System()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getSystem();
@@ -91,7 +91,7 @@ public interface ValueSetMember extends EObject {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetMember_Version()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getVersion();
@@ -117,7 +117,7 @@ public interface ValueSetMember extends EObject {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetMember_Code()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCode();
@@ -143,7 +143,7 @@ public interface ValueSetMember extends EObject {
 	 * @return the value of the '<em>Display</em>' attribute.
 	 * @see #setDisplay(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetMember_Display()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDisplay();

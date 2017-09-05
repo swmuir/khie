@@ -25,7 +25,6 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getBase_Property <em>Base Property</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getName <em>Name</em>}</li>
@@ -41,6 +40,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getExample <em>Example</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementDefinition#getComment <em>Comment</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition()
  * @model
@@ -84,7 +84,7 @@ public interface ElementDefinition extends Element {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getName();
@@ -110,7 +110,7 @@ public interface ElementDefinition extends Element {
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Label()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getLabel();
@@ -281,7 +281,7 @@ public interface ElementDefinition extends Element {
 	 * @return the value of the '<em>Meaning When Missing</em>' attribute.
 	 * @see #setMeaningWhenMissing(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_MeaningWhenMissing()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getMeaningWhenMissing();
@@ -385,7 +385,7 @@ public interface ElementDefinition extends Element {
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementDefinition_Comment()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getComment();

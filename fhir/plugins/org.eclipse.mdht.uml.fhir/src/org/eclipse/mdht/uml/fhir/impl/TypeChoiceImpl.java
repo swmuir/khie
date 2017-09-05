@@ -38,11 +38,11 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.TypeChoiceImpl#getBase_Property <em>Base Property</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.TypeChoiceImpl#getTypes <em>Types</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -91,6 +91,7 @@ public class TypeChoiceImpl extends MinimalEObjectImpl.Container implements Type
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
 			InternalEObject oldBase_Property = (InternalEObject)base_Property;
@@ -117,6 +118,7 @@ public class TypeChoiceImpl extends MinimalEObjectImpl.Container implements Type
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
@@ -129,6 +131,7 @@ public class TypeChoiceImpl extends MinimalEObjectImpl.Container implements Type
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Classifier> getTypes() {
 		if (types == null) {
 			types = new EObjectResolvingEList<Classifier>(Classifier.class, this, FHIRPackage.TYPE_CHOICE__TYPES);
@@ -141,6 +144,7 @@ public class TypeChoiceImpl extends MinimalEObjectImpl.Container implements Type
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Classifier getTypes(String name) {
 		return getTypes(name, false, null);
 	}
@@ -150,6 +154,7 @@ public class TypeChoiceImpl extends MinimalEObjectImpl.Container implements Type
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Classifier getTypes(String name, boolean ignoreCase, EClass eClass) {
 		typesLoop: for (Classifier types : getTypes()) {
 			if (eClass != null && !eClass.isInstance(types))

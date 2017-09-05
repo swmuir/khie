@@ -35,7 +35,6 @@ import org.eclipse.mdht.uml.fhir.StructureDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getBase_Class <em>Base Class</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getDisplay <em>Display</em>}</li>
@@ -44,6 +43,7 @@ import org.eclipse.mdht.uml.fhir.StructureDefinition;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getIsLogical <em>Is Logical</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.StructureDefinitionImpl#getDerivation <em>Derivation</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -181,6 +181,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
 			InternalEObject oldBase_Class = (InternalEObject)base_Class;
@@ -207,6 +208,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
@@ -219,6 +221,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDisplay() {
 		return display;
 	}
@@ -228,6 +231,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDisplay(String newDisplay) {
 		String oldDisplay = display;
 		display = newDisplay;
@@ -240,6 +244,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getContextType() {
 		return contextType;
 	}
@@ -249,6 +254,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setContextType(String newContextType) {
 		String oldContextType = contextType;
 		contextType = newContextType;
@@ -261,6 +267,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getContexts() {
 		if (contexts == null) {
 			contexts = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.STRUCTURE_DEFINITION__CONTEXT);
@@ -273,6 +280,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getIsLogical() {
 		return isLogical;
 	}
@@ -282,6 +290,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsLogical(Boolean newIsLogical) {
 		Boolean oldIsLogical = isLogical;
 		isLogical = newIsLogical;
@@ -294,6 +303,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DerivationKind getDerivation() {
 		return derivation;
 	}
@@ -303,6 +313,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDerivation(DerivationKind newDerivation) {
 		DerivationKind oldDerivation = derivation;
 		derivation = newDerivation == null ? DERIVATION_EDEFAULT : newDerivation;
@@ -317,6 +328,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetDerivation() {
 		DerivationKind oldDerivation = derivation;
 		boolean oldDerivationESet = derivationESet;
@@ -331,6 +343,7 @@ public class StructureDefinitionImpl extends ConformanceResourceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetDerivation() {
 		return derivationESet;
 	}

@@ -82,6 +82,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Extension createExtension() {
 		ExtensionImpl extension = new ExtensionImpl();
 		return extension;
@@ -92,6 +93,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CodeableConcept createCodeableConcept() {
 		CodeableConceptImpl codeableConcept = new CodeableConceptImpl();
 		return codeableConcept;
@@ -102,6 +104,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Coding createCoding() {
 		CodingImpl coding = new CodingImpl();
 		return coding;
@@ -112,6 +115,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContactDetail createContactDetail() {
 		ContactDetailImpl contactDetail = new ContactDetailImpl();
 		return contactDetail;
@@ -122,6 +126,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContactPoint createContactPoint() {
 		ContactPointImpl contactPoint = new ContactPointImpl();
 		return contactPoint;
@@ -132,6 +137,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Reference createReference() {
 		ReferenceImpl reference = new ReferenceImpl();
 		return reference;
@@ -142,6 +148,7 @@ public class FHIRTypesFactoryImpl extends EFactoryImpl implements FHIRTypesFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FHIRTypesPackage getFHIRTypesPackage() {
 		return (FHIRTypesPackage)getEPackage();
 	}

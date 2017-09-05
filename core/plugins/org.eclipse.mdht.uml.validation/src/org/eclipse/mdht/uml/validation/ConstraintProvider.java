@@ -21,7 +21,6 @@ import org.eclipse.uml2.uml.Namespace;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  * <li>{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getBase_Namespace <em>Base Namespace</em>}</li>
  * <li>{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getDiagnosticSource <em>Diagnostic Source</em>}</li>
@@ -30,6 +29,7 @@ import org.eclipse.uml2.uml.Namespace;
  * <li>{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getParentCategoryID <em>Parent Category ID</em>}</li>
  * <li>{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getBundleName <em>Bundle Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider()
  * @model
@@ -43,7 +43,7 @@ public interface ConstraintProvider extends EObject {
 	 * If the meaning of the '<em>Base Namespace</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Base Namespace</em>' reference.
 	 * @see #setBase_Namespace(Namespace)
 	 * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider_Base_Namespace()
@@ -56,7 +56,7 @@ public interface ConstraintProvider extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getBase_Namespace <em>Base Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Base Namespace</em>' reference.
 	 * @see #getBase_Namespace()
@@ -71,11 +71,11 @@ public interface ConstraintProvider extends EObject {
 	 * If the meaning of the '<em>Diagnostic Source</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Diagnostic Source</em>' attribute.
 	 * @see #setDiagnosticSource(String)
 	 * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider_DiagnosticSource()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDiagnosticSource();
@@ -84,7 +84,7 @@ public interface ConstraintProvider extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getDiagnosticSource <em>Diagnostic Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Diagnostic Source</em>' attribute.
 	 * @see #getDiagnosticSource()
@@ -99,11 +99,11 @@ public interface ConstraintProvider extends EObject {
 	 * If the meaning of the '<em>Category ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Category ID</em>' attribute.
 	 * @see #setCategoryID(String)
 	 * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider_CategoryID()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCategoryID();
@@ -112,7 +112,7 @@ public interface ConstraintProvider extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getCategoryID <em>Category ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Category ID</em>' attribute.
 	 * @see #getCategoryID()
@@ -127,11 +127,11 @@ public interface ConstraintProvider extends EObject {
 	 * If the meaning of the '<em>Category Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Category Name</em>' attribute.
 	 * @see #setCategoryName(String)
 	 * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider_CategoryName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCategoryName();
@@ -140,7 +140,7 @@ public interface ConstraintProvider extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getCategoryName <em>Category Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Category Name</em>' attribute.
 	 * @see #getCategoryName()
@@ -155,11 +155,11 @@ public interface ConstraintProvider extends EObject {
 	 * If the meaning of the '<em>Parent Category ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Parent Category ID</em>' attribute.
 	 * @see #setParentCategoryID(String)
 	 * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider_ParentCategoryID()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getParentCategoryID();
@@ -168,7 +168,7 @@ public interface ConstraintProvider extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getParentCategoryID <em>Parent Category ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Parent Category ID</em>' attribute.
 	 * @see #getParentCategoryID()
@@ -183,11 +183,11 @@ public interface ConstraintProvider extends EObject {
 	 * If the meaning of the '<em>Bundle Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Bundle Name</em>' attribute.
 	 * @see #setBundleName(String)
 	 * @see org.eclipse.mdht.uml.validation.ValidationPackage#getConstraintProvider_BundleName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getBundleName();
@@ -196,7 +196,7 @@ public interface ConstraintProvider extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.validation.ConstraintProvider#getBundleName <em>Bundle Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Bundle Name</em>' attribute.
 	 * @see #getBundleName()
@@ -207,7 +207,7 @@ public interface ConstraintProvider extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */

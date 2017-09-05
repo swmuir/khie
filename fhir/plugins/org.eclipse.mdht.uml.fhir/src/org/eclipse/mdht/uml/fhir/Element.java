@@ -25,11 +25,11 @@ import org.eclipse.mdht.uml.fhir.types.Extension;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.Element#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.Element#getExtensions <em>Extension</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElement()
  * @model abstract="true"
@@ -47,7 +47,7 @@ public interface Element extends EObject {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElement_Id()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getId();

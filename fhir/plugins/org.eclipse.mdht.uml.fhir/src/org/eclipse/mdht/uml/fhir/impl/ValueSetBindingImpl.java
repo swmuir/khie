@@ -33,7 +33,6 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl#getBase_Property <em>Base Property</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl#getStrength <em>Strength</em>}</li>
@@ -41,6 +40,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl#getValueSetUri <em>Value Set Uri</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetBindingImpl#getValueSetReference <em>Value Set Reference</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -149,6 +149,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
 			InternalEObject oldBase_Property = (InternalEObject)base_Property;
@@ -175,6 +176,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
@@ -187,6 +189,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BindingStrengthKind getStrength() {
 		return strength;
 	}
@@ -196,6 +199,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStrength(BindingStrengthKind newStrength) {
 		BindingStrengthKind oldStrength = strength;
 		strength = newStrength == null ? STRENGTH_EDEFAULT : newStrength;
@@ -208,6 +212,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -217,6 +222,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -229,6 +235,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValueSetUri() {
 		return valueSetUri;
 	}
@@ -238,6 +245,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValueSetUri(String newValueSetUri) {
 		String oldValueSetUri = valueSetUri;
 		valueSetUri = newValueSetUri;
@@ -250,6 +258,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValueSet getValueSetReference() {
 		if (valueSetReference != null && valueSetReference.eIsProxy()) {
 			InternalEObject oldValueSetReference = (InternalEObject)valueSetReference;
@@ -276,6 +285,7 @@ public class ValueSetBindingImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValueSetReference(ValueSet newValueSetReference) {
 		ValueSet oldValueSetReference = valueSetReference;
 		valueSetReference = newValueSetReference;

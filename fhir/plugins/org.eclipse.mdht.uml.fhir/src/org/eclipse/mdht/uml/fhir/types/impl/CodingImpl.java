@@ -27,13 +27,13 @@ import org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.CodingImpl#getSystem <em>System</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.CodingImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.CodingImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.CodingImpl#getDisplay <em>Display</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -142,6 +142,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSystem() {
 		return system;
 	}
@@ -151,6 +152,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystem(String newSystem) {
 		String oldSystem = system;
 		system = newSystem;
@@ -163,6 +165,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -172,6 +175,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
@@ -184,6 +188,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -193,6 +198,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -205,6 +211,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDisplay() {
 		return display;
 	}
@@ -214,6 +221,7 @@ public class CodingImpl extends DataTypeImpl implements Coding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDisplay(String newDisplay) {
 		String oldDisplay = display;
 		display = newDisplay;

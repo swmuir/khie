@@ -23,10 +23,10 @@ import org.eclipse.uml2.uml.Comment;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.Requirements#getBase_Comment <em>Base Comment</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getRequirements()
  * @model

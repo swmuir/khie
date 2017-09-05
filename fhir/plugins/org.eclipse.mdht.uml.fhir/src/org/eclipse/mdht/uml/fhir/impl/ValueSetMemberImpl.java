@@ -21,7 +21,6 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetMemberImpl#getBase_EnumerationLiteral <em>Base Enumeration Literal</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetMemberImpl#getSystem <em>System</em>}</li>
@@ -30,6 +29,7 @@ import org.eclipse.uml2.uml.EnumerationLiteral;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetMemberImpl#getDisplay <em>Display</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetMemberImpl#getAbstract <em>Abstract</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -168,6 +168,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EnumerationLiteral getBase_EnumerationLiteral() {
 		if (base_EnumerationLiteral != null && base_EnumerationLiteral.eIsProxy()) {
 			InternalEObject oldBase_EnumerationLiteral = (InternalEObject)base_EnumerationLiteral;
@@ -194,6 +195,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_EnumerationLiteral(EnumerationLiteral newBase_EnumerationLiteral) {
 		EnumerationLiteral oldBase_EnumerationLiteral = base_EnumerationLiteral;
 		base_EnumerationLiteral = newBase_EnumerationLiteral;
@@ -206,6 +208,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSystem() {
 		return system;
 	}
@@ -215,6 +218,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSystem(String newSystem) {
 		String oldSystem = system;
 		system = newSystem;
@@ -227,6 +231,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -236,6 +241,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
@@ -248,6 +254,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -257,6 +264,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -269,6 +277,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDisplay() {
 		return display;
 	}
@@ -278,6 +287,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDisplay(String newDisplay) {
 		String oldDisplay = display;
 		display = newDisplay;
@@ -290,6 +300,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getAbstract() {
 		return abstract_;
 	}
@@ -299,6 +310,7 @@ public class ValueSetMemberImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAbstract(Boolean newAbstract) {
 		Boolean oldAbstract = abstract_;
 		abstract_ = newAbstract;

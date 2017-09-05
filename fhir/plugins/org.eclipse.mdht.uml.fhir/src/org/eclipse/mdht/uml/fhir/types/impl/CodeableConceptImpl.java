@@ -36,11 +36,11 @@ import org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.CodeableConceptImpl#getCodings <em>Coding</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.CodeableConceptImpl#getText <em>Text</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -99,6 +99,7 @@ public class CodeableConceptImpl extends DataTypeImpl implements CodeableConcept
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Coding> getCodings() {
 		if (codings == null) {
 			codings = new EObjectContainmentEList<Coding>(Coding.class, this, FHIRTypesPackage.CODEABLE_CONCEPT__CODING);
@@ -111,6 +112,7 @@ public class CodeableConceptImpl extends DataTypeImpl implements CodeableConcept
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -120,6 +122,7 @@ public class CodeableConceptImpl extends DataTypeImpl implements CodeableConcept
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;

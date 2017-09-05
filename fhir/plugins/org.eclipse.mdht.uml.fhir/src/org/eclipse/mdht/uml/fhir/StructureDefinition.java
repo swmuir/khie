@@ -21,7 +21,6 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getBase_Class <em>Base Class</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getDisplay <em>Display</em>}</li>
@@ -30,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getIsLogical <em>Is Logical</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.StructureDefinition#getDerivation <em>Derivation</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition()
  * @model
@@ -73,7 +73,7 @@ public interface StructureDefinition extends ConformanceResource {
 	 * @return the value of the '<em>Display</em>' attribute.
 	 * @see #setDisplay(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition_Display()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDisplay();
@@ -99,7 +99,7 @@ public interface StructureDefinition extends ConformanceResource {
 	 * @return the value of the '<em>Context Type</em>' attribute.
 	 * @see #setContextType(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition_ContextType()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getContextType();
@@ -125,7 +125,7 @@ public interface StructureDefinition extends ConformanceResource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getStructureDefinition_Context()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getContexts();

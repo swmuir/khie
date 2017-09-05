@@ -10,10 +10,10 @@ package org.eclipse.mdht.uml.fhir;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.DataElement#getBase_Class <em>Base Class</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getDataElement()
  * @model

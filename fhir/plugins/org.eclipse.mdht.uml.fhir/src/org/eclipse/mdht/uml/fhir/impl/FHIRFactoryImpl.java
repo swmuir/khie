@@ -134,6 +134,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeChoice createTypeChoice() {
 		TypeChoiceImpl typeChoice = new TypeChoiceImpl();
 		return typeChoice;
@@ -144,6 +145,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructureDefinition createStructureDefinition() {
 		StructureDefinitionImpl structureDefinition = new StructureDefinitionImpl();
 		return structureDefinition;
@@ -154,6 +156,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ElementDefinition createElementDefinition() {
 		ElementDefinitionImpl elementDefinition = new ElementDefinitionImpl();
 		return elementDefinition;
@@ -164,6 +167,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ShortDescription createShortDescription() {
 		ShortDescriptionImpl shortDescription = new ShortDescriptionImpl();
 		return shortDescription;
@@ -174,6 +178,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Description createDescription() {
 		DescriptionImpl description = new DescriptionImpl();
 		return description;
@@ -184,6 +189,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Definition createDefinition() {
 		DefinitionImpl definition = new DefinitionImpl();
 		return definition;
@@ -194,6 +200,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Requirements createRequirements() {
 		RequirementsImpl requirements = new RequirementsImpl();
 		return requirements;
@@ -204,6 +211,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Comments createComments() {
 		CommentsImpl comments = new CommentsImpl();
 		return comments;
@@ -214,6 +222,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValueSetBinding createValueSetBinding() {
 		ValueSetBindingImpl valueSetBinding = new ValueSetBindingImpl();
 		return valueSetBinding;
@@ -224,6 +233,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValueSet createValueSet() {
 		ValueSetImpl valueSet = new ValueSetImpl();
 		return valueSet;
@@ -234,6 +244,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataElement createDataElement() {
 		DataElementImpl dataElement = new DataElementImpl();
 		return dataElement;
@@ -244,6 +255,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValueSetMember createValueSetMember() {
 		ValueSetMemberImpl valueSetMember = new ValueSetMemberImpl();
 		return valueSetMember;
@@ -254,6 +266,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ElementSlicing createElementSlicing() {
 		ElementSlicingImpl elementSlicing = new ElementSlicingImpl();
 		return elementSlicing;
@@ -264,6 +277,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SearchParameter createSearchParameter() {
 		SearchParameterImpl searchParameter = new SearchParameterImpl();
 		return searchParameter;
@@ -274,6 +288,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SearchParameter_ComponentClass createSearchParameter_ComponentClass() {
 		SearchParameter_ComponentClassImpl searchParameter_ComponentClass = new SearchParameter_ComponentClassImpl();
 		return searchParameter_ComponentClass;
@@ -364,6 +379,7 @@ public class FHIRFactoryImpl extends EFactoryImpl implements FHIRFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FHIRPackage getFHIRPackage() {
 		return (FHIRPackage)getEPackage();
 	}

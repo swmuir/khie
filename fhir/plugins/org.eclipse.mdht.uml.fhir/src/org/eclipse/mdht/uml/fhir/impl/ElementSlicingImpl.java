@@ -28,7 +28,6 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementSlicingImpl#getDiscriminators <em>Discriminator</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementSlicingImpl#getDescription <em>Description</em>}</li>
@@ -36,6 +35,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementSlicingImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementSlicingImpl#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -144,6 +144,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getDiscriminators() {
 		if (discriminators == null) {
 			discriminators = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.ELEMENT_SLICING__DISCRIMINATOR);
@@ -156,6 +157,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -165,6 +167,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -177,6 +180,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getOrdered() {
 		return ordered;
 	}
@@ -186,6 +190,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOrdered(Boolean newOrdered) {
 		Boolean oldOrdered = ordered;
 		ordered = newOrdered;
@@ -198,6 +203,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SlicingRulesKind getRules() {
 		return rules;
 	}
@@ -207,6 +213,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRules(SlicingRulesKind newRules) {
 		SlicingRulesKind oldRules = rules;
 		rules = newRules == null ? RULES_EDEFAULT : newRules;
@@ -219,6 +226,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
 			InternalEObject oldBase_Property = (InternalEObject)base_Property;
@@ -245,6 +253,7 @@ public class ElementSlicingImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;

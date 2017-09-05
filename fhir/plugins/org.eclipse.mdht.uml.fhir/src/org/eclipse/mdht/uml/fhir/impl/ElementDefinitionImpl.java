@@ -41,7 +41,6 @@ import org.eclipse.uml2.uml.Property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getBase_Property <em>Base Property</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getName <em>Name</em>}</li>
@@ -57,6 +56,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getExample <em>Example</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementDefinitionImpl#getComment <em>Comment</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -285,6 +285,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Property getBase_Property() {
 		if (base_Property != null && base_Property.eIsProxy()) {
 			InternalEObject oldBase_Property = (InternalEObject)base_Property;
@@ -311,6 +312,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
@@ -323,6 +325,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -332,6 +335,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -344,6 +348,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -353,6 +358,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLabel(String newLabel) {
 		String oldLabel = label;
 		label = newLabel;
@@ -365,6 +371,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getMustSupport() {
 		return mustSupport;
 	}
@@ -374,6 +381,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMustSupport(Boolean newMustSupport) {
 		Boolean oldMustSupport = mustSupport;
 		mustSupport = newMustSupport;
@@ -386,6 +394,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getIsModifier() {
 		return isModifier;
 	}
@@ -395,6 +404,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsModifier(Boolean newIsModifier) {
 		Boolean oldIsModifier = isModifier;
 		isModifier = newIsModifier;
@@ -407,6 +417,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getIsSummary() {
 		return isSummary;
 	}
@@ -416,6 +427,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsSummary(Boolean newIsSummary) {
 		Boolean oldIsSummary = isSummary;
 		isSummary = newIsSummary;
@@ -428,6 +440,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<PropertyRepresentationKind> getRepresentations() {
 		if (representations == null) {
 			representations = new EDataTypeUniqueEList.Unsettable<PropertyRepresentationKind>(PropertyRepresentationKind.class, this, FHIRPackage.ELEMENT_DEFINITION__REPRESENTATION);
@@ -440,6 +453,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetRepresentations() {
 		if (representations != null) ((InternalEList.Unsettable<?>)representations).unset();
 	}
@@ -449,6 +463,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetRepresentations() {
 		return representations != null && ((InternalEList.Unsettable<?>)representations).isSet();
 	}
@@ -458,6 +473,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getDefault() {
 		return default_;
 	}
@@ -482,6 +498,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(DataType newDefault) {
 		if (newDefault != default_) {
 			NotificationChain msgs = null;
@@ -501,6 +518,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMeaningWhenMissing() {
 		return meaningWhenMissing;
 	}
@@ -510,6 +528,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMeaningWhenMissing(String newMeaningWhenMissing) {
 		String oldMeaningWhenMissing = meaningWhenMissing;
 		meaningWhenMissing = newMeaningWhenMissing;
@@ -522,6 +541,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getFixed() {
 		return fixed;
 	}
@@ -546,6 +566,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFixed(DataType newFixed) {
 		if (newFixed != fixed) {
 			NotificationChain msgs = null;
@@ -565,6 +586,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getPattern() {
 		return pattern;
 	}
@@ -589,6 +611,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPattern(DataType newPattern) {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;
@@ -608,6 +631,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getExample() {
 		return example;
 	}
@@ -632,6 +656,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExample(DataType newExample) {
 		if (newExample != example) {
 			NotificationChain msgs = null;
@@ -651,6 +676,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getComment() {
 		return comment;
 	}
@@ -660,6 +686,7 @@ public class ElementDefinitionImpl extends ElementImpl implements ElementDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComment(String newComment) {
 		String oldComment = comment;
 		comment = newComment;

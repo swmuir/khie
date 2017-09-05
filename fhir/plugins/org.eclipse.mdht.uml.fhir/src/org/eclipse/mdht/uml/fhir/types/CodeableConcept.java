@@ -21,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.CodeableConcept#getCodings <em>Coding</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.CodeableConcept#getText <em>Text</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCodeableConcept()
  * @model
@@ -59,7 +59,7 @@ public interface CodeableConcept extends DataType {
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCodeableConcept_Text()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getText();

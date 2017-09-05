@@ -36,11 +36,11 @@ import org.eclipse.mdht.uml.fhir.types.Extension;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ElementImpl#getExtensions <em>Extension</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -99,6 +99,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -108,6 +109,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -120,6 +122,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Extension> getExtensions() {
 		if (extensions == null) {
 			extensions = new EObjectResolvingEList<Extension>(Extension.class, this, FHIRPackage.ELEMENT__EXTENSION);

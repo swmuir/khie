@@ -31,10 +31,10 @@ import org.eclipse.uml2.uml.Comment;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.DescriptionImpl#getBase_Comment <em>Base Comment</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -73,6 +73,7 @@ public class DescriptionImpl extends MinimalEObjectImpl.Container implements Des
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Comment getBase_Comment() {
 		if (base_Comment != null && base_Comment.eIsProxy()) {
 			InternalEObject oldBase_Comment = (InternalEObject)base_Comment;
@@ -99,6 +100,7 @@ public class DescriptionImpl extends MinimalEObjectImpl.Container implements Des
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Comment(Comment newBase_Comment) {
 		Comment oldBase_Comment = base_Comment;
 		base_Comment = newBase_Comment;

@@ -20,13 +20,13 @@ package org.eclipse.mdht.uml.fhir.types;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Coding#getSystem <em>System</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Coding#getVersion <em>Version</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Coding#getCode <em>Code</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Coding#getDisplay <em>Display</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCoding()
  * @model
@@ -44,7 +44,7 @@ public interface Coding extends DataType {
 	 * @return the value of the '<em>System</em>' attribute.
 	 * @see #setSystem(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCoding_System()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getSystem();
@@ -70,7 +70,7 @@ public interface Coding extends DataType {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCoding_Version()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getVersion();
@@ -96,7 +96,7 @@ public interface Coding extends DataType {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCoding_Code()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCode();
@@ -122,7 +122,7 @@ public interface Coding extends DataType {
 	 * @return the value of the '<em>Display</em>' attribute.
 	 * @see #setDisplay(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getCoding_Display()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDisplay();

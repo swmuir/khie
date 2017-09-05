@@ -43,8 +43,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <ul>
  * <li>{@link org.eclipse.mdht.uml.validation.Diagnostic#fail(org.eclipse.emf.validation.IValidationContext, org.eclipse.emf.ecore.EObject)
  * <em>Fail</em>}</li>
- * <li>
- * {@link org.eclipse.mdht.uml.validation.Diagnostic#fail(org.eclipse.emf.validation.IValidationContext, org.eclipse.emf.ecore.EObject, org.eclipse.emf.common.util.EList)
+ * <li>{@link org.eclipse.mdht.uml.validation.Diagnostic#fail(org.eclipse.emf.validation.IValidationContext, org.eclipse.emf.ecore.EObject, org.eclipse.emf.common.util.EList)
  * <em>Fail</em>}</li>
  * <li>{@link org.eclipse.mdht.uml.validation.Diagnostic#getTargets() <em>Get Targets</em>}</li>
  * <li>{@link org.eclipse.mdht.uml.validation.Diagnostic#targets(org.eclipse.emf.ecore.EObject) <em>Targets</em>}</li>
@@ -58,7 +57,7 @@ public class DiagnosticOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DiagnosticOperations() {

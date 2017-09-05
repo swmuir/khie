@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.Reference#getReference <em>Reference</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getReference()
  * @model
@@ -32,7 +32,7 @@ public interface Reference extends EObject {
 	 * @return the value of the '<em>Reference</em>' attribute.
 	 * @see #setReference(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getReference_Reference()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getReference();

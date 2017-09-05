@@ -30,7 +30,6 @@ import org.eclipse.mdht.uml.fhir.types.CodeableConcept;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.SearchParameterImpl#getBase_Class <em>Base Class</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.SearchParameterImpl#getJurisdictions <em>Jurisdiction</em>}</li>
@@ -49,6 +48,7 @@ import org.eclipse.mdht.uml.fhir.types.CodeableConcept;
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.SearchParameterImpl#getChains <em>Chain</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.SearchParameterImpl#getComponents <em>Component</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -317,6 +317,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
 			InternalEObject oldBase_Class = (InternalEObject)base_Class;
@@ -343,6 +344,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
@@ -355,6 +357,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CodeableConcept> getJurisdictions() {
 		if (jurisdictions == null) {
 			jurisdictions = new EObjectContainmentEList<CodeableConcept>(CodeableConcept.class, this, FHIRPackage.SEARCH_PARAMETER__JURISDICTION);
@@ -367,6 +370,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPurpose() {
 		return purpose;
 	}
@@ -376,6 +380,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPurpose(String newPurpose) {
 		String oldPurpose = purpose;
 		purpose = newPurpose;
@@ -388,6 +393,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -397,6 +403,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -409,6 +416,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getBases() {
 		if (bases == null) {
 			bases = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.SEARCH_PARAMETER__BASE);
@@ -421,6 +429,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -430,6 +439,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -442,6 +452,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDerivedFrom() {
 		return derivedFrom;
 	}
@@ -451,6 +462,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDerivedFrom(String newDerivedFrom) {
 		String oldDerivedFrom = derivedFrom;
 		derivedFrom = newDerivedFrom;
@@ -463,6 +475,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -472,6 +485,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -484,6 +498,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExpression() {
 		return expression;
 	}
@@ -493,6 +508,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(String newExpression) {
 		String oldExpression = expression;
 		expression = newExpression;
@@ -505,6 +521,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getXpath() {
 		return xpath;
 	}
@@ -514,6 +531,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setXpath(String newXpath) {
 		String oldXpath = xpath;
 		xpath = newXpath;
@@ -526,6 +544,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getXpathUsage() {
 		return xpathUsage;
 	}
@@ -535,6 +554,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setXpathUsage(String newXpathUsage) {
 		String oldXpathUsage = xpathUsage;
 		xpathUsage = newXpathUsage;
@@ -547,6 +567,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getTargets() {
 		if (targets == null) {
 			targets = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.SEARCH_PARAMETER__TARGET);
@@ -559,6 +580,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getComparators() {
 		if (comparators == null) {
 			comparators = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.SEARCH_PARAMETER__COMPARATOR);
@@ -571,6 +593,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getModifiers() {
 		if (modifiers == null) {
 			modifiers = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.SEARCH_PARAMETER__MODIFIER);
@@ -583,6 +606,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getChains() {
 		if (chains == null) {
 			chains = new EDataTypeUniqueEList<String>(String.class, this, FHIRPackage.SEARCH_PARAMETER__CHAIN);
@@ -595,6 +619,7 @@ public class SearchParameterImpl extends ConformanceResourceImpl implements Sear
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SearchParameter_ComponentClass> getComponents() {
 		if (components == null) {
 			components = new EObjectResolvingEList<SearchParameter_ComponentClass>(SearchParameter_ComponentClass.class, this, FHIRPackage.SEARCH_PARAMETER__COMPONENT);

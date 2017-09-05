@@ -18,10 +18,10 @@ import org.eclipse.mdht.uml.fhir.FHIRPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.DataElementImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -60,6 +60,7 @@ public class DataElementImpl extends ConformanceResourceImpl implements DataElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.eclipse.uml2.uml.Class getBase_Class() {
 		if (base_Class != null && base_Class.eIsProxy()) {
 			InternalEObject oldBase_Class = (InternalEObject)base_Class;
@@ -86,6 +87,7 @@ public class DataElementImpl extends ConformanceResourceImpl implements DataElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;

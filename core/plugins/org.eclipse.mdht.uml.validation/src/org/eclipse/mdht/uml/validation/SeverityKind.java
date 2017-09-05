@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Severity Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.mdht.uml.validation.ValidationPackage#getSeverityKind()
  * @model
  * @generated
@@ -31,7 +31,7 @@ public enum SeverityKind implements Enumerator {
 	 * The '<em><b>Informational</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #INFORMATIONAL_VALUE
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public enum SeverityKind implements Enumerator {
 	 * The '<em><b>Warning</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #WARNING_VALUE
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public enum SeverityKind implements Enumerator {
 	 * The '<em><b>Error</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #ERROR_VALUE
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public enum SeverityKind implements Enumerator {
 	 * If the meaning of '<em><b>Informational</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #INFORMATIONAL
 	 * @model name="informational" literal="info"
 	 * @generated
@@ -82,7 +82,7 @@ public enum SeverityKind implements Enumerator {
 	 * If the meaning of '<em><b>Warning</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #WARNING
 	 * @model name="warning" literal="warn"
 	 * @generated
@@ -97,7 +97,7 @@ public enum SeverityKind implements Enumerator {
 	 * If the meaning of '<em><b>Error</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #ERROR
 	 * @model name="error"
 	 * @generated
@@ -109,7 +109,7 @@ public enum SeverityKind implements Enumerator {
 	 * An array of all the '<em><b>Severity Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static final SeverityKind[] VALUES_ARRAY = new SeverityKind[] { INFORMATIONAL, WARNING, ERROR, };
@@ -118,7 +118,7 @@ public enum SeverityKind implements Enumerator {
 	 * A public read-only list of all the '<em><b>Severity Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final List<SeverityKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -127,7 +127,10 @@ public enum SeverityKind implements Enumerator {
 	 * Returns the '<em><b>Severity Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @param literal
+	 *            the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static SeverityKind get(String literal) {
@@ -144,7 +147,10 @@ public enum SeverityKind implements Enumerator {
 	 * Returns the '<em><b>Severity Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @param name
+	 *            the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static SeverityKind getByName(String name) {
@@ -161,7 +167,10 @@ public enum SeverityKind implements Enumerator {
 	 * Returns the '<em><b>Severity Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
+	 * @param value
+	 *            the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static SeverityKind get(int value) {
@@ -179,7 +188,7 @@ public enum SeverityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -187,7 +196,7 @@ public enum SeverityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -195,7 +204,7 @@ public enum SeverityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -204,7 +213,7 @@ public enum SeverityKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private SeverityKind(int value, String name, String literal) {
@@ -216,7 +225,7 @@ public enum SeverityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
@@ -226,7 +235,7 @@ public enum SeverityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -236,7 +245,7 @@ public enum SeverityKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -247,7 +256,7 @@ public enum SeverityKind implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

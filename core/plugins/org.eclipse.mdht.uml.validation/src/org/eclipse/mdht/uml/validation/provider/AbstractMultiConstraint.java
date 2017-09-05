@@ -75,9 +75,10 @@ public abstract class AbstractMultiConstraint extends AbstractModelConstraint {
 			try {
 				result = getClass().getMethod(getValidationMethodName(ctx), IValidationContext.class);
 			} catch (Exception e) {
-				ValidationPlugin.INSTANCE.log(new Status(
-					IStatus.ERROR, ValidationPlugin.INSTANCE.getSymbolicName(),
-					"Failed to look up validation method for constraint: " + id, e));
+				ValidationPlugin.INSTANCE.log(
+					new Status(
+						IStatus.ERROR, ValidationPlugin.INSTANCE.getSymbolicName(),
+						"Failed to look up validation method for constraint: " + id, e));
 
 				result = getFailOnMissingValidationMethod();
 			}

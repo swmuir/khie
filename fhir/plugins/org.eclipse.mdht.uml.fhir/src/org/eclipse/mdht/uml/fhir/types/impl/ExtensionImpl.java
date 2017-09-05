@@ -31,13 +31,13 @@ import org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ExtensionImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ExtensionImpl#getValueString <em>Value String</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ExtensionImpl#getValueInteger <em>Value Integer</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ExtensionImpl#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -136,6 +136,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUrl() {
 		return url;
 	}
@@ -145,6 +146,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUrl(String newUrl) {
 		String oldUrl = url;
 		url = newUrl;
@@ -157,6 +159,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValueString() {
 		return valueString;
 	}
@@ -166,6 +169,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValueString(String newValueString) {
 		String oldValueString = valueString;
 		valueString = newValueString;
@@ -178,6 +182,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getValueInteger() {
 		return valueInteger;
 	}
@@ -187,6 +192,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValueInteger(Integer newValueInteger) {
 		Integer oldValueInteger = valueInteger;
 		valueInteger = newValueInteger;
@@ -199,6 +205,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getValue() {
 		return value;
 	}
@@ -223,6 +230,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(DataType newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;

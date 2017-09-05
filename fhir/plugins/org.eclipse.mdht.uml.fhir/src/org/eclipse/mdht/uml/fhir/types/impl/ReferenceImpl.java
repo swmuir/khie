@@ -18,10 +18,10 @@ import org.eclipse.mdht.uml.fhir.types.Reference;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.impl.ReferenceImpl#getReference <em>Reference</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -70,6 +70,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -79,6 +80,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;

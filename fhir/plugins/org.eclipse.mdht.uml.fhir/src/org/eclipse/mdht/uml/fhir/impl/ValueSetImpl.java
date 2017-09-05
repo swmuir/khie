@@ -30,10 +30,10 @@ import org.eclipse.uml2.uml.Enumeration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.ValueSetImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -72,6 +72,7 @@ public class ValueSetImpl extends ConformanceResourceImpl implements ValueSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Enumeration getBase_Enumeration() {
 		if (base_Enumeration != null && base_Enumeration.eIsProxy()) {
 			InternalEObject oldBase_Enumeration = (InternalEObject)base_Enumeration;
@@ -98,6 +99,7 @@ public class ValueSetImpl extends ConformanceResourceImpl implements ValueSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
 		Enumeration oldBase_Enumeration = base_Enumeration;
 		base_Enumeration = newBase_Enumeration;

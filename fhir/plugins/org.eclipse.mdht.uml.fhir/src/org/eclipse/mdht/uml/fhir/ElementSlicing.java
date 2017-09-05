@@ -15,7 +15,6 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementSlicing#getDiscriminators <em>Discriminator</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementSlicing#getDescription <em>Description</em>}</li>
@@ -23,6 +22,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementSlicing#getRules <em>Rules</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ElementSlicing#getBase_Property <em>Base Property</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementSlicing()
  * @model
@@ -40,7 +40,7 @@ public interface ElementSlicing extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Discriminator</em>' attribute list.
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementSlicing_Discriminator()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getDiscriminators();
@@ -56,7 +56,7 @@ public interface ElementSlicing extends EObject {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getElementSlicing_Description()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDescription();

@@ -18,4 +18,12 @@ Export-Package: org.eclipse.mdht.uml.fhir.core.datatype,
  org.eclipse.mdht.uml.fhir.core.resource.impl,
  org.eclipse.mdht.uml.fhir.core.resource.util,
  org.eclipse.mdht.uml.fhir.core.valueset,
- org.eclipse.mdht.uml.fhir.core.valueset.impl
+ org.eclipse.mdht.uml.fhir.core.valueset.impl,
+ org.eclipse.mdht.uml.fhir.core.dataTypes,
+ org.eclipse.mdht.uml.fhir.core.dataTypes.impl,
+ org.eclipse.mdht.uml.fhir.core.dataTypes.util,
+ org.eclipse.mdht.uml.fhir.core.resources,
+ org.eclipse.mdht.uml.fhir.core.resources.impl,
+ org.eclipse.mdht.uml.fhir.core.resources.util,
+ org.eclipse.mdht.uml.fhir.core.valueSets,
+ org.eclipse.mdht.uml.fhir.core.valueSets.impl

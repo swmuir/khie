@@ -21,11 +21,11 @@ import org.eclipse.mdht.uml.fhir.types.Reference;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.SearchParameter_ComponentClassImpl#getDefinition <em>Definition</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.impl.SearchParameter_ComponentClassImpl#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -84,6 +84,7 @@ public class SearchParameter_ComponentClassImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Reference getDefinition() {
 		if (definition != null && definition.eIsProxy()) {
 			InternalEObject oldDefinition = (InternalEObject)definition;
@@ -110,6 +111,7 @@ public class SearchParameter_ComponentClassImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefinition(Reference newDefinition) {
 		Reference oldDefinition = definition;
 		definition = newDefinition;
@@ -122,6 +124,7 @@ public class SearchParameter_ComponentClassImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExpression() {
 		return expression;
 	}
@@ -131,6 +134,7 @@ public class SearchParameter_ComponentClassImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(String newExpression) {
 		String oldExpression = expression;
 		expression = newExpression;

@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.ContactDetail#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.ContactDetail#getTelecoms <em>Telecom</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.types.ContactDetail#getId <em>Id</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getContactDetail()
  * @model
@@ -36,7 +36,7 @@ public interface ContactDetail extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getContactDetail_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getName();
@@ -78,7 +78,7 @@ public interface ContactDetail extends EObject {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.eclipse.mdht.uml.fhir.types.FHIRTypesPackage#getContactDetail_Id()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getId();

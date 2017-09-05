@@ -23,7 +23,6 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getBase_Property <em>Base Property</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getStrength <em>Strength</em>}</li>
@@ -31,6 +30,7 @@ import org.eclipse.uml2.uml.Property;
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getValueSetUri <em>Value Set Uri</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.ValueSetBinding#getValueSetReference <em>Value Set Reference</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetBinding()
  * @model
@@ -104,7 +104,7 @@ public interface ValueSetBinding extends EObject {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetBinding_Description()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDescription();
@@ -130,7 +130,7 @@ public interface ValueSetBinding extends EObject {
 	 * @return the value of the '<em>Value Set Uri</em>' attribute.
 	 * @see #setValueSetUri(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getValueSetBinding_ValueSetUri()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getValueSetUri();

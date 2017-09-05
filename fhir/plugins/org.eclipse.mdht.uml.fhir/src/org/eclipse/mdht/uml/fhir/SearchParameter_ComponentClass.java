@@ -13,11 +13,11 @@ import org.eclipse.mdht.uml.fhir.types.Reference;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.mdht.uml.fhir.SearchParameter_ComponentClass#getDefinition <em>Definition</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.fhir.SearchParameter_ComponentClass#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_ComponentClass()
  * @model
@@ -61,7 +61,7 @@ public interface SearchParameter_ComponentClass extends EObject {
 	 * @return the value of the '<em>Expression</em>' attribute.
 	 * @see #setExpression(String)
 	 * @see org.eclipse.mdht.uml.fhir.FHIRPackage#getSearchParameter_ComponentClass_Expression()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getExpression();
