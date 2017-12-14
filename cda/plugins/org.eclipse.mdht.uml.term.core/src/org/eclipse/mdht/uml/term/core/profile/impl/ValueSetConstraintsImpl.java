@@ -1,6 +1,7 @@
 package org.eclipse.mdht.uml.term.core.profile.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -30,11 +31,12 @@ import org.eclipse.uml2.uml.Property;
  * @generated
  */
 public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetConstraints {
+
 	/**
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -45,7 +47,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -55,7 +57,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ValueSetConstraintsImpl() {
@@ -65,7 +67,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +78,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
@@ -98,7 +100,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -108,7 +110,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
@@ -125,7 +127,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ContextToValueSet> getConstraints() {
@@ -139,7 +141,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +156,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +176,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -195,7 +197,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +216,7 @@ public class ValueSetConstraintsImpl extends EObjectImpl implements ValueSetCons
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
