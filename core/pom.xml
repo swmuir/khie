@@ -32,9 +32,6 @@
 		<module>plugins/org.eclipse.mdht.transformation.ocl2xpath</module>
 		<module>plugins/org.eclipse.mdht.transformation.ocl2csharp</module>
 		<module>plugins/org.eclipse.mdht.validation.ocl2java</module>
-		<module>plugins/org.eclipse.mdht.metamodel.traceability</module>
-		<module>plugins/org.eclipse.mdht.metamodel.traceability.edit</module>
-		<module>plugins/org.eclipse.mdht.metamodel.traceability.editor</module>
 
 
 		<!-- Features -->

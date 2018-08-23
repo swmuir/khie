@@ -4,8 +4,10 @@ package org.eclipse.mdht.uml.term.core.profile;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -15,11 +17,11 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraints#getBase_Property <em>Base Property</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraints#getConstraints <em>Constraints</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraints#getBase_Property <em>Base Property</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraints#getConstraints <em>Constraints</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraints()
  * @model
@@ -34,26 +36,23 @@ public interface ValueSetConstraints extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Property</em>' reference.
-	 * @see #setBase_Property(Property)
+	 * @see #setBase_Property(NamedElement)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraints_Base_Property()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Property getBase_Property();
+	NamedElement getBase_Property();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraints#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Property</em>' reference.
+	 * @param value the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */
-	void setBase_Property(Property value);
+	void setBase_Property(NamedElement value);
 
 	/**
 	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
@@ -64,7 +63,6 @@ public interface ValueSetConstraints extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Constraints</em>' containment reference list.
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraints_Constraints()
 	 * @model containment="true" ordered="false"

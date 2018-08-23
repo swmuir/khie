@@ -15,7 +15,7 @@ package org.eclipse.mdht.uml.term.ui.filters;
 import org.eclipse.mdht.uml.term.core.util.ITermProfileConstants;
 import org.eclipse.mdht.uml.term.core.util.TermProfileUtil;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
@@ -27,7 +27,7 @@ public class ValueSetConstraintsFilter extends TermFilter {
 	public boolean select(Object object) {
 		Element element = getElement(object);
 
-		if (element instanceof Property) {
+		if (element instanceof NamedElement) {
 			Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
 				element, ITermProfileConstants.VALUE_SET_CONSTRAINTS);
 			return stereotype != null;

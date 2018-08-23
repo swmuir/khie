@@ -22,18 +22,18 @@ import org.eclipse.uml2.uml.Property;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getReference <em>Reference</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getName <em>Name</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getVersion <em>Version</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getBinding <em>Binding</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getBase_Property <em>Base Property</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getExtensibility <em>Extensibility</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getGuidance <em>Guidance</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getUri <em>Uri</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getBinding <em>Binding</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getBase_Property <em>Base Property</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getExtensibility <em>Extensibility</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getGuidance <em>Guidance</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getUri <em>Uri</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint()
  * @model
@@ -47,7 +47,6 @@ public interface ValueSetConstraint extends EObject {
 	 * If the meaning of the '<em>Base Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Property</em>' reference.
 	 * @see #setBase_Property(Property)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint_Base_Property()
@@ -64,7 +63,6 @@ public interface ValueSetConstraint extends EObject {
 	 * If the meaning of the '<em>Binding</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Binding</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.BindingKind
 	 * @see #setBinding(BindingKind)
@@ -81,11 +79,10 @@ public interface ValueSetConstraint extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint_Identifier()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();
@@ -97,11 +94,10 @@ public interface ValueSetConstraint extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint_Name()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getName();
@@ -113,7 +109,6 @@ public interface ValueSetConstraint extends EObject {
 	 * If the meaning of the '<em>Reference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Reference</em>' reference.
 	 * @see #setReference(ValueSetVersion)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint_Reference()
@@ -129,11 +124,10 @@ public interface ValueSetConstraint extends EObject {
 	 * If the meaning of the '<em>Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint_Version()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getVersion();
@@ -142,9 +136,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getBase_Property <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Property</em>' reference.
+	 * @param value the new value of the '<em>Base Property</em>' reference.
 	 * @see #getBase_Property()
 	 * @generated
 	 */
@@ -159,7 +151,6 @@ public interface ValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Extensibility</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.Extensibility
 	 * @see #setExtensibility(Extensibility)
@@ -173,9 +164,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getExtensibility <em>Extensibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Extensibility</em>' attribute.
+	 * @param value the new value of the '<em>Extensibility</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.Extensibility
 	 * @see #getExtensibility()
 	 * @generated
@@ -191,7 +180,6 @@ public interface ValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Guidance</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.Guidance
 	 * @see #setGuidance(Guidance)
@@ -205,9 +193,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getGuidance <em>Guidance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Guidance</em>' attribute.
+	 * @param value the new value of the '<em>Guidance</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.Guidance
 	 * @see #getGuidance()
 	 * @generated
@@ -222,11 +208,10 @@ public interface ValueSetConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Uri</em>' attribute.
 	 * @see #setUri(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getValueSetConstraint_Uri()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getUri();
@@ -235,9 +220,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getUri <em>Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Uri</em>' attribute.
+	 * @param value the new value of the '<em>Uri</em>' attribute.
 	 * @see #getUri()
 	 * @generated
 	 */
@@ -247,9 +230,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getBinding <em>Binding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Binding</em>' attribute.
+	 * @param value the new value of the '<em>Binding</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.BindingKind
 	 * @see #getBinding()
 	 * @generated
@@ -260,9 +241,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -272,9 +251,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -284,9 +261,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getReference <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Reference</em>' reference.
+	 * @param value the new value of the '<em>Reference</em>' reference.
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -296,9 +271,7 @@ public interface ValueSetConstraint extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ValueSetConstraint#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Version</em>' attribute.
+	 * @param value the new value of the '<em>Version</em>' attribute.
 	 * @see #getVersion()
 	 * @generated
 	 */

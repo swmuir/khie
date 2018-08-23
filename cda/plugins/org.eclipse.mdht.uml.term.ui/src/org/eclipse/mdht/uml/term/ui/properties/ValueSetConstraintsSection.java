@@ -75,7 +75,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
@@ -126,7 +125,7 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 	}
 
-	private Property property;
+	private NamedElement property;
 
 	private static String[] CONTEXTS = new String[] { "aaaa", "bbb" };
 
@@ -328,7 +327,7 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		Assert.isTrue(element instanceof NamedElement);
-		this.property = (Property) element;
+		this.property = (NamedElement) element;
 	}
 
 	@Override
@@ -467,11 +466,11 @@ public class ValueSetConstraintsSection extends ResettableModelerPropertySection
 
 					if (update.ctov == null) {
 						ContextToValueSet contextToValueSet = TermFactory.eINSTANCE.createContextToValueSet();
-						contextToValueSet.setContext(update.ctov.getContext());
+						update.ctov = contextToValueSet;
 						contextToValueSet.setValueSetName(update.ctov.getValueSetName());
 						contextToValueSet.setValueSetURI(update.ctov.getValueSetURI());
 						contextToValueSet.setValueSetOID(update.ctov.getValueSetOID());
-						update.ctov = contextToValueSet;
+						contextToValueSet.setContext(update.ctov.getContext());
 						valueSetConstraints.getConstraints().add(contextToValueSet);
 					} else {
 						int index = valueSetConstraints.getConstraints().indexOf(update.ctov);

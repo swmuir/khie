@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Enumeration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextImpl#getBase_Enumeration <em>Base Enumeration</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -33,7 +33,6 @@ public class ContextImpl extends EObjectImpl implements Context {
 	 * The cached value of the '{@link #getBase_Enumeration() <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 * @ordered
@@ -43,7 +42,6 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ContextImpl() {
@@ -53,7 +51,6 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,20 +61,15 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Enumeration getBase_Enumeration() {
 		if (base_Enumeration != null && base_Enumeration.eIsProxy()) {
-			InternalEObject oldBase_Enumeration = (InternalEObject) base_Enumeration;
-			base_Enumeration = (Enumeration) eResolveProxy(oldBase_Enumeration);
+			InternalEObject oldBase_Enumeration = (InternalEObject)base_Enumeration;
+			base_Enumeration = (Enumeration)eResolveProxy(oldBase_Enumeration);
 			if (base_Enumeration != oldBase_Enumeration) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, TermPackage.CONTEXT__BASE_ENUMERATION, oldBase_Enumeration,
-							base_Enumeration));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TermPackage.CONTEXT__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
 			}
 		}
 		return base_Enumeration;
@@ -86,7 +78,6 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Enumeration basicGetBase_Enumeration() {
@@ -96,33 +87,25 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setBase_Enumeration(Enumeration newBase_Enumeration) {
 		Enumeration oldBase_Enumeration = base_Enumeration;
 		base_Enumeration = newBase_Enumeration;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, TermPackage.CONTEXT__BASE_ENUMERATION, oldBase_Enumeration,
-					base_Enumeration));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONTEXT__BASE_ENUMERATION, oldBase_Enumeration, base_Enumeration));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TermPackage.CONTEXT__BASE_ENUMERATION:
-				if (resolve) {
-					return getBase_Enumeration();
-				}
+				if (resolve) return getBase_Enumeration();
 				return basicGetBase_Enumeration();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -131,14 +114,13 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.CONTEXT__BASE_ENUMERATION:
-				setBase_Enumeration((Enumeration) newValue);
+				setBase_Enumeration((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -147,14 +129,13 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TermPackage.CONTEXT__BASE_ENUMERATION:
-				setBase_Enumeration((Enumeration) null);
+				setBase_Enumeration((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -163,7 +144,6 @@ public class ContextImpl extends EObjectImpl implements Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

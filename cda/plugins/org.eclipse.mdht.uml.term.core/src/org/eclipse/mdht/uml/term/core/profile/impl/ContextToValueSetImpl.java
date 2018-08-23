@@ -16,13 +16,13 @@ import org.eclipse.mdht.uml.term.core.profile.TermPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getContext <em>Context</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValueSetName <em>Value Set Name</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValueSetURI <em>Value Set URI</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValueSetOID <em>Value Set OID</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValueSetName <em>Value Set Name</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValueSetURI <em>Value Set URI</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.impl.ContextToValueSetImpl#getValueSetOID <em>Value Set OID</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -31,7 +31,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -42,7 +41,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -53,7 +51,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The default value of the '{@link #getValueSetName() <em>Value Set Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValueSetName()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The cached value of the '{@link #getValueSetName() <em>Value Set Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValueSetName()
 	 * @generated
 	 * @ordered
@@ -75,7 +71,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The default value of the '{@link #getValueSetURI() <em>Value Set URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValueSetURI()
 	 * @generated
 	 * @ordered
@@ -86,7 +81,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The cached value of the '{@link #getValueSetURI() <em>Value Set URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValueSetURI()
 	 * @generated
 	 * @ordered
@@ -97,7 +91,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The default value of the '{@link #getValueSetOID() <em>Value Set OID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValueSetOID()
 	 * @generated
 	 * @ordered
@@ -108,7 +101,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	 * The cached value of the '{@link #getValueSetOID() <em>Value Set OID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getValueSetOID()
 	 * @generated
 	 * @ordered
@@ -118,7 +110,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ContextToValueSetImpl() {
@@ -128,7 +119,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +129,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getContext() {
@@ -149,23 +138,18 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setContext(String newContext) {
 		String oldContext = context;
 		context = newContext;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__CONTEXT, oldContext, context));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__CONTEXT, oldContext, context));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getValueSetName() {
@@ -175,24 +159,18 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setValueSetName(String newValueSetName) {
 		String oldValueSetName = valueSetName;
 		valueSetName = newValueSetName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_NAME, oldValueSetName,
-					valueSetName));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_NAME, oldValueSetName, valueSetName));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getValueSetURI() {
@@ -202,24 +180,18 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setValueSetURI(String newValueSetURI) {
 		String oldValueSetURI = valueSetURI;
 		valueSetURI = newValueSetURI;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_URI, oldValueSetURI,
-					valueSetURI));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_URI, oldValueSetURI, valueSetURI));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String getValueSetOID() {
@@ -229,24 +201,18 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public void setValueSetOID(String newValueSetOID) {
 		String oldValueSetOID = valueSetOID;
 		valueSetOID = newValueSetOID;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_OID, oldValueSetOID,
-					valueSetOID));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_OID, oldValueSetOID, valueSetOID));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -267,23 +233,22 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TermPackage.CONTEXT_TO_VALUE_SET__CONTEXT:
-				setContext((String) newValue);
+				setContext((String)newValue);
 				return;
 			case TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_NAME:
-				setValueSetName((String) newValue);
+				setValueSetName((String)newValue);
 				return;
 			case TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_URI:
-				setValueSetURI((String) newValue);
+				setValueSetURI((String)newValue);
 				return;
 			case TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_OID:
-				setValueSetOID((String) newValue);
+				setValueSetOID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -292,7 +257,6 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -317,28 +281,19 @@ public class ContextToValueSetImpl extends EObjectImpl implements ContextToValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TermPackage.CONTEXT_TO_VALUE_SET__CONTEXT:
-				return CONTEXT_EDEFAULT == null
-						? context != null
-						: !CONTEXT_EDEFAULT.equals(context);
+				return CONTEXT_EDEFAULT == null ? context != null : !CONTEXT_EDEFAULT.equals(context);
 			case TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_NAME:
-				return VALUE_SET_NAME_EDEFAULT == null
-						? valueSetName != null
-						: !VALUE_SET_NAME_EDEFAULT.equals(valueSetName);
+				return VALUE_SET_NAME_EDEFAULT == null ? valueSetName != null : !VALUE_SET_NAME_EDEFAULT.equals(valueSetName);
 			case TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_URI:
-				return VALUE_SET_URI_EDEFAULT == null
-						? valueSetURI != null
-						: !VALUE_SET_URI_EDEFAULT.equals(valueSetURI);
+				return VALUE_SET_URI_EDEFAULT == null ? valueSetURI != null : !VALUE_SET_URI_EDEFAULT.equals(valueSetURI);
 			case TermPackage.CONTEXT_TO_VALUE_SET__VALUE_SET_OID:
-				return VALUE_SET_OID_EDEFAULT == null
-						? valueSetOID != null
-						: !VALUE_SET_OID_EDEFAULT.equals(valueSetOID);
+				return VALUE_SET_OID_EDEFAULT == null ? valueSetOID != null : !VALUE_SET_OID_EDEFAULT.equals(valueSetOID);
 		}
 		return super.eIsSet(featureID);
 	}

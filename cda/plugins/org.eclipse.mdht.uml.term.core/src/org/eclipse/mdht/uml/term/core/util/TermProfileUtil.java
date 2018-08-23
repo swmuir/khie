@@ -222,7 +222,7 @@ public class TermProfileUtil {
 	/**
 	 * @param property
 	 */
-	public static ValueSetConstraints getValueSetConstraints(Property property) {
+	public static ValueSetConstraints getValueSetConstraints(NamedElement property) {
 		ValueSetConstraints valueSetConstraints = null;
 		Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
 			property, ITermProfileConstants.VALUE_SET_CONSTRAINTS);

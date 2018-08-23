@@ -13,10 +13,10 @@ import org.eclipse.uml2.uml.Enumeration;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.Context#getBase_Enumeration <em>Base Enumeration</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.Context#getBase_Enumeration <em>Base Enumeration</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContext()
  * @model
@@ -31,7 +31,6 @@ public interface Context extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
 	 * @return the value of the '<em>Base Enumeration</em>' reference.
 	 * @see #setBase_Enumeration(Enumeration)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContext_Base_Enumeration()
@@ -44,9 +43,7 @@ public interface Context extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.Context#getBase_Enumeration <em>Base Enumeration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Base Enumeration</em>' reference.
+	 * @param value the new value of the '<em>Base Enumeration</em>' reference.
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 */

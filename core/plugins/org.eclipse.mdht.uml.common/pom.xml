@@ -11,12 +11,12 @@
 	<artifactId>org.eclipse.mdht.uml.common</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-	<dependencies>
+	<!--  <dependencies>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>17.0</version>
 		</dependency>
-	</dependencies>
+	</dependencies> -->
   
 </project>

@@ -22,13 +22,13 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getContext <em>Context</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetName <em>Value Set Name</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetURI <em>Value Set URI</em>}</li>
- * <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetOID <em>Value Set OID</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getContext <em>Context</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetName <em>Value Set Name</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetURI <em>Value Set URI</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetOID <em>Value Set OID</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet()
  * @model
@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 public interface ContextToValueSet extends EObject {
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Notifier#eAdapters()
 	 */
 	@Override
@@ -45,7 +45,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Notifier#eDeliver()
 	 */
 	@Override
@@ -53,7 +53,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Notifier#eSetDeliver(boolean)
 	 */
 	@Override
@@ -61,7 +61,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Notifier#eNotify(org.eclipse.emf.common.notify.Notification)
 	 */
 	@Override
@@ -69,7 +69,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -77,7 +77,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eClass()
 	 */
 	@Override
@@ -85,7 +85,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eResource()
 	 */
 	@Override
@@ -93,7 +93,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eContainer()
 	 */
 	@Override
@@ -101,7 +101,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eContainingFeature()
 	 */
 	@Override
@@ -109,7 +109,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eContainmentFeature()
 	 */
 	@Override
@@ -117,7 +117,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eContents()
 	 */
 	@Override
@@ -125,7 +125,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eAllContents()
 	 */
 	@Override
@@ -133,7 +133,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eIsProxy()
 	 */
 	@Override
@@ -141,7 +141,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eCrossReferences()
 	 */
 	@Override
@@ -149,7 +149,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eGet(org.eclipse.emf.ecore.EStructuralFeature)
 	 */
 	@Override
@@ -157,7 +157,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eGet(org.eclipse.emf.ecore.EStructuralFeature, boolean)
 	 */
 	@Override
@@ -165,7 +165,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eSet(org.eclipse.emf.ecore.EStructuralFeature, java.lang.Object)
 	 */
 	@Override
@@ -173,7 +173,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eIsSet(org.eclipse.emf.ecore.EStructuralFeature)
 	 */
 	@Override
@@ -181,7 +181,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eUnset(org.eclipse.emf.ecore.EStructuralFeature)
 	 */
 	@Override
@@ -189,7 +189,7 @@ public interface ContextToValueSet extends EObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EObject#eInvoke(org.eclipse.emf.ecore.EOperation, org.eclipse.emf.common.util.EList)
 	 */
 	@Override
@@ -203,11 +203,10 @@ public interface ContextToValueSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Context</em>' attribute.
 	 * @see #setContext(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet_Context()
-	 * @model required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getContext();
@@ -216,9 +215,7 @@ public interface ContextToValueSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getContext <em>Context</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Context</em>' attribute.
+	 * @param value the new value of the '<em>Context</em>' attribute.
 	 * @see #getContext()
 	 * @generated
 	 */
@@ -232,11 +229,10 @@ public interface ContextToValueSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Value Set Name</em>' attribute.
 	 * @see #setValueSetName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet_ValueSetName()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getValueSetName();
@@ -245,9 +241,7 @@ public interface ContextToValueSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetName <em>Value Set Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Set Name</em>' attribute.
+	 * @param value the new value of the '<em>Value Set Name</em>' attribute.
 	 * @see #getValueSetName()
 	 * @generated
 	 */
@@ -261,11 +255,10 @@ public interface ContextToValueSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Value Set URI</em>' attribute.
 	 * @see #setValueSetURI(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet_ValueSetURI()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getValueSetURI();
@@ -274,9 +267,7 @@ public interface ContextToValueSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetURI <em>Value Set URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Set URI</em>' attribute.
+	 * @param value the new value of the '<em>Value Set URI</em>' attribute.
 	 * @see #getValueSetURI()
 	 * @generated
 	 */
@@ -290,11 +281,10 @@ public interface ContextToValueSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Value Set OID</em>' attribute.
 	 * @see #setValueSetOID(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getContextToValueSet_ValueSetOID()
-	 * @model ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
 	 */
 	String getValueSetOID();
@@ -303,9 +293,7 @@ public interface ContextToValueSet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.ContextToValueSet#getValueSetOID <em>Value Set OID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Set OID</em>' attribute.
+	 * @param value the new value of the '<em>Value Set OID</em>' attribute.
 	 * @see #getValueSetOID()
 	 * @generated
 	 */

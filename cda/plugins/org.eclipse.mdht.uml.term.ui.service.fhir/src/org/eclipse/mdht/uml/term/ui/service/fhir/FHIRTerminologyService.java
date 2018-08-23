@@ -62,13 +62,18 @@ public class FHIRTerminologyService implements TerminologyService {
 	}
 
 	public FHIRTerminologyService() {
-
+		System.out.println("ffffffx");
+		;
 	}
 
 	@Override
 	public ArrayList<String> getValueSets() {
-		if (result.isEmpty()) {
-			init();
+		try {
+			if (result.isEmpty()) {
+				init();
+			}
+		} catch (RuntimeException re) {
+
 		}
 		return result;
 	}
