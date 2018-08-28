@@ -18,6 +18,31 @@
 
     
 
+   <extension
+         id="TermProfiles"
+         name="Terminology Profiles"
+         point="org.eclipse.gmf.runtime.emf.core.Pathmaps">
+      <pathmap
+            name="MDHT_TERM_PROFILES"
+            path="profiles"
+            plugin="org.eclipse.mdht.uml.term.core"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://MDHT_TERM_PROFILES/"
+            target="profiles/">
+      </mapping>
+   </extension>
+  
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Terminology.profile -->
+      <package
+            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
+            class="org.eclipse.mdht.uml.term.core.profile.TermPackage"
+            genModel="model/Terminology.profile.genmodel"/>
+   </extension>
+
 	<extension point="org.eclipse.uml2.uml.generated_package">
       <profile
             uri="http://www.openhealthtools.org/mdht/schemas/term/1"
@@ -26,13 +51,5 @@
    </extension>
      
   
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated Terminology.profile -->
-      <package
-            uri="http://www.openhealthtools.org/mdht/schemas/term/1"
-            class="org.eclipse.mdht.uml.term.core.profile.TermPackage"
-            genModel="model/Terminology.profile.genmodel"/>
-   </extension>
 
 </plugin>
