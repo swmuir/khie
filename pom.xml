@@ -35,7 +35,7 @@
 	<modules>
 		<module>core</module>
  	 	<module>cda</module>
-	<!-- 	<module>dita</module> -->
+	 	<module>dita</module> 
 		<module>releng/p2-site</module>
 	</modules>
 
