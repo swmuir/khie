@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getStatus <em>Status</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getBase_Class <em>Base Class</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getStatus <em>Status</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getStatusDate <em>Status Date</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getBase_Class <em>Base Class</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getUsageContext()
  * @model
@@ -41,6 +41,7 @@ public interface UsageContext extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getUsageContext_Base_Class()
@@ -56,10 +57,11 @@ public interface UsageContext extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getUsageContext_Identifier()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();
@@ -72,6 +74,7 @@ public interface UsageContext extends EObject {
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.StatusKind
 	 * @see #setStatus(StatusKind)
@@ -88,10 +91,11 @@ public interface UsageContext extends EObject {
 	 * If the meaning of the '<em>Status Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getUsageContext_StatusDate()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getStatusDate();
@@ -100,7 +104,9 @@ public interface UsageContext extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -110,7 +116,9 @@ public interface UsageContext extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -120,7 +128,9 @@ public interface UsageContext extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Status</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.StatusKind
 	 * @see #getStatus()
 	 * @generated
@@ -131,7 +141,9 @@ public interface UsageContext extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.UsageContext#getStatusDate <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Date</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Status Date</em>' attribute.
 	 * @see #getStatusDate()
 	 * @generated
 	 */

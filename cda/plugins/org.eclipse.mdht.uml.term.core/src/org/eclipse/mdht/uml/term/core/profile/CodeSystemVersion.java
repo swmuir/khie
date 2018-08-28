@@ -22,19 +22,19 @@ import org.eclipse.uml2.uml.Enumeration;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getVersion <em>Version</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getFullName <em>Full Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getSource <em>Source</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getUrl <em>Url</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getEffectiveDate <em>Effective Date</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getReleaseDate <em>Release Date</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getStatus <em>Status</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration <em>Base Enumeration</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getVersion <em>Version</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getFullName <em>Full Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getUrl <em>Url</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getEffectiveDate <em>Effective Date</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getReleaseDate <em>Release Date</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getStatus <em>Status</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getStatusDate <em>Status Date</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration <em>Base Enumeration</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion()
  * @model
@@ -48,6 +48,7 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Base Enumeration</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Base Enumeration</em>' reference.
 	 * @see #setBase_Enumeration(Enumeration)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_Base_Enumeration()
@@ -63,10 +64,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Effective Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Effective Date</em>' attribute.
 	 * @see #setEffectiveDate(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_EffectiveDate()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getEffectiveDate();
@@ -74,7 +76,8 @@ public interface CodeSystemVersion extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * 
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getEnumerationName();
@@ -82,7 +85,8 @@ public interface CodeSystemVersion extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * 
+	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
 	String getEnumerationQualifiedName();
@@ -94,10 +98,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Full Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Full Name</em>' attribute.
 	 * @see #setFullName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_FullName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getFullName();
@@ -109,10 +114,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_Identifier()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();
@@ -124,10 +130,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Release Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Release Date</em>' attribute.
 	 * @see #setReleaseDate(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_ReleaseDate()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getReleaseDate();
@@ -139,10 +146,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Source</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Source</em>' attribute.
 	 * @see #setSource(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_Source()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getSource();
@@ -155,6 +163,7 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.StatusKind
 	 * @see #setStatus(StatusKind)
@@ -171,10 +180,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Status Date</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Status Date</em>' attribute.
 	 * @see #setStatusDate(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_StatusDate()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getStatusDate();
@@ -186,10 +196,11 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Url</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_Url()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getUrl();
@@ -201,19 +212,23 @@ public interface CodeSystemVersion extends EObject {
 	 * If the meaning of the '<em>Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCodeSystemVersion_Version()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getVersion();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration <em>Base Enumeration</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getBase_Enumeration <em>Base Enumeration</em>}'
+	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Enumeration</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Enumeration</em>' reference.
 	 * @see #getBase_Enumeration()
 	 * @generated
 	 */
@@ -223,7 +238,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getEffectiveDate <em>Effective Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Effective Date</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Effective Date</em>' attribute.
 	 * @see #getEffectiveDate()
 	 * @generated
 	 */
@@ -232,7 +249,8 @@ public interface CodeSystemVersion extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false"
+	 * 
+	 * @model nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */
 	void setEnumerationName(String name);
@@ -241,7 +259,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getFullName <em>Full Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Full Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Full Name</em>' attribute.
 	 * @see #getFullName()
 	 * @generated
 	 */
@@ -251,7 +271,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -261,7 +283,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getReleaseDate <em>Release Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Release Date</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Release Date</em>' attribute.
 	 * @see #getReleaseDate()
 	 * @generated
 	 */
@@ -271,7 +295,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getSource <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Source</em>' attribute.
 	 * @see #getSource()
 	 * @generated
 	 */
@@ -281,7 +307,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Status</em>' attribute.
 	 * @see org.eclipse.mdht.uml.term.core.profile.StatusKind
 	 * @see #getStatus()
 	 * @generated
@@ -292,7 +320,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getStatusDate <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Date</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Status Date</em>' attribute.
 	 * @see #getStatusDate()
 	 * @generated
 	 */
@@ -302,7 +332,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getUrl <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Url</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Url</em>' attribute.
 	 * @see #getUrl()
 	 * @generated
 	 */
@@ -312,7 +344,9 @@ public interface CodeSystemVersion extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CodeSystemVersion#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Version</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Version</em>' attribute.
 	 * @see #getVersion()
 	 * @generated
 	 */

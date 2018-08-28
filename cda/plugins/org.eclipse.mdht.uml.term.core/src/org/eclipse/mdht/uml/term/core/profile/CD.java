@@ -22,16 +22,16 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getQualifier <em>Qualifier</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getTranslation <em>Translation</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCode <em>Code</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystem <em>Code System</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystemName <em>Code System Name</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystemVersion <em>Code System Version</em>}</li>
- *   <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getDisplayName <em>Display Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getQualifier <em>Qualifier</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getTranslation <em>Translation</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCode <em>Code</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystem <em>Code System</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystemName <em>Code System Name</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystemVersion <em>Code System Version</em>}</li>
+ * <li>{@link org.eclipse.mdht.uml.term.core.profile.CD#getDisplayName <em>Display Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD()
  * @model
@@ -45,10 +45,11 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Code</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_Code()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCode();
@@ -60,10 +61,11 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Code System</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Code System</em>' attribute.
 	 * @see #setCodeSystem(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystem()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCodeSystem();
@@ -75,10 +77,11 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Code System Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Code System Name</em>' attribute.
 	 * @see #setCodeSystemName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystemName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCodeSystemName();
@@ -90,10 +93,11 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Code System Version</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Code System Version</em>' attribute.
 	 * @see #setCodeSystemVersion(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_CodeSystemVersion()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getCodeSystemVersion();
@@ -105,10 +109,11 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Display Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Display Name</em>' attribute.
 	 * @see #setDisplayName(String)
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_DisplayName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDisplayName();
@@ -121,6 +126,7 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Qualifier</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Qualifier</em>' containment reference list.
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_Qualifier()
 	 * @model containment="true" ordered="false"
@@ -136,6 +142,7 @@ public interface CD extends EObject {
 	 * If the meaning of the '<em>Translation</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Translation</em>' containment reference list.
 	 * @see org.eclipse.mdht.uml.term.core.profile.TermPackage#getCD_Translation()
 	 * @model containment="true" ordered="false"
@@ -147,7 +154,9 @@ public interface CD extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CD#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Code</em>' attribute.
 	 * @see #getCode()
 	 * @generated
 	 */
@@ -157,7 +166,9 @@ public interface CD extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystem <em>Code System</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code System</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Code System</em>' attribute.
 	 * @see #getCodeSystem()
 	 * @generated
 	 */
@@ -167,7 +178,9 @@ public interface CD extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystemName <em>Code System Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code System Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Code System Name</em>' attribute.
 	 * @see #getCodeSystemName()
 	 * @generated
 	 */
@@ -177,7 +190,9 @@ public interface CD extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CD#getCodeSystemVersion <em>Code System Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code System Version</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Code System Version</em>' attribute.
 	 * @see #getCodeSystemVersion()
 	 * @generated
 	 */
@@ -187,7 +202,9 @@ public interface CD extends EObject {
 	 * Sets the value of the '{@link org.eclipse.mdht.uml.term.core.profile.CD#getDisplayName <em>Display Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Display Name</em>' attribute.
 	 * @see #getDisplayName()
 	 * @generated
 	 */
