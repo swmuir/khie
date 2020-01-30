@@ -45,11 +45,11 @@ public class SheetHeaderUtil {
 	static int createDemographicsHeader(Row row1, Row row2, int offset) {
 		row2.createCell(offset++).setCellValue("Name");
 		row2.createCell(offset++).setCellValue("Address");
-		offset = addCodeHeader2(row2, offset, "Race");
-		offset = addCodeHeader2(row2, offset, "Ethnicity");
-		offset = addCodeHeader2(row2, offset, "Gender");
-		offset = addCodeHeader2(row2, offset, "Marital Status");
-		offset = addCodeHeader2(row2, offset, "Langauge");
+		offset = addCodeHeader(row2, offset, "Race");
+		offset = addCodeHeader(row2, offset, "Ethnicity");
+		offset = addCodeHeader(row2, offset, "Gender");
+		offset = addCodeHeader(row2, offset, "Marital Status");
+		offset = addCodeHeader(row2, offset, "Langauge");
 		row2.createCell(offset++).setCellValue("Telephone");
 		return offset;
 	}
@@ -162,7 +162,11 @@ public class SheetHeaderUtil {
 		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
 		offset = addCodeHeader(row2, offset, "Procedure");
 		row2.createCell(offset++).setCellValue("Performer");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
 		row2.createCell(offset++).setCellValue("Organization");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
 		row2.createCell(offset++).setCellValue("Section Title");
 		row2.createCell(offset++).setCellValue("File Name");
 		return offset;
@@ -217,6 +221,8 @@ public class SheetHeaderUtil {
 		row2.createCell(offset++).setCellValue("Location");
 		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
 		row2.createCell(offset++).setCellValue("Prescription");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
 		row2.createCell(offset++).setCellValue("Organization");
 		row2.createCell(offset++).setCellValue("Author");
 		offset = addSectionHeader(row2, offset);
@@ -375,6 +381,47 @@ public class SheetHeaderUtil {
 		offset = addSectionHeader(row2, offset);
 		return offset;
 
+	}
+
+	/**
+	 * @param row1
+	 * @param row2
+	 * @param offset
+	 * @return
+	 */
+	public static int createPlanOfCareActivityObservationHeader(Row row1, Row row2, int offset) {
+		row2.createCell(offset++).setCellValue("ID");
+		row2.createCell(offset++).setCellValue("Date");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
+		offset = addCodeHeader(row2, offset, "Observation");
+		row2.createCell(offset++).setCellValue("Value");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
+		row2.createCell(offset++).setCellValue("Range");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
+		offset = addSectionHeader(row2, offset);
+		return offset;
+	}
+
+	/**
+	 * @param row1
+	 * @param row2
+	 * @param offset
+	 * @return
+	 */
+	public static int createInstructionsHeader(Row row1, Row row2, int offset) {
+		row2.createCell(offset++).setCellValue("ID");
+		row2.createCell(offset++).setCellValue("Date");
+		row2.createCell(offset++).setCellValue("Location");
+		row2.getSheet().setColumnHidden(offset - 1, hideColumns);
+		offset = addCodeHeader(row2, offset, "Code");
+		row2.createCell(offset++).setCellValue("Performer");
+		row2.createCell(offset++).setCellValue("Organization");
+		row2.createCell(offset++).setCellValue("Section Title");
+		row2.createCell(offset++).setCellValue("File Name");
+		return offset;
 	}
 
 }

@@ -719,6 +719,8 @@ public class SpreadsheetSerializer {
 
 			if (setion != null || ed != null) {
 				row.createCell(offset++).setCellValue(CDAValueUtil.getValue(setion, theED));
+			} else {
+				row.createCell(offset++).setCellValue("");
 			}
 
 			// Display Name
@@ -737,6 +739,7 @@ public class SpreadsheetSerializer {
 			if (setion != null || ed != null) {
 				row.createCell(offset++).setCellValue("");
 			}
+			row.createCell(offset++).setCellValue("");
 			row.createCell(offset++).setCellValue("");
 			row.createCell(offset++).setCellValue("");
 			row.createCell(offset++).setCellValue("");
@@ -1309,14 +1312,18 @@ public class SpreadsheetSerializer {
 			row, offset, resultObservation.getSection(), resultObservation.getCode(), resultObservation.getText());
 
 		String value = "";
+		String valueLocation = "";
 		for (ANY any : resultObservation.getValues()) {
 			value = CDAValueUtil.getAnyValue(resultObservation.getSection(), any);
+			valueLocation = CDAUtil.getDomainPath(any);
 		}
 		if (value.length() < 1000) {
 			row.createCell(offset++).setCellValue(value);
 		} else {
 			row.createCell(offset++).setCellValue(value.substring(0, 1000));
 		}
+
+		row.createCell(offset++).setCellValue(valueLocation);
 
 		String referenceRangeValue = "";
 		ANY anyRangeValue = null;
@@ -1625,19 +1632,29 @@ public class SpreadsheetSerializer {
 			row, offset, procedureActivityAct.getSection(), procedureActivityAct.getCode(),
 			procedureActivityAct.getText());
 
+		offset = appendProcedurePerformaerAndOrganization(row, offset, procedureActivityAct.getPerformers());
+		return offset;
+	}
+
+	static int appendProcedurePerformaerAndOrganization(Row row, int offset, EList<Performer2> performers) {
 		String organizationValue = "";
+		String organizationValueLocation = "";
 		String personValue = "";
-		for (Performer2 performer : procedureActivityAct.getPerformers()) {
+		String personValueLocation = "";
+		for (Performer2 performer : performers) {
 
 			if (performer.getAssignedEntity() != null) {
 				for (Organization organization : performer.getAssignedEntity().getRepresentedOrganizations()) {
 					for (ON on : organization.getNames()) {
 						organizationValue = organizationValue + CDAValueUtil.getValues(on);
+						organizationValueLocation = CDAUtil.getDomainPath(on);
 					}
+
 				}
 				if (performer.getAssignedEntity().getAssignedPerson() != null) {
 					for (PN pn : performer.getAssignedEntity().getAssignedPerson().getNames()) {
 						personValue = CDAValueUtil.getValues(pn);
+						personValueLocation = CDAUtil.getDomainPath(pn);
 					}
 				}
 			}
@@ -1645,10 +1662,13 @@ public class SpreadsheetSerializer {
 		}
 
 		row.createCell(offset++).setCellValue(personValue);
+		row.createCell(offset++).setCellValue(personValueLocation);
 
 		row.createCell(offset++).setCellValue(organizationValue);
+		row.createCell(offset++).setCellValue(organizationValueLocation);
 
 		return offset;
+
 	}
 
 	/**
@@ -1681,28 +1701,7 @@ public class SpreadsheetSerializer {
 			row, offset, procedureActivityObservation.getSection(), procedureActivityObservation.getCode(),
 			procedureActivityObservation.getText());
 
-		String organizationValue = "";
-		String personValue = "";
-		for (Performer2 performer : procedureActivityObservation.getPerformers()) {
-
-			if (performer.getAssignedEntity() != null) {
-				for (Organization organization : performer.getAssignedEntity().getRepresentedOrganizations()) {
-					for (ON on : organization.getNames()) {
-						organizationValue = organizationValue + CDAValueUtil.getValues(on);
-					}
-				}
-				if (performer.getAssignedEntity().getAssignedPerson() != null) {
-					for (PN pn : performer.getAssignedEntity().getAssignedPerson().getNames()) {
-						personValue = CDAValueUtil.getValues(pn);
-					}
-				}
-			}
-
-		}
-
-		row.createCell(offset++).setCellValue(personValue);
-
-		row.createCell(offset++).setCellValue(organizationValue);
+		offset = appendProcedurePerformaerAndOrganization(row, offset, procedureActivityObservation.getPerformers());
 
 		return offset;
 	}
@@ -1736,28 +1735,7 @@ public class SpreadsheetSerializer {
 			row, offset, procedureActivityProcedure.getSection(), procedureActivityProcedure.getCode(),
 			procedureActivityProcedure.getText());
 
-		String organizationValue = "";
-		String personValue = "";
-		for (Performer2 performer : procedureActivityProcedure.getPerformers()) {
-
-			if (performer.getAssignedEntity() != null) {
-				for (Organization organization : performer.getAssignedEntity().getRepresentedOrganizations()) {
-					for (ON on : organization.getNames()) {
-						organizationValue = organizationValue + CDAValueUtil.getValues(on);
-					}
-				}
-				if (performer.getAssignedEntity().getAssignedPerson() != null) {
-					for (PN pn : performer.getAssignedEntity().getAssignedPerson().getNames()) {
-						personValue = CDAValueUtil.getValues(pn);
-					}
-				}
-			}
-
-		}
-
-		row.createCell(offset++).setCellValue(personValue);
-
-		row.createCell(offset++).setCellValue(organizationValue);
+		offset = appendProcedurePerformaerAndOrganization(row, offset, procedureActivityProcedure.getPerformers());
 
 		return offset;
 	}
@@ -2013,6 +1991,10 @@ public class SpreadsheetSerializer {
 		row.createCell(offset++).setCellValue(CDAUtil.getDomainPath(source));
 
 		row.createCell(offset++).setCellValue(GenerateCDADataHandler.sigSwitch.doSwitch(substanceAdministration));
+
+		row.createCell(offset++).setCellValue(
+			GenerateCDADataHandler.sigLocationSwitch.doSwitch(substanceAdministration));
+
 		offset = SpreadsheetSerializer.appendOrganizationAndAuthor(row, offset, substanceAdministration.getAuthors());
 
 		return offset;

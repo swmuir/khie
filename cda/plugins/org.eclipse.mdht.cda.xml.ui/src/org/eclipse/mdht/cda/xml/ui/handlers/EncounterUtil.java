@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     seanmuir - initial API and implementation
- *     
+ *
  *******************************************************************************/
 package org.eclipse.mdht.cda.xml.ui.handlers;
 
@@ -41,17 +41,17 @@ public class EncounterUtil {
 	 */
 	@SuppressWarnings("deprecation")
 	public static boolean isWithinEncounterDateRate(Encounter encounter, Date date) {
-	
+
 		if (encounter.getEffectiveTime() != null) {
 			if (!StringUtils.isEmpty(encounter.getEffectiveTime().getValue())) {
-	
+
 				Date edate = CDAValueUtil.getDate(encounter.getEffectiveTime().getValue());
 				if (edate != null) {
-	
+
 					if (edate.compareTo(date) == 0) {
 						return true;
 					}
-	
+
 					if (edate.getYear() == date.getYear()) {
 						if (edate.getMonth() == date.getMonth()) {
 							if (edate.getDay() == date.getDay()) {
@@ -61,7 +61,7 @@ public class EncounterUtil {
 					}
 				}
 			}
-	
+
 			if (encounter.getEffectiveTime().getLow() != null &&
 					!StringUtils.isEmpty(encounter.getEffectiveTime().getLow().getValue())) {
 				Date edate = CDAValueUtil.getDate(encounter.getEffectiveTime().getLow().getValue());
@@ -71,13 +71,13 @@ public class EncounterUtil {
 							if (edate.getDay() == date.getDay()) {
 								return true;
 							}
-	
+
 						}
 					}
 				}
-	
+
 			}
-	
+
 			if (encounter.getEffectiveTime().getHigh() != null &&
 					!StringUtils.isEmpty(encounter.getEffectiveTime().getLow().getValue())) {
 				Date edate = CDAValueUtil.getDate(encounter.getEffectiveTime().getHigh().getValue());
@@ -88,19 +88,22 @@ public class EncounterUtil {
 								if (edate.getDay() == date.getDay()) {
 									return true;
 								}
-	
+
 							}
 						}
 					}
 				}
 			}
 		}
-	
+
 		return false;
 	}
 
 	public static MatchEncounterBy matchesEncounter(Encounter encounter, Act act) {
-	
+
+		if (act == null) {
+			return MatchEncounterBy.NOMATCH;
+		}
 		for (II ii : act.getIds()) {
 			for (II iii : encounter.getIds()) {
 				if (CDAValueUtil.getKey(ii).equals(CDAValueUtil.getKey(iii))) {
@@ -108,23 +111,23 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		Date observationTime = null;
-	
+
 		MatchEncounterBy result = MatchEncounterBy.BYEFFECTIVETIME;
-	
+
 		if (act.getEffectiveTime() != null) {
 			IVL_TS ivlts = act.getEffectiveTime();
 			if (observationTime == null && ivlts.getLow() != null && !StringUtils.isEmpty(ivlts.getLow().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getLow().getValue());
 			}
-	
+
 			if (observationTime == null && ivlts.getHigh() != null &&
 					!StringUtils.isEmpty(ivlts.getHigh().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getHigh().getValue());
 			}
 		}
-	
+
 		if (observationTime == null) {
 			for (Author author : act.getAuthors()) {
 				if (author.getTime() != null && !StringUtils.isEmpty(author.getTime().getValue())) {
@@ -133,13 +136,13 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		if (observationTime != null && isWithinEncounterDateRate(encounter, observationTime)) {
 			return result;
 		}
-	
+
 		return MatchEncounterBy.NOMATCH;
-	
+
 	}
 
 	public static MatchEncounterBy matchesEncounter(Encounter encounter, Observation observation) {
@@ -150,23 +153,23 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		Date observationTime = null;
-	
+
 		MatchEncounterBy result = MatchEncounterBy.BYEFFECTIVETIME;
-	
+
 		if (observation.getEffectiveTime() != null) {
 			IVL_TS ivlts = observation.getEffectiveTime();
 			if (observationTime == null && ivlts.getLow() != null && !StringUtils.isEmpty(ivlts.getLow().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getLow().getValue());
 			}
-	
+
 			if (observationTime == null && ivlts.getHigh() != null &&
 					!StringUtils.isEmpty(ivlts.getHigh().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getHigh().getValue());
 			}
 		}
-	
+
 		if (observationTime == null) {
 			for (Author author : observation.getAuthors()) {
 				if (author.getTime() != null && !StringUtils.isEmpty(author.getTime().getValue())) {
@@ -175,13 +178,13 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		if (observationTime != null && isWithinEncounterDateRate(encounter, observationTime)) {
 			return result;
 		}
-	
+
 		return MatchEncounterBy.NOMATCH;
-	
+
 	}
 
 	/**
@@ -190,7 +193,7 @@ public class EncounterUtil {
 	 * @return
 	 */
 	public static MatchEncounterBy matchesEncounter(Encounter encounter, Organizer organizer) {
-	
+
 		for (II ii : organizer.getIds()) {
 			for (II iii : encounter.getIds()) {
 				if (CDAValueUtil.getKey(ii).equals(CDAValueUtil.getKey(iii))) {
@@ -198,23 +201,23 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		Date observationTime = null;
-	
+
 		MatchEncounterBy result = MatchEncounterBy.BYEFFECTIVETIME;
-	
+
 		if (organizer.getEffectiveTime() != null) {
 			IVL_TS ivlts = organizer.getEffectiveTime();
 			if (observationTime == null && ivlts.getLow() != null && !StringUtils.isEmpty(ivlts.getLow().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getLow().getValue());
 			}
-	
+
 			if (observationTime == null && ivlts.getHigh() != null &&
 					!StringUtils.isEmpty(ivlts.getHigh().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getHigh().getValue());
 			}
 		}
-	
+
 		if (observationTime == null) {
 			for (Author author : organizer.getAuthors()) {
 				if (author.getTime() != null && !StringUtils.isEmpty(author.getTime().getValue())) {
@@ -223,17 +226,17 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		if (observationTime != null && isWithinEncounterDateRate(encounter, observationTime)) {
 			return result;
 		}
-	
+
 		return MatchEncounterBy.NOMATCH;
-	
+
 	}
 
 	public static MatchEncounterBy matchesEncounter(Encounter encounter, Procedure procedure) {
-	
+
 		for (II ii : procedure.getIds()) {
 			for (II iii : encounter.getIds()) {
 				if (CDAValueUtil.getKey(ii).equals(CDAValueUtil.getKey(iii))) {
@@ -241,22 +244,22 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		Date observationTime = null;
-	
+
 		MatchEncounterBy result = MatchEncounterBy.BYEFFECTIVETIME;
 		if (procedure.getEffectiveTime() != null) {
 			IVL_TS ivlts = procedure.getEffectiveTime();
 			if (observationTime == null && ivlts.getLow() != null && !StringUtils.isEmpty(ivlts.getLow().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getLow().getValue());
 			}
-	
+
 			if (observationTime == null && ivlts.getHigh() != null &&
 					!StringUtils.isEmpty(ivlts.getHigh().getValue())) {
 				observationTime = CDAValueUtil.getDate(ivlts.getHigh().getValue());
 			}
 		}
-	
+
 		if (observationTime == null) {
 			for (Author author : procedure.getAuthors()) {
 				if (author.getTime() != null && !StringUtils.isEmpty(author.getTime().getValue())) {
@@ -265,33 +268,33 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		if (observationTime != null && isWithinEncounterDateRate(encounter, observationTime)) {
 			return result;
 		}
-	
+
 		return MatchEncounterBy.NOMATCH;
-	
+
 	}
 
 	public static MatchEncounterBy matchesEncounter(Encounter encounter, SubstanceAdministration item) {
-	
+
 		for (Encounter e : item.getEncounters()) {
-	
+
 			for (II ii : e.getIds()) {
 				for (II iii : encounter.getIds()) {
 					if (CDAValueUtil.getKey(ii).equals(CDAValueUtil.getKey(iii))) {
 						return MatchEncounterBy.BYID;
 					}
-	
+
 				}
 			}
-	
+
 		}
-	
+
 		MatchEncounterBy result = MatchEncounterBy.BYEFFECTIVETIME;
 		Date substanceAdminTime = null;
-	
+
 		for (SXCM_TS ts : item.getEffectiveTimes()) {
 			if (ts instanceof IVL_TS) {
 				IVL_TS ivlts = (IVL_TS) ts;
@@ -305,9 +308,9 @@ public class EncounterUtil {
 					substanceAdminTime = CDAValueUtil.getDate(ts.getValue());
 				}
 			}
-	
+
 		}
-	
+
 		if (substanceAdminTime == null) {
 			for (Author author : item.getAuthors()) {
 				if (author.getTime() != null && !StringUtils.isEmpty(author.getTime().getValue())) {
@@ -315,10 +318,10 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		if (substanceAdminTime != null && isWithinEncounterDateRate(encounter, substanceAdminTime)) {
 			return result;
-	
+
 		}
 		return MatchEncounterBy.NOMATCH;
 	}
@@ -330,22 +333,22 @@ public class EncounterUtil {
 	 */
 	public static MatchEncounterBy matchesEncounter(Encounter encounter, Supply supply) {
 		for (Encounter e : supply.getEncounters()) {
-	
+
 			for (II ii : e.getIds()) {
 				for (II iii : encounter.getIds()) {
 					if (CDAValueUtil.getKey(ii).equals(CDAValueUtil.getKey(iii))) {
 						return MatchEncounterBy.BYID;
 					}
-	
+
 				}
 			}
-	
+
 		}
-	
+
 		Date supplyTime = null;
-	
+
 		MatchEncounterBy result = MatchEncounterBy.BYEFFECTIVETIME;
-	
+
 		for (SXCM_TS ts : supply.getEffectiveTimes()) {
 			if (ts instanceof IVL_TS) {
 				IVL_TS ivlts = (IVL_TS) ts;
@@ -359,9 +362,9 @@ public class EncounterUtil {
 					supplyTime = CDAValueUtil.getDate(ts.getValue());
 				}
 			}
-	
+
 		}
-	
+
 		if (supplyTime == null) {
 			for (Author author : supply.getAuthors()) {
 				if (author.getTime() != null && !StringUtils.isEmpty(author.getTime().getValue())) {
@@ -370,10 +373,10 @@ public class EncounterUtil {
 				}
 			}
 		}
-	
+
 		if (supplyTime != null && isWithinEncounterDateRate(encounter, supplyTime)) {
 			return result;
-	
+
 		}
 		return MatchEncounterBy.NOMATCH;
 	}

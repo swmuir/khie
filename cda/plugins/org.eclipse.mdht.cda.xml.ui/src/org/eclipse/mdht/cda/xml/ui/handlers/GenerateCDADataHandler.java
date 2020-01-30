@@ -278,6 +278,8 @@ public class GenerateCDADataHandler extends GenerateCDABaseHandler {
 
 	static SigSwitch sigSwitch = new SigSwitch();
 
+	static SigLocationSwitch sigLocationSwitch = new SigLocationSwitch();
+
 	private static final String SPLITBYDOCUMENT = "org.eclipse.mdht.cda.xml.ui.splitbydocument";
 
 	/**

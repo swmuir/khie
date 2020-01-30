@@ -19,6 +19,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.mdht.cda.xml.ui.handlers.CDAValueUtil.DocumentMetadata;
+import org.eclipse.mdht.uml.cda.Act;
 import org.eclipse.mdht.uml.cda.Encounter;
 import org.eclipse.mdht.uml.cda.Entry;
 import org.eclipse.mdht.uml.cda.PatientRole;
@@ -178,7 +179,7 @@ class ProcessSectionSwitch extends ConsolSwitch<Boolean> {
 			Row row = sheet.createRow(sheet.getPhysicalNumberOfRows());
 			int offset = SpreadsheetSerializer.serializePatient(row, 0, this.documentMetadata, patientRole);
 			offset = SpreadsheetSerializer.serializeEnounterID(row, offset, observation, encounters);
-			offset = SpreadsheetSerializer.serializeObservation(row, offset, observation);
+			offset = SpreadsheetSerializer.serializeObservation(row, offset, observation, false);
 			SpreadsheetSerializer.serializeSectionAndFileName(row, offset, observation.getSection(), file.getName());
 		}
 
@@ -227,7 +228,7 @@ class ProcessSectionSwitch extends ConsolSwitch<Boolean> {
 			Row row = sheet.createRow(sheet.getPhysicalNumberOfRows());
 			int offset = SpreadsheetSerializer.serializePatient(row, 0, this.documentMetadata, patientRole);
 			offset = SpreadsheetSerializer.serializeEnounterID(row, offset, observation, encounters);
-			offset = SpreadsheetSerializer.serializeObservation(row, offset, observation);
+			offset = SpreadsheetSerializer.serializeObservation(row, offset, observation, false);
 			SpreadsheetSerializer.serializeSectionAndFileName(row, offset, observation.getSection(), file.getName());
 		}
 
@@ -484,6 +485,31 @@ class ProcessSectionSwitch extends ConsolSwitch<Boolean> {
 			GenerateCDADataHandler.sheetName(section.eClass()), splitOption);
 
 		Sheet sheet = wb.getSheet(sheetIndex);
+
+		if (section.getEntries().isEmpty()) {
+			System.out.println("NO ENTRIES");
+
+			if (sheet.getPhysicalNumberOfRows() == 0) {
+				Row row1 = null; // sheet.createRow(0);
+				Row row2 = sheet.createRow(0);
+
+				int offset = SheetHeaderUtil.createPatientHeader(row1, row2, 0);
+				offset = SheetHeaderUtil.createEncounterIDHeader(row1, row2, offset);
+				offset = SheetHeaderUtil.createClinicalStatmentHeader(row1, row2, offset);
+
+			}
+
+			Row row = sheet.createRow(sheet.getPhysicalNumberOfRows());
+			int offset = SpreadsheetSerializer.serializePatient(row, 0, this.documentMetadata, patientRole);
+
+			offset = SpreadsheetSerializer.serializeEnounterID(row, offset, (Act) null, encounters);
+			offset += 11;
+			// offset = SpreadsheetSerializer.serializeClinicalStatement(row, offset, (Act) null);
+			offset = SpreadsheetSerializer.serializeSectionAndFileName(row, offset, section, file.getName());
+			offset = SpreadsheetSerializer.serializeStrucDocText(row, offset, section.getText());
+
+		}
+
 		for (Entry entry : section.getEntries()) {
 
 			if (sheet.getPhysicalNumberOfRows() == 0) {
@@ -615,7 +641,7 @@ class ProcessSectionSwitch extends ConsolSwitch<Boolean> {
 				Row row2 = sheet.createRow(0);
 				int offset = SheetHeaderUtil.createPatientHeader(row1, row2, 0);
 				offset = SheetHeaderUtil.createEncounterIDHeader(row1, row2, offset);
-				offset = SheetHeaderUtil.createSocialHistoryHeader(row1, row2, offset);
+				offset = SheetHeaderUtil.createPlanOfCareActivityObservationHeader(row1, row2, offset);
 				// emptySectionOffset.put(sheet, offset);
 			}
 			Row row = sheet.createRow(sheet.getPhysicalNumberOfRows());

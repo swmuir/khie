@@ -203,7 +203,7 @@ class SectionSwitch extends ConsolSwitch<Boolean> {
 
 			int offset = SheetHeaderUtil.createPatientHeader(row1, row2, 0);
 			offset = SheetHeaderUtil.createEncounterIDHeader(row1, row2, offset);
-			offset = SheetHeaderUtil.createAllergyHeader(row1, row2, offset);
+			offset = SheetHeaderUtil.createInstructionsHeader(row1, row2, offset);
 			emptySectionOffset.put(sheet, offset);
 		}
 
@@ -663,7 +663,8 @@ class SectionSwitch extends ConsolSwitch<Boolean> {
 			Row row2 = sheet.createRow(0);
 			int offset = SheetHeaderUtil.createPatientHeader(row1, row2, 0);
 			offset = SheetHeaderUtil.createEncounterIDHeader(row1, row2, offset);
-			offset = SheetHeaderUtil.createSubstanceAdministrationHeader(row1, row2, offset, "Discharged Medications");
+			offset = SheetHeaderUtil.createClinicalStatmentHeader(row1, row2, offset);
+			// offset = SheetHeaderUtil.createSubstanceAdministrationHeader(row1, row2, offset, "Discharged Medications");
 			emptySectionOffset.put(sheet, offset);
 		}
 
@@ -969,7 +970,9 @@ class SectionSwitch extends ConsolSwitch<Boolean> {
 			Date d = CDAValueUtil.getDate(CDAValueUtil.getValueAsString(allergyObservation.getEffectiveTime()));
 			if (d != null) {
 				row.createCell(offset++).setCellValue(CDAValueUtil.DATE_PRETTY.format(d));
+				row.createCell(offset++).setCellValue(CDAUtil.getDomainPath(allergyObservation.getEffectiveTime()));
 			} else {
+				row.createCell(offset++).setCellValue("");
 				row.createCell(offset++).setCellValue("");
 			}
 
@@ -1034,6 +1037,8 @@ class SectionSwitch extends ConsolSwitch<Boolean> {
 				offset = SpreadsheetSerializer.appendCode(
 					row, offset, allergyProblemAct.getSection(), severityCode, severity.getText());
 			} else {
+				// tick up offset becuase appendcode will not populate the text column
+				offset++;
 				offset = SpreadsheetSerializer.appendCode(row, offset, allergyProblemAct.getSection(), null, null);
 			}
 			offset = SpreadsheetSerializer.appendOrganizationAndAuthor(row, offset, allergyObservation.getAuthors());
