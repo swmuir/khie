@@ -303,8 +303,10 @@ public class ConsumableImpl extends ParticipationImpl implements Consumable {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONSUMABLE__MANUFACTURED_PRODUCT,
-				newManufacturedProduct, newManufacturedProduct));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.CONSUMABLE__MANUFACTURED_PRODUCT, newManufacturedProduct,
+					newManufacturedProduct));
 		}
 	}
 
@@ -331,8 +333,10 @@ public class ConsumableImpl extends ParticipationImpl implements Consumable {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONSUMABLE__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.CONSUMABLE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -347,8 +351,10 @@ public class ConsumableImpl extends ParticipationImpl implements Consumable {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CONSUMABLE__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.CONSUMABLE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -384,8 +390,9 @@ public class ConsumableImpl extends ParticipationImpl implements Consumable {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.CONSUMABLE__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.CONSUMABLE__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -400,8 +407,10 @@ public class ConsumableImpl extends ParticipationImpl implements Consumable {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.CONSUMABLE__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.CONSUMABLE__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 

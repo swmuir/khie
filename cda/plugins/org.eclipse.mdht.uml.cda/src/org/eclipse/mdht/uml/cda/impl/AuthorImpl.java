@@ -356,8 +356,9 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHOR__FUNCTION_CODE, newFunctionCode,
-				newFunctionCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHOR__FUNCTION_CODE, newFunctionCode, newFunctionCode));
 		}
 	}
 
@@ -465,8 +466,9 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHOR__ASSIGNED_AUTHOR, newAssignedAuthor,
-				newAssignedAuthor));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHOR__ASSIGNED_AUTHOR, newAssignedAuthor, newAssignedAuthor));
 		}
 	}
 
@@ -493,8 +495,10 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHOR__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHOR__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -509,8 +513,10 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHOR__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.AUTHOR__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -546,8 +552,9 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHOR__TYPE_CODE, oldTypeCode, typeCode,
-				!oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHOR__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -562,8 +569,10 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHOR__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.AUTHOR__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 
@@ -598,8 +607,10 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 		boolean oldContextControlCodeESet = contextControlCodeESet;
 		contextControlCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHOR__CONTEXT_CONTROL_CODE,
-				oldContextControlCode, contextControlCode, !oldContextControlCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHOR__CONTEXT_CONTROL_CODE, oldContextControlCode,
+					contextControlCode, !oldContextControlCodeESet));
 		}
 	}
 
@@ -614,8 +625,10 @@ public class AuthorImpl extends ParticipationImpl implements Author {
 		contextControlCode = CONTEXT_CONTROL_CODE_EDEFAULT;
 		contextControlCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHOR__CONTEXT_CONTROL_CODE,
-				oldContextControlCode, CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.AUTHOR__CONTEXT_CONTROL_CODE, oldContextControlCode,
+					CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
 		}
 	}
 

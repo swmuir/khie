@@ -355,8 +355,9 @@ public class PersonImpl extends EntityImpl implements Person {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERSON__SDTC_BIRTH_TIME, newSDTCBirthTime,
-				newSDTCBirthTime));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERSON__SDTC_BIRTH_TIME, newSDTCBirthTime, newSDTCBirthTime));
 		}
 	}
 
@@ -383,8 +384,10 @@ public class PersonImpl extends EntityImpl implements Person {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERSON__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERSON__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -399,8 +402,10 @@ public class PersonImpl extends EntityImpl implements Person {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERSON__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PERSON__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -436,8 +441,9 @@ public class PersonImpl extends EntityImpl implements Person {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERSON__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERSON__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -452,8 +458,10 @@ public class PersonImpl extends EntityImpl implements Person {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERSON__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PERSON__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -489,8 +497,10 @@ public class PersonImpl extends EntityImpl implements Person {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERSON__DETERMINER_CODE, oldDeterminerCode,
-				determinerCode, !oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERSON__DETERMINER_CODE, oldDeterminerCode, determinerCode,
+					!oldDeterminerCodeESet));
 		}
 	}
 
@@ -505,8 +515,10 @@ public class PersonImpl extends EntityImpl implements Person {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERSON__DETERMINER_CODE,
-				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PERSON__DETERMINER_CODE, oldDeterminerCode,
+					DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

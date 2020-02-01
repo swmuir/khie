@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.mdht.uml.cda.AssignedAuthor;
 import org.eclipse.mdht.uml.cda.Author;
 import org.eclipse.mdht.uml.cda.CDAFactory;
@@ -31,9 +32,11 @@ import org.eclipse.mdht.uml.cda.util.CDAUtil;
 import org.eclipse.mdht.uml.cda.util.ValidationResult;
 import org.eclipse.mdht.uml.hl7.datatypes.CE;
 import org.eclipse.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.eclipse.mdht.uml.hl7.datatypes.ED;
 import org.eclipse.mdht.uml.hl7.datatypes.II;
 import org.eclipse.mdht.uml.hl7.datatypes.PN;
 import org.eclipse.mdht.uml.hl7.datatypes.ST;
+import org.eclipse.mdht.uml.hl7.datatypes.TEL;
 import org.eclipse.mdht.uml.hl7.datatypes.TS;
 import org.eclipse.mdht.uml.hl7.vocab.ActClass;
 import org.eclipse.mdht.uml.hl7.vocab.NullFlavor;
@@ -269,6 +272,14 @@ public class Main {
 		encounter.setClassCode(ActClass.ACCM);
 		encounter.setMoodCode(x_DocumentEncounterMood.APT);
 
+		ED ed = DatatypesFactory.eINSTANCE.createED();
+		TEL t = DatatypesFactory.eINSTANCE.createTEL();
+
+		FeatureMapUtil.addText(t.getMixed(), "AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+		ed.setReference(t);
+		// encounter.setText(ed);
+
 		// encounter.setClassCode(value);
 		// encounter.setCode(value);
 		// encounter.setEffectiveTime(value);
@@ -312,8 +323,11 @@ public class Main {
 		section.addEncounter(encounter);
 
 		// saveData("foobar.xml", doc);
-		CDAUtil.save(doc, new FileOutputStream("samples/sdtcdischargedispositioncodes.xml"));
+		CDAUtil.save(doc, System.out);
 
+		if (true) {
+			return;
+		}
 		// ClinicalDocument clinicalDocument = loadData("foobar.xml");
 
 		ClinicalDocument clinicalDocument = CDAUtil.load(
@@ -366,6 +380,8 @@ public class Main {
 		RecordTarget recordTarget = CDAFactory.eINSTANCE.createRecordTarget();
 		doc.getRecordTargets().add(recordTarget);
 
+		doc.setXDRO(DatatypesFactory.eINSTANCE.createED("TRUE"));
+
 		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
 		recordTarget.setPatientRole(patientRole);
 
@@ -415,6 +431,10 @@ public class Main {
 		System.out.println("***** Constructed example *****");
 		CDAUtil.save(doc, System.out);
 		System.out.println();
+
+		if (true) {
+			return;
+		}
 
 		// create a validation result object to collect diagnostics produced during validation
 		ValidationResult result = new ValidationResult();

@@ -299,8 +299,9 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -423,8 +424,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__SIGNATURE_CODE,
-				newSignatureCode, newSignatureCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__SIGNATURE_CODE, newSignatureCode,
+					newSignatureCode));
 		}
 	}
 
@@ -479,8 +482,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY,
-				newAssignedEntity, newAssignedEntity));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__ASSIGNED_ENTITY, newAssignedEntity,
+					newAssignedEntity));
 		}
 	}
 
@@ -507,8 +512,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -523,8 +530,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -560,8 +569,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE,
-				oldTypeCode, typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE, oldTypeCode, typeCode,
+					!oldTypeCodeESet));
 		}
 	}
 
@@ -576,8 +587,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE,
-				oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__TYPE_CODE, oldTypeCode,
+					TYPE_CODE_EDEFAULT, oldTypeCodeESet));
 		}
 	}
 
@@ -612,8 +625,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 		boolean oldContextControlCodeESet = contextControlCodeESet;
 		contextControlCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE,
-				oldContextControlCode, contextControlCode, !oldContextControlCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE, oldContextControlCode,
+					contextControlCode, !oldContextControlCodeESet));
 		}
 	}
 
@@ -629,7 +644,8 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 		contextControlCodeESet = false;
 		if (eNotificationRequired()) {
 			eNotify(
-				new ENotificationImpl(this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE,
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE,
 					oldContextControlCode, CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
 		}
 	}
@@ -694,8 +710,10 @@ public class LegalAuthenticatorImpl extends ParticipationImpl implements LegalAu
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT,
-				newSDTCSignatureText, newSDTCSignatureText));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.LEGAL_AUTHENTICATOR__SDTC_SIGNATURE_TEXT, newSDTCSignatureText,
+					newSDTCSignatureText));
 		}
 	}
 

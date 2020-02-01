@@ -221,8 +221,9 @@ public class InFulfillmentOf1Impl extends ActRelationshipImpl implements InFulfi
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -260,8 +261,9 @@ public class InFulfillmentOf1Impl extends ActRelationshipImpl implements InFulfi
 				? NULL_FLAVOR_EDEFAULT
 				: newNullFlavor;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__NULL_FLAVOR, oldNullFlavor, nullFlavor));
 		}
 	}
 
@@ -288,8 +290,10 @@ public class InFulfillmentOf1Impl extends ActRelationshipImpl implements InFulfi
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__TYPE_CODE, oldTypeCode, typeCode,
+					!oldTypeCodeESet));
 		}
 	}
 
@@ -304,8 +308,10 @@ public class InFulfillmentOf1Impl extends ActRelationshipImpl implements InFulfi
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.IN_FULFILLMENT_OF1__TYPE_CODE,
-				oldTypeCode, TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.IN_FULFILLMENT_OF1__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 
@@ -368,8 +374,10 @@ public class InFulfillmentOf1Impl extends ActRelationshipImpl implements InFulfi
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__ACT_REFERENCE,
-				newActReference, newActReference));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.IN_FULFILLMENT_OF1__ACT_REFERENCE, newActReference,
+					newActReference));
 		}
 	}
 

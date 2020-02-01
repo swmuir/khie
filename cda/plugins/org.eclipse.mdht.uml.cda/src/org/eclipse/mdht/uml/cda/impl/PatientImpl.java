@@ -535,8 +535,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE,
-				newAdministrativeGenderCode, newAdministrativeGenderCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__ADMINISTRATIVE_GENDER_CODE, newAdministrativeGenderCode,
+					newAdministrativeGenderCode));
 		}
 	}
 
@@ -590,8 +592,9 @@ public class PatientImpl extends EntityImpl implements Patient {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__BIRTH_TIME, newBirthTime,
-				newBirthTime));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__BIRTH_TIME, newBirthTime, newBirthTime));
 		}
 	}
 
@@ -646,8 +649,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__MARITAL_STATUS_CODE,
-				newMaritalStatusCode, newMaritalStatusCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__MARITAL_STATUS_CODE, newMaritalStatusCode,
+					newMaritalStatusCode));
 		}
 	}
 
@@ -702,8 +707,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__RELIGIOUS_AFFILIATION_CODE,
-				newReligiousAffiliationCode, newReligiousAffiliationCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__RELIGIOUS_AFFILIATION_CODE, newReligiousAffiliationCode,
+					newReligiousAffiliationCode));
 		}
 	}
 
@@ -824,8 +831,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__ETHNIC_GROUP_CODE,
-				newEthnicGroupCode, newEthnicGroupCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__ETHNIC_GROUP_CODE, newEthnicGroupCode,
+					newEthnicGroupCode));
 		}
 	}
 
@@ -891,8 +900,9 @@ public class PatientImpl extends EntityImpl implements Patient {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__BIRTHPLACE, newBirthplace,
-				newBirthplace));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__BIRTHPLACE, newBirthplace, newBirthplace));
 		}
 	}
 
@@ -945,8 +955,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -961,8 +973,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PATIENT__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -998,8 +1012,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -1014,8 +1030,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PATIENT__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -1051,8 +1069,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT__DETERMINER_CODE,
-				oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT__DETERMINER_CODE, oldDeterminerCode, determinerCode,
+					!oldDeterminerCodeESet));
 		}
 	}
 
@@ -1067,8 +1087,10 @@ public class PatientImpl extends EntityImpl implements Patient {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT__DETERMINER_CODE,
-				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PATIENT__DETERMINER_CODE, oldDeterminerCode,
+					DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

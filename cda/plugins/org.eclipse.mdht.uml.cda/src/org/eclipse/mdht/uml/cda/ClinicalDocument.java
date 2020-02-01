@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.mdht.uml.hl7.datatypes.CE;
 import org.eclipse.mdht.uml.hl7.datatypes.CS;
+import org.eclipse.mdht.uml.hl7.datatypes.ED;
 import org.eclipse.mdht.uml.hl7.datatypes.II;
 import org.eclipse.mdht.uml.hl7.datatypes.INT;
 import org.eclipse.mdht.uml.hl7.datatypes.ST;
@@ -47,6 +48,7 @@ import org.eclipse.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getVersionNumber <em>Version Number</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getCopyTime <em>Copy Time</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getRecordTargets <em>Record Target</em>}</li>
+ *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getXDRO <em>XDRO</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getAuthors <em>Author</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getDataEnterer <em>Data Enterer</em>}</li>
  *   <li>{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getInformants <em>Informant</em>}</li>
@@ -851,6 +853,33 @@ public interface ClinicalDocument extends Act {
 	boolean isSetMoodCode();
 
 	/**
+	 * Returns the value of the '<em><b>XDRO</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>XDRO</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>XDRO</em>' containment reference.
+	 * @see #setXDRO(ED)
+	 * @see org.eclipse.mdht.uml.cda.CDAPackage#getClinicalDocument_XDRO()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="namespace='##targetNamespace' kind='element'"
+	 * @generated
+	 */
+	ED getXDRO();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getXDRO <em>XDRO</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>XDRO</em>' containment reference.
+	 * @see #getXDRO()
+	 * @generated
+	 */
+	void setXDRO(ED value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -938,7 +967,7 @@ public interface ClinicalDocument extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.getSections()-&gt;exists(sect : cda::Section | sect.hasTemplateId(templateId))'"
 	 * @generated
 	 */
 	boolean hasSectionTemplate(String templateId);
@@ -947,7 +976,7 @@ public interface ClinicalDocument extends Act {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" templateIdDataType="org.eclipse.uml2.types.String" templateIdRequired="true" templateIdOrdered="false"
-	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId->exists(id : datatypes::II | id.root = templateId)'"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.templateId-&gt;exists(id : datatypes::II | id.root = templateId)'"
 	 * @generated
 	 */
 	boolean hasTemplateId(String templateId);

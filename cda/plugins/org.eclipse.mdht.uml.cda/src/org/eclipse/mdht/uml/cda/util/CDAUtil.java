@@ -795,7 +795,7 @@ public class CDAUtil {
 
 	public static String SCHEMA_NAME = "infrastructure/cda/CDA_SDTC.xsd";
 
-	private static String SCHEMA_PROPERTY = "cdaSchema";
+	private static String SCHEMA_PROPERTY = "schema";
 
 	private static SchemaLoader schemaLoader = null;
 

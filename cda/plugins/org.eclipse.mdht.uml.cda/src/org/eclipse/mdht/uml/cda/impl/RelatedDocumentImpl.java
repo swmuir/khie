@@ -230,8 +230,9 @@ public class RelatedDocumentImpl extends ActRelationshipImpl implements RelatedD
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_DOCUMENT__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.RELATED_DOCUMENT__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -299,8 +300,10 @@ public class RelatedDocumentImpl extends ActRelationshipImpl implements RelatedD
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_DOCUMENT__PARENT_DOCUMENT,
-				newParentDocument, newParentDocument));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.RELATED_DOCUMENT__PARENT_DOCUMENT, newParentDocument,
+					newParentDocument));
 		}
 	}
 
@@ -327,8 +330,10 @@ public class RelatedDocumentImpl extends ActRelationshipImpl implements RelatedD
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_DOCUMENT__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.RELATED_DOCUMENT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -343,8 +348,10 @@ public class RelatedDocumentImpl extends ActRelationshipImpl implements RelatedD
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.RELATED_DOCUMENT__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.RELATED_DOCUMENT__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -380,8 +387,10 @@ public class RelatedDocumentImpl extends ActRelationshipImpl implements RelatedD
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.RELATED_DOCUMENT__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.RELATED_DOCUMENT__TYPE_CODE, oldTypeCode, typeCode,
+					!oldTypeCodeESet));
 		}
 	}
 
@@ -396,8 +405,10 @@ public class RelatedDocumentImpl extends ActRelationshipImpl implements RelatedD
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.RELATED_DOCUMENT__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.RELATED_DOCUMENT__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 

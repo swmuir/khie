@@ -535,8 +535,9 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__OBSERVATION, newObservation,
-				newObservation));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__OBSERVATION, newObservation, newObservation));
 		}
 	}
 
@@ -590,8 +591,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__OBSERVATION_MEDIA,
-				newObservationMedia, newObservationMedia));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__OBSERVATION_MEDIA, newObservationMedia,
+					newObservationMedia));
 		}
 	}
 
@@ -755,8 +758,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__REGION_OF_INTEREST,
-				newRegionOfInterest, newRegionOfInterest));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__REGION_OF_INTEREST, newRegionOfInterest,
+					newRegionOfInterest));
 		}
 	}
 
@@ -812,8 +817,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION,
-				newSubstanceAdministration, newSubstanceAdministration));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__SUBSTANCE_ADMINISTRATION, newSubstanceAdministration,
+					newSubstanceAdministration));
 		}
 	}
 
@@ -894,8 +901,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -910,8 +919,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ENTRY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -947,8 +958,9 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, typeCode,
-				!oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -963,8 +975,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ENTRY__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 
@@ -997,8 +1011,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		boolean oldContextConductionIndESet = contextConductionIndESet;
 		contextConductionIndESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND,
-				oldContextConductionInd, contextConductionInd, !oldContextConductionIndESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
+					contextConductionInd, !oldContextConductionIndESet));
 		}
 	}
 
@@ -1013,8 +1029,10 @@ public class EntryImpl extends ActRelationshipImpl implements Entry {
 		contextConductionInd = CONTEXT_CONDUCTION_IND_EDEFAULT;
 		contextConductionIndESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND,
-				oldContextConductionInd, CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ENTRY__CONTEXT_CONDUCTION_IND, oldContextConductionInd,
+					CONTEXT_CONDUCTION_IND_EDEFAULT, oldContextConductionIndESet));
 		}
 	}
 

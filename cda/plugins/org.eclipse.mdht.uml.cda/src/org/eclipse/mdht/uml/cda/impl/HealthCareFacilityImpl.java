@@ -265,8 +265,9 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -400,8 +401,9 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__LOCATION,
-				newLocation, newLocation));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__LOCATION, newLocation, newLocation));
 		}
 	}
 
@@ -459,9 +461,10 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-				CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION, newServiceProviderOrganization,
-				newServiceProviderOrganization));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__SERVICE_PROVIDER_ORGANIZATION,
+					newServiceProviderOrganization, newServiceProviderOrganization));
 		}
 	}
 
@@ -488,8 +491,10 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -504,8 +509,10 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -541,8 +548,10 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE,
-				oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -557,8 +566,10 @@ public class HealthCareFacilityImpl extends RoleImpl implements HealthCareFacili
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE,
-				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.HEALTH_CARE_FACILITY__CLASS_CODE, oldClassCode,
+					CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

@@ -446,8 +446,10 @@ public class EntityImpl extends org.eclipse.mdht.uml.hl7.rim.impl.EntityImpl imp
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTITY__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -462,8 +464,10 @@ public class EntityImpl extends org.eclipse.mdht.uml.hl7.rim.impl.EntityImpl imp
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTITY__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ENTITY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -499,8 +503,9 @@ public class EntityImpl extends org.eclipse.mdht.uml.hl7.rim.impl.EntityImpl imp
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTITY__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTITY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -515,8 +520,10 @@ public class EntityImpl extends org.eclipse.mdht.uml.hl7.rim.impl.EntityImpl imp
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTITY__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -552,8 +559,10 @@ public class EntityImpl extends org.eclipse.mdht.uml.hl7.rim.impl.EntityImpl imp
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ENTITY__DETERMINER_CODE, oldDeterminerCode,
-				determinerCode, !oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ENTITY__DETERMINER_CODE, oldDeterminerCode, determinerCode,
+					!oldDeterminerCodeESet));
 		}
 	}
 
@@ -568,8 +577,10 @@ public class EntityImpl extends org.eclipse.mdht.uml.hl7.rim.impl.EntityImpl imp
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ENTITY__DETERMINER_CODE,
-				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ENTITY__DETERMINER_CODE, oldDeterminerCode,
+					DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

@@ -279,8 +279,9 @@ public class ActReferenceImpl extends EObjectImpl implements ActReference {
 				? CLASS_CODE_EDEFAULT
 				: newClassCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_REFERENCE__CLASS_CODE, oldClassCode,
-				classCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ACT_REFERENCE__CLASS_CODE, oldClassCode, classCode));
 		}
 	}
 
@@ -304,8 +305,9 @@ public class ActReferenceImpl extends EObjectImpl implements ActReference {
 				? MOOD_CODE_EDEFAULT
 				: newMoodCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_REFERENCE__MOOD_CODE, oldMoodCode,
-				moodCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ACT_REFERENCE__MOOD_CODE, oldMoodCode, moodCode));
 		}
 	}
 
@@ -329,8 +331,10 @@ public class ActReferenceImpl extends EObjectImpl implements ActReference {
 				? DETERMINER_CODE_EDEFAULT
 				: newDeterminerCode;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ACT_REFERENCE__DETERMINER_CODE,
-				oldDeterminerCode, determinerCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ACT_REFERENCE__DETERMINER_CODE, oldDeterminerCode,
+					determinerCode));
 		}
 	}
 

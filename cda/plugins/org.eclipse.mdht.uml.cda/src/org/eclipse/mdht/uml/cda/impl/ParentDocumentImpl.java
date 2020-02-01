@@ -310,8 +310,9 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PARENT_DOCUMENT__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -553,8 +554,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER,
-				newVersionNumber, newVersionNumber));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PARENT_DOCUMENT__VERSION_NUMBER, newVersionNumber,
+					newVersionNumber));
 		}
 	}
 
@@ -581,8 +584,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -597,8 +602,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -634,8 +641,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -650,8 +659,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE,
-				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -687,8 +698,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode,
-				moodCode, !oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode, moodCode,
+					!oldMoodCodeESet));
 		}
 	}
 
@@ -703,8 +716,10 @@ public class ParentDocumentImpl extends ActImpl implements ParentDocument {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode,
-				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PARENT_DOCUMENT__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+					oldMoodCodeESet));
 		}
 	}
 

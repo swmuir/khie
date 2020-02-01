@@ -650,7 +650,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.delimiter->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.delimiter-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DEL)'"
 	 * @generated
 	 */
 	boolean validateDelimiter(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -662,7 +662,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.country->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.country-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CNT)'"
 	 * @generated
 	 */
 	boolean validateCountry(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -674,7 +674,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.state->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.state-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STA)'"
 	 * @generated
 	 */
 	boolean validateState(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -686,7 +686,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.county->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.county-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CPA)'"
 	 * @generated
 	 */
 	boolean validateCounty(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -698,7 +698,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.city->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.city-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CTY)'"
 	 * @generated
 	 */
 	boolean validateCity(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -710,7 +710,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.postalCode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.postalCode-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ZIP)'"
 	 * @generated
 	 */
 	boolean validatePostalCode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -722,7 +722,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetAddressLine-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::SAL)'"
 	 * @generated
 	 */
 	boolean validateStreetAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -734,7 +734,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.houseNumber->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.houseNumber-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNR)'"
 	 * @generated
 	 */
 	boolean validateHouseNumber(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -746,7 +746,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.houseNumberNumeric->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.houseNumberNumeric-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNN)'"
 	 * @generated
 	 */
 	boolean validateHouseNumberNumeric(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -758,7 +758,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.direction->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.direction-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DIR)'"
 	 * @generated
 	 */
 	boolean validateDirection(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -770,7 +770,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetName->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetName-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STR)'"
 	 * @generated
 	 */
 	boolean validateStreetName(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -782,7 +782,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetNameBase->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetNameBase-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STB)'"
 	 * @generated
 	 */
 	boolean validateStreetNameBase(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -794,7 +794,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetNameType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.streetNameType-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::STTYP)'"
 	 * @generated
 	 */
 	boolean validateStreetNameType(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -806,7 +806,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.additionalLocator->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.additionalLocator-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::ADL)'"
 	 * @generated
 	 */
 	boolean validateAdditionalLocator(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -818,7 +818,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.unitID->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.unitID-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNID)'"
 	 * @generated
 	 */
 	boolean validateUnitID(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -830,7 +830,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.unitType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.unitType-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::UNIT)'"
 	 * @generated
 	 */
 	boolean validateUnitType(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -842,7 +842,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.careOf->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.careOf-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CAR)'"
 	 * @generated
 	 */
 	boolean validateCareOf(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -854,7 +854,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.censusTract->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.censusTract-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::CEN)'"
 	 * @generated
 	 */
 	boolean validateCensusTract(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -866,7 +866,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryAddressLine->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryAddressLine-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DAL)'"
 	 * @generated
 	 */
 	boolean validateDeliveryAddressLine(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -878,7 +878,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationType->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationType-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINST)'"
 	 * @generated
 	 */
 	boolean validateDeliveryInstallationType(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -890,7 +890,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationArea->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationArea-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTA)'"
 	 * @generated
 	 */
 	boolean validateDeliveryInstallationArea(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -902,7 +902,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationQualifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryInstallationQualifier-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DINSTQ)'"
 	 * @generated
 	 */
 	boolean validateDeliveryInstallationQualifier(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -914,7 +914,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryMode->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryMode-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMOD)'"
 	 * @generated
 	 */
 	boolean validateDeliveryMode(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -926,7 +926,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryModeIdentifier->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.deliveryModeIdentifier-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::DMODID)'"
 	 * @generated
 	 */
 	boolean validateDeliveryModeIdentifier(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -938,7 +938,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.buildingNumberSuffix->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.buildingNumberSuffix-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::BNS)'"
 	 * @generated
 	 */
 	boolean validateBuildingNumberSuffix(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -950,7 +950,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.postBox->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.postBox-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::POB)'"
 	 * @generated
 	 */
 	boolean validatePostBox(DiagnosticChain diagnostics, Map<Object, Object> context);
@@ -962,7 +962,7 @@ public interface AD extends ANY {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.precinct->forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.precinct-&gt;forAll(adxp : datatypes::ADXP | adxp.partType = vocab::AddressPartType::PRE)'"
 	 * @generated
 	 */
 	boolean validatePrecinct(DiagnosticChain diagnostics, Map<Object, Object> context);

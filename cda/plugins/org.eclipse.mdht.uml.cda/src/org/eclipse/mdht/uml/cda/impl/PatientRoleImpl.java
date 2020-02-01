@@ -384,8 +384,9 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__PATIENT, newPatient,
-				newPatient));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT_ROLE__PATIENT, newPatient, newPatient));
 		}
 	}
 
@@ -441,8 +442,10 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION,
-				newProviderOrganization, newProviderOrganization));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT_ROLE__PROVIDER_ORGANIZATION, newProviderOrganization,
+					newProviderOrganization));
 		}
 	}
 
@@ -469,8 +472,10 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -485,8 +490,10 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PATIENT_ROLE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -522,8 +529,10 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -538,8 +547,10 @@ public class PatientRoleImpl extends RoleImpl implements PatientRole {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PATIENT_ROLE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 

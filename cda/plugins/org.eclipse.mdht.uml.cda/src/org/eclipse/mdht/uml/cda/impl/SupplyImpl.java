@@ -688,8 +688,9 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__STATUS_CODE, newStatusCode,
-				newStatusCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__STATUS_CODE, newStatusCode, newStatusCode));
 		}
 	}
 
@@ -768,8 +769,9 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__REPEAT_NUMBER, newRepeatNumber,
-				newRepeatNumber));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__REPEAT_NUMBER, newRepeatNumber, newRepeatNumber));
 		}
 	}
 
@@ -823,8 +825,9 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__INDEPENDENT_IND, newIndependentInd,
-				newIndependentInd));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__INDEPENDENT_IND, newIndependentInd, newIndependentInd));
 		}
 	}
 
@@ -933,8 +936,10 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__EXPECTED_USE_TIME,
-				newExpectedUseTime, newExpectedUseTime));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__EXPECTED_USE_TIME, newExpectedUseTime,
+					newExpectedUseTime));
 		}
 	}
 
@@ -1182,8 +1187,10 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -1198,8 +1205,10 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SUPPLY__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -1235,8 +1244,9 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode, classCode, !oldClassCodeESet));
 		}
 	}
 
@@ -1251,8 +1261,10 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SUPPLY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -1288,8 +1300,9 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, moodCode,
-				!oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -1304,8 +1317,10 @@ public class SupplyImpl extends ClinicalStatementImpl implements Supply {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode,
-				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SUPPLY__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+					oldMoodCodeESet));
 		}
 	}
 

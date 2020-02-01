@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.mdht.uml.cda.CDAPackage;
@@ -159,6 +160,8 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 	 */
 	private HashMap<String, AnyType> textHash = new HashMap<String, AnyType>();
 
+	// private HashMap<String, AnyType> textsHash = new HashMap<String, AnyType>();
+
 	/**
 	 * @generated NOT;
 	 */
@@ -178,7 +181,16 @@ public class StrucDocTextImpl extends EObjectImpl implements StrucDocText {
 					AnyType anyType = (AnyType) entry.getValue();
 					String x = StrucDocTextOperations.getAttributeValue(anyType.getAnyAttribute(), "ID");
 					if (x != null) {
-						textHash.put(x, anyType);
+						if (textHash.containsKey(x)) {
+							AnyType perviousAny = textHash.get(x);
+							System.out.println(StrucDocTextOperations.getText(anyType.getMixed()));
+							FeatureMapUtil.addText(
+								anyType.getMixed(), " " + StrucDocTextOperations.getText(perviousAny.getMixed()));
+							textHash.put(x, anyType);
+
+						} else {
+							textHash.put(x, anyType);
+						}
 					}
 					stack.push(anyType.getMixed());
 				}

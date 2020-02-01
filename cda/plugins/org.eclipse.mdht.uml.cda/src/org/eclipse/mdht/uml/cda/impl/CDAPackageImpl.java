@@ -28,7 +28,10 @@ import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.mdht.uml.cda.CDAFactory;
 import org.eclipse.mdht.uml.cda.CDAPackage;
 import org.eclipse.mdht.uml.cda.util.CDAValidator;
+import org.eclipse.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.eclipse.mdht.uml.hl7.rim.RIMPackage;
+import org.eclipse.mdht.uml.hl7.vocab.VocabPackage;
+import org.eclipse.uml2.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -759,8 +762,11 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		DatatypesPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 		RIMPackage.eINSTANCE.eClass();
+		VocabPackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
 
 		// Load packages
 		theCDAPackage.loadPackage();
@@ -919,15 +925,6 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * @generated
 	 */
 	public EReference getClinicalDocument_Author() {
-		return (EReference) getClinicalDocument().getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getClinicalDocument_DataEnterer() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(14);
 	}
 
@@ -936,7 +933,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_Informant() {
+	public EReference getClinicalDocument_DataEnterer() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(15);
 	}
 
@@ -945,7 +942,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_Custodian() {
+	public EReference getClinicalDocument_Informant() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(16);
 	}
 
@@ -954,7 +951,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_InformationRecipient() {
+	public EReference getClinicalDocument_Custodian() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(17);
 	}
 
@@ -963,7 +960,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_LegalAuthenticator() {
+	public EReference getClinicalDocument_InformationRecipient() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(18);
 	}
 
@@ -972,7 +969,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_Authenticator() {
+	public EReference getClinicalDocument_LegalAuthenticator() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(19);
 	}
 
@@ -981,7 +978,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_Participant() {
+	public EReference getClinicalDocument_Authenticator() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(20);
 	}
 
@@ -990,7 +987,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_InFulfillmentOf() {
+	public EReference getClinicalDocument_Participant() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(21);
 	}
 
@@ -999,7 +996,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_DocumentationOf() {
+	public EReference getClinicalDocument_InFulfillmentOf() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(22);
 	}
 
@@ -1008,7 +1005,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_RelatedDocument() {
+	public EReference getClinicalDocument_DocumentationOf() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(23);
 	}
 
@@ -1017,7 +1014,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_Authorization() {
+	public EReference getClinicalDocument_RelatedDocument() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(24);
 	}
 
@@ -1026,7 +1023,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_ComponentOf() {
+	public EReference getClinicalDocument_Authorization() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(25);
 	}
 
@@ -1035,7 +1032,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClinicalDocument_Component() {
+	public EReference getClinicalDocument_ComponentOf() {
 		return (EReference) getClinicalDocument().getEStructuralFeatures().get(26);
 	}
 
@@ -1044,8 +1041,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClinicalDocument_NullFlavor() {
-		return (EAttribute) getClinicalDocument().getEStructuralFeatures().get(27);
+	public EReference getClinicalDocument_Component() {
+		return (EReference) getClinicalDocument().getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -1053,7 +1050,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClinicalDocument_ClassCode() {
+	public EAttribute getClinicalDocument_NullFlavor() {
 		return (EAttribute) getClinicalDocument().getEStructuralFeatures().get(28);
 	}
 
@@ -1062,8 +1059,26 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClinicalDocument_MoodCode() {
+	public EAttribute getClinicalDocument_ClassCode() {
 		return (EAttribute) getClinicalDocument().getEStructuralFeatures().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClinicalDocument_MoodCode() {
+		return (EAttribute) getClinicalDocument().getEStructuralFeatures().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClinicalDocument_XDRO() {
+		return (EReference) getClinicalDocument().getEStructuralFeatures().get(13);
 	}
 
 	/**

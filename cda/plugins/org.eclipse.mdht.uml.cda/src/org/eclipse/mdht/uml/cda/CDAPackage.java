@@ -193,13 +193,22 @@ public interface CDAPackage extends EPackage {
 	int CLINICAL_DOCUMENT__RECORD_TARGET = RIMPackage.ACT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>XDRO</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLINICAL_DOCUMENT__XDRO = RIMPackage.ACT_FEATURE_COUNT + 13;
+
+	/**
 	 * The feature id for the '<em><b>Author</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__AUTHOR = RIMPackage.ACT_FEATURE_COUNT + 13;
+	int CLINICAL_DOCUMENT__AUTHOR = RIMPackage.ACT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Data Enterer</b></em>' containment reference.
@@ -208,7 +217,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__DATA_ENTERER = RIMPackage.ACT_FEATURE_COUNT + 14;
+	int CLINICAL_DOCUMENT__DATA_ENTERER = RIMPackage.ACT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Informant</b></em>' containment reference list.
@@ -217,7 +226,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__INFORMANT = RIMPackage.ACT_FEATURE_COUNT + 15;
+	int CLINICAL_DOCUMENT__INFORMANT = RIMPackage.ACT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Custodian</b></em>' containment reference.
@@ -226,7 +235,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__CUSTODIAN = RIMPackage.ACT_FEATURE_COUNT + 16;
+	int CLINICAL_DOCUMENT__CUSTODIAN = RIMPackage.ACT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Information Recipient</b></em>' containment reference list.
@@ -235,7 +244,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__INFORMATION_RECIPIENT = RIMPackage.ACT_FEATURE_COUNT + 17;
+	int CLINICAL_DOCUMENT__INFORMATION_RECIPIENT = RIMPackage.ACT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Legal Authenticator</b></em>' containment reference.
@@ -244,7 +253,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR = RIMPackage.ACT_FEATURE_COUNT + 18;
+	int CLINICAL_DOCUMENT__LEGAL_AUTHENTICATOR = RIMPackage.ACT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Authenticator</b></em>' containment reference list.
@@ -253,7 +262,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__AUTHENTICATOR = RIMPackage.ACT_FEATURE_COUNT + 19;
+	int CLINICAL_DOCUMENT__AUTHENTICATOR = RIMPackage.ACT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
@@ -262,7 +271,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__PARTICIPANT = RIMPackage.ACT_FEATURE_COUNT + 20;
+	int CLINICAL_DOCUMENT__PARTICIPANT = RIMPackage.ACT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>In Fulfillment Of</b></em>' containment reference list.
@@ -271,7 +280,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__IN_FULFILLMENT_OF = RIMPackage.ACT_FEATURE_COUNT + 21;
+	int CLINICAL_DOCUMENT__IN_FULFILLMENT_OF = RIMPackage.ACT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Of</b></em>' containment reference list.
@@ -280,7 +289,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__DOCUMENTATION_OF = RIMPackage.ACT_FEATURE_COUNT + 22;
+	int CLINICAL_DOCUMENT__DOCUMENTATION_OF = RIMPackage.ACT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Related Document</b></em>' containment reference list.
@@ -289,7 +298,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__RELATED_DOCUMENT = RIMPackage.ACT_FEATURE_COUNT + 23;
+	int CLINICAL_DOCUMENT__RELATED_DOCUMENT = RIMPackage.ACT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Authorization</b></em>' containment reference list.
@@ -298,7 +307,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__AUTHORIZATION = RIMPackage.ACT_FEATURE_COUNT + 24;
+	int CLINICAL_DOCUMENT__AUTHORIZATION = RIMPackage.ACT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Component Of</b></em>' containment reference.
@@ -307,7 +316,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__COMPONENT_OF = RIMPackage.ACT_FEATURE_COUNT + 25;
+	int CLINICAL_DOCUMENT__COMPONENT_OF = RIMPackage.ACT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -316,7 +325,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__COMPONENT = RIMPackage.ACT_FEATURE_COUNT + 26;
+	int CLINICAL_DOCUMENT__COMPONENT = RIMPackage.ACT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -325,7 +334,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 27;
+	int CLINICAL_DOCUMENT__NULL_FLAVOR = RIMPackage.ACT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -334,7 +343,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 28;
+	int CLINICAL_DOCUMENT__CLASS_CODE = RIMPackage.ACT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Mood Code</b></em>' attribute.
@@ -343,7 +352,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 29;
+	int CLINICAL_DOCUMENT__MOOD_CODE = RIMPackage.ACT_FEATURE_COUNT + 30;
 
 	/**
 	 * The number of structural features of the '<em>Clinical Document</em>' class.
@@ -352,7 +361,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLINICAL_DOCUMENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 30;
+	int CLINICAL_DOCUMENT_FEATURE_COUNT = RIMPackage.ACT_FEATURE_COUNT + 31;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.mdht.uml.cda.impl.InfrastructureRootTypeIdImpl <em>Infrastructure Root Type Id</em>}' class.
@@ -11101,6 +11110,17 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getClinicalDocument_MoodCode();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.mdht.uml.cda.ClinicalDocument#getXDRO <em>XDRO</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>XDRO</em>'.
+	 * @see org.eclipse.mdht.uml.cda.ClinicalDocument#getXDRO()
+	 * @see #getClinicalDocument()
+	 * @generated
+	 */
+	EReference getClinicalDocument_XDRO();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.mdht.uml.cda.InfrastructureRootTypeId <em>Infrastructure Root Type Id</em>}'.
@@ -22774,6 +22794,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CLINICAL_DOCUMENT__MOOD_CODE = eINSTANCE.getClinicalDocument_MoodCode();
+
+		/**
+		 * The meta object literal for the '<em><b>XDRO</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLINICAL_DOCUMENT__XDRO = eINSTANCE.getClinicalDocument_XDRO();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.mdht.uml.cda.impl.InfrastructureRootTypeIdImpl <em>Infrastructure Root Type Id</em>}' class.

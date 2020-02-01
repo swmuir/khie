@@ -707,8 +707,10 @@ public class SectionImpl extends ActImpl implements Section {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__CONFIDENTIALITY_CODE,
-				newConfidentialityCode, newConfidentialityCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SECTION__CONFIDENTIALITY_CODE, newConfidentialityCode,
+					newConfidentialityCode));
 		}
 	}
 
@@ -762,8 +764,9 @@ public class SectionImpl extends ActImpl implements Section {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__LANGUAGE_CODE, newLanguageCode,
-				newLanguageCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SECTION__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 		}
 	}
 
@@ -890,8 +893,10 @@ public class SectionImpl extends ActImpl implements Section {
 		boolean oldSectionIdESet = sectionIdESet;
 		sectionIdESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__SECTION_ID, oldSectionId,
-				sectionId, !oldSectionIdESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SECTION__SECTION_ID, oldSectionId, sectionId,
+					!oldSectionIdESet));
 		}
 	}
 
@@ -906,8 +911,10 @@ public class SectionImpl extends ActImpl implements Section {
 		sectionId = SECTION_ID_EDEFAULT;
 		sectionIdESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SECTION__SECTION_ID, oldSectionId,
-				SECTION_ID_EDEFAULT, oldSectionIdESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SECTION__SECTION_ID, oldSectionId, SECTION_ID_EDEFAULT,
+					oldSectionIdESet));
 		}
 	}
 
@@ -943,8 +950,10 @@ public class SectionImpl extends ActImpl implements Section {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SECTION__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -959,8 +968,10 @@ public class SectionImpl extends ActImpl implements Section {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SECTION__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SECTION__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -996,8 +1007,10 @@ public class SectionImpl extends ActImpl implements Section {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SECTION__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -1012,8 +1025,10 @@ public class SectionImpl extends ActImpl implements Section {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SECTION__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SECTION__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -1049,8 +1064,9 @@ public class SectionImpl extends ActImpl implements Section {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.SECTION__MOOD_CODE, oldMoodCode, moodCode,
-				!oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.SECTION__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -1065,8 +1081,10 @@ public class SectionImpl extends ActImpl implements Section {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.SECTION__MOOD_CODE, oldMoodCode,
-				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.SECTION__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+					oldMoodCodeESet));
 		}
 	}
 

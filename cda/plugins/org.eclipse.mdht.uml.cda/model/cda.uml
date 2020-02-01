@@ -85,6 +85,11 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_At1FcSVyEeCrtN9McWFciw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_At1FcCVyEeCrtN9McWFciw" value="*"/>
       </ownedAttribute>
+           <ownedAttribute xmi:id="_y0GL4D0rEeqYTph3X2Ntqw" name="XDRO" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="pathmap://DATATYPES_MODEL/datatypes.uml#_CowXkDxaEd6JwqSGecoePg"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y0LrcD0rEeqYTph3X2Ntqw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y0MSgD0rEeqYTph3X2Ntqw" value="1"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_hhbysUcgEd6besF9iFIJkQ" name="author" visibility="private" type="_ChEisEcEEd6besF9iFIJkQ" aggregation="composite" association="_hhbysEcgEd6besF9iFIJkQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hhbyskcgEd6besF9iFIJkQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hhbys0cgEd6besF9iFIJkQ" value="*"/>
@@ -164,6 +169,7 @@
           <instance xmi:type="uml:EnumerationLiteral" href="pathmap://VOCAB_MODEL/vocab.uml#__yeW30DcEd6xYZuu1VKCVw"/>
         </defaultValue>
       </ownedAttribute>
+ 
       <ownedOperation xmi:id="_5PXHUE7FEd6ohP_YEXs4Wg" name="addPatient">
         <ownedParameter xmi:id="_6gHkkE7FEd6ohP_YEXs4Wg" name="patient" type="_mxsCMEALEd6wZe6nFLrjsw"/>
       </ownedOperation>
@@ -9237,4 +9243,5 @@
   <Ecore:EReference xmi:id="_ttyPQIdUEeeAsbPrNOnubg" xmlName="multipleBirthInd" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_kczBgIdTEeeAsbPrNOnubg"/>
   <Ecore:EReference xmi:id="_9lKtIGNaEeia4fKTb08hoA" xmlName="functionCode" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_h6Q8kF-aEeia4fKTb08hoA"/>
   <Ecore:EReference xmi:id="_REIKwGNcEeia4fKTb08hoA" xmlName="functionCode" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_7XAXAGNbEeia4fKTb08hoA"/>
+  <Ecore:EReference xmi:id="_CVwi8D0sEeqYTph3X2Ntqw" xmlNamespace="##targetNamespace" xmlFeatureKind="Element" base_Property="_y0GL4D0rEeqYTph3X2Ntqw"/>
 </xmi:XMI>

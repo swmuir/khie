@@ -699,8 +699,9 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__STATUS_CODE, newStatusCode,
-				newStatusCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__STATUS_CODE, newStatusCode, newStatusCode));
 		}
 	}
 
@@ -754,8 +755,9 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__EFFECTIVE_TIME,
-				newEffectiveTime, newEffectiveTime));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__EFFECTIVE_TIME, newEffectiveTime, newEffectiveTime));
 		}
 	}
 
@@ -809,8 +811,9 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__PRIORITY_CODE, newPriorityCode,
-				newPriorityCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__PRIORITY_CODE, newPriorityCode, newPriorityCode));
 		}
 	}
 
@@ -864,8 +867,9 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__LANGUAGE_CODE, newLanguageCode,
-				newLanguageCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__LANGUAGE_CODE, newLanguageCode, newLanguageCode));
 		}
 	}
 
@@ -1098,8 +1102,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -1114,8 +1120,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PROCEDURE__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -1151,8 +1159,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -1167,8 +1177,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PROCEDURE__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -1204,8 +1216,9 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode,
-				moodCode, !oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, moodCode, !oldMoodCodeESet));
 		}
 	}
 
@@ -1220,8 +1233,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode,
-				MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PROCEDURE__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+					oldMoodCodeESet));
 		}
 	}
 
@@ -1255,8 +1270,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		boolean oldNegationIndESet = negationIndESet;
 		negationIndESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd,
-				negationInd, !oldNegationIndESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd, negationInd,
+					!oldNegationIndESet));
 		}
 	}
 
@@ -1271,8 +1288,10 @@ public class ProcedureImpl extends ClinicalStatementImpl implements Procedure {
 		negationInd = NEGATION_IND_EDEFAULT;
 		negationIndESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd,
-				NEGATION_IND_EDEFAULT, oldNegationIndESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PROCEDURE__NEGATION_IND, oldNegationInd, NEGATION_IND_EDEFAULT,
+					oldNegationIndESet));
 		}
 	}
 

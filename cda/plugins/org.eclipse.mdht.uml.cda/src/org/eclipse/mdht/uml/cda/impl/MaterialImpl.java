@@ -463,8 +463,9 @@ public class MaterialImpl extends EntityImpl implements Material {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__LOT_NUMBER_TEXT,
-				newLotNumberText, newLotNumberText));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MATERIAL__LOT_NUMBER_TEXT, newLotNumberText, newLotNumberText));
 		}
 	}
 
@@ -491,8 +492,10 @@ public class MaterialImpl extends EntityImpl implements Material {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -507,8 +510,10 @@ public class MaterialImpl extends EntityImpl implements Material {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.MATERIAL__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -544,8 +549,10 @@ public class MaterialImpl extends EntityImpl implements Material {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -560,8 +567,10 @@ public class MaterialImpl extends EntityImpl implements Material {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.MATERIAL__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -597,8 +606,10 @@ public class MaterialImpl extends EntityImpl implements Material {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MATERIAL__DETERMINER_CODE,
-				oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MATERIAL__DETERMINER_CODE, oldDeterminerCode, determinerCode,
+					!oldDeterminerCodeESet));
 		}
 	}
 
@@ -613,8 +624,10 @@ public class MaterialImpl extends EntityImpl implements Material {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MATERIAL__DETERMINER_CODE,
-				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.MATERIAL__DETERMINER_CODE, oldDeterminerCode,
+					DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

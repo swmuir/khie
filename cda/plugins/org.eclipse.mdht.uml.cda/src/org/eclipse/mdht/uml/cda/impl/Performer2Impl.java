@@ -390,8 +390,9 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER2__MODE_CODE, newModeCode,
-				newModeCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERFORMER2__MODE_CODE, newModeCode, newModeCode));
 		}
 	}
 
@@ -445,8 +446,10 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER2__ASSIGNED_ENTITY,
-				newAssignedEntity, newAssignedEntity));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERFORMER2__ASSIGNED_ENTITY, newAssignedEntity,
+					newAssignedEntity));
 		}
 	}
 
@@ -473,8 +476,10 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER2__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERFORMER2__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -489,8 +494,10 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERFORMER2__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PERFORMER2__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -526,8 +533,9 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER2__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERFORMER2__TYPE_CODE, oldTypeCode, typeCode, !oldTypeCodeESet));
 		}
 	}
 
@@ -542,8 +550,10 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PERFORMER2__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PERFORMER2__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 
@@ -607,8 +617,10 @@ public class Performer2Impl extends ParticipationImpl implements Performer2 {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PERFORMER2__SDTC_FUNCTION_CODE,
-				newSDTCFunctionCode, newSDTCFunctionCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PERFORMER2__SDTC_FUNCTION_CODE, newSDTCFunctionCode,
+					newSDTCFunctionCode));
 		}
 	}
 

@@ -233,8 +233,9 @@ public class ReferenceRangeImpl extends ActRelationshipImpl implements Reference
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE_RANGE__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.REFERENCE_RANGE__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -302,8 +303,10 @@ public class ReferenceRangeImpl extends ActRelationshipImpl implements Reference
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE,
-				newObservationRange, newObservationRange));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.REFERENCE_RANGE__OBSERVATION_RANGE, newObservationRange,
+					newObservationRange));
 		}
 	}
 
@@ -330,8 +333,10 @@ public class ReferenceRangeImpl extends ActRelationshipImpl implements Reference
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE_RANGE__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.REFERENCE_RANGE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -346,8 +351,10 @@ public class ReferenceRangeImpl extends ActRelationshipImpl implements Reference
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.REFERENCE_RANGE__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.REFERENCE_RANGE__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -383,8 +390,10 @@ public class ReferenceRangeImpl extends ActRelationshipImpl implements Reference
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.REFERENCE_RANGE__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.REFERENCE_RANGE__TYPE_CODE, oldTypeCode, typeCode,
+					!oldTypeCodeESet));
 		}
 	}
 
@@ -399,8 +408,10 @@ public class ReferenceRangeImpl extends ActRelationshipImpl implements Reference
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.REFERENCE_RANGE__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.REFERENCE_RANGE__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 

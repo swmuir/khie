@@ -233,8 +233,9 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -305,9 +306,10 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-				CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION, newRepresentedCustodianOrganization,
-				newRepresentedCustodianOrganization));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__REPRESENTED_CUSTODIAN_ORGANIZATION,
+					newRepresentedCustodianOrganization, newRepresentedCustodianOrganization));
 		}
 	}
 
@@ -334,8 +336,10 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -350,8 +354,10 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -387,8 +393,10 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE,
-				oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -403,8 +411,10 @@ public class AssignedCustodianImpl extends RoleImpl implements AssignedCustodian
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE,
-				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.ASSIGNED_CUSTODIAN__CLASS_CODE, oldClassCode,
+					CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 

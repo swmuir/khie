@@ -399,8 +399,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.DATA_ENTERER__ASSIGNED_ENTITY,
-				newAssignedEntity, newAssignedEntity));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.DATA_ENTERER__ASSIGNED_ENTITY, newAssignedEntity,
+					newAssignedEntity));
 		}
 	}
 
@@ -427,8 +429,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.DATA_ENTERER__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.DATA_ENTERER__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -443,8 +447,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.DATA_ENTERER__NULL_FLAVOR, oldNullFlavor,
-				NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.DATA_ENTERER__NULL_FLAVOR, oldNullFlavor, NULL_FLAVOR_EDEFAULT,
+					oldNullFlavorESet));
 		}
 	}
 
@@ -480,8 +486,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.DATA_ENTERER__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.DATA_ENTERER__TYPE_CODE, oldTypeCode, typeCode,
+					!oldTypeCodeESet));
 		}
 	}
 
@@ -496,8 +504,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.DATA_ENTERER__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.DATA_ENTERER__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 
@@ -532,8 +542,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 		boolean oldContextControlCodeESet = contextControlCodeESet;
 		contextControlCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.DATA_ENTERER__CONTEXT_CONTROL_CODE,
-				oldContextControlCode, contextControlCode, !oldContextControlCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.DATA_ENTERER__CONTEXT_CONTROL_CODE, oldContextControlCode,
+					contextControlCode, !oldContextControlCodeESet));
 		}
 	}
 
@@ -548,8 +560,10 @@ public class DataEntererImpl extends ParticipationImpl implements DataEnterer {
 		contextControlCode = CONTEXT_CONTROL_CODE_EDEFAULT;
 		contextControlCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.DATA_ENTERER__CONTEXT_CONTROL_CODE,
-				oldContextControlCode, CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.DATA_ENTERER__CONTEXT_CONTROL_CODE, oldContextControlCode,
+					CONTEXT_CONTROL_CODE_EDEFAULT, oldContextControlCodeESet));
 		}
 	}
 

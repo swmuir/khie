@@ -312,8 +312,9 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PLAYING_ENTITY__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -458,8 +459,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME,
-				newSDTCBirthTime, newSDTCBirthTime));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PLAYING_ENTITY__SDTC_BIRTH_TIME, newSDTCBirthTime,
+					newSDTCBirthTime));
 		}
 	}
 
@@ -540,8 +543,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -556,8 +561,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -593,8 +600,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode,
-				classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -609,8 +618,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode,
-				CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__CLASS_CODE, oldClassCode, CLASS_CODE_EDEFAULT,
+					oldClassCodeESet));
 		}
 	}
 
@@ -646,8 +657,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 		boolean oldDeterminerCodeESet = determinerCodeESet;
 		determinerCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE,
-				oldDeterminerCode, determinerCode, !oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE, oldDeterminerCode,
+					determinerCode, !oldDeterminerCodeESet));
 		}
 	}
 
@@ -662,8 +675,10 @@ public class PlayingEntityImpl extends EntityImpl implements PlayingEntity {
 		determinerCode = DETERMINER_CODE_EDEFAULT;
 		determinerCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE,
-				oldDeterminerCode, DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.PLAYING_ENTITY__DETERMINER_CODE, oldDeterminerCode,
+					DETERMINER_CODE_EDEFAULT, oldDeterminerCodeESet));
 		}
 	}
 

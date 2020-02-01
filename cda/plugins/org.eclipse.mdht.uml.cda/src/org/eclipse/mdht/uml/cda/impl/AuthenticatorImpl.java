@@ -390,8 +390,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__SIGNATURE_CODE,
-				newSignatureCode, newSignatureCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHENTICATOR__SIGNATURE_CODE, newSignatureCode,
+					newSignatureCode));
 		}
 	}
 
@@ -446,8 +448,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY,
-				newAssignedEntity, newAssignedEntity));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHENTICATOR__ASSIGNED_ENTITY, newAssignedEntity,
+					newAssignedEntity));
 		}
 	}
 
@@ -474,8 +478,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor,
-				nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -490,8 +496,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHENTICATOR__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.AUTHENTICATOR__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -527,8 +535,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 		boolean oldTypeCodeESet = typeCodeESet;
 		typeCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__TYPE_CODE, oldTypeCode,
-				typeCode, !oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHENTICATOR__TYPE_CODE, oldTypeCode, typeCode,
+					!oldTypeCodeESet));
 		}
 	}
 
@@ -543,8 +553,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 		typeCode = TYPE_CODE_EDEFAULT;
 		typeCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.AUTHENTICATOR__TYPE_CODE, oldTypeCode,
-				TYPE_CODE_EDEFAULT, oldTypeCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.AUTHENTICATOR__TYPE_CODE, oldTypeCode, TYPE_CODE_EDEFAULT,
+					oldTypeCodeESet));
 		}
 	}
 
@@ -608,8 +620,10 @@ public class AuthenticatorImpl extends ParticipationImpl implements Authenticato
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT,
-				newSDTCSignatureText, newSDTCSignatureText));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.AUTHENTICATOR__SDTC_SIGNATURE_TEXT, newSDTCSignatureText,
+					newSDTCSignatureText));
 		}
 	}
 

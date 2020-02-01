@@ -300,8 +300,9 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.OBSERVATION_RANGE__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -534,8 +535,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE,
-				newInterpretationCode, newInterpretationCode));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.OBSERVATION_RANGE__INTERPRETATION_CODE, newInterpretationCode,
+					newInterpretationCode));
 		}
 	}
 
@@ -562,8 +565,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -578,8 +583,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -615,8 +622,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE,
-				oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -631,8 +640,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE,
-				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__CLASS_CODE, oldClassCode,
+					CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
@@ -668,8 +679,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		boolean oldMoodCodeESet = moodCodeESet;
 		moodCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE, oldMoodCode,
-				moodCode, !oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE, oldMoodCode, moodCode,
+					!oldMoodCodeESet));
 		}
 	}
 
@@ -684,8 +697,10 @@ public class ObservationRangeImpl extends ActImpl implements ObservationRange {
 		moodCode = MOOD_CODE_EDEFAULT;
 		moodCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE,
-				oldMoodCode, MOOD_CODE_EDEFAULT, oldMoodCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.OBSERVATION_RANGE__MOOD_CODE, oldMoodCode, MOOD_CODE_EDEFAULT,
+					oldMoodCodeESet));
 		}
 	}
 

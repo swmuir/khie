@@ -268,8 +268,9 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID, newTypeId,
-				newTypeId));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__TYPE_ID, newTypeId, newTypeId));
 		}
 	}
 
@@ -352,9 +353,10 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-				CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG, newManufacturedLabeledDrug,
-				newManufacturedLabeledDrug));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_LABELED_DRUG,
+					newManufacturedLabeledDrug, newManufacturedLabeledDrug));
 		}
 	}
 
@@ -410,7 +412,8 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 			}
 		} else if (eNotificationRequired()) {
 			eNotify(
-				new ENotificationImpl(this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL,
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURED_MATERIAL,
 					newManufacturedMaterial, newManufacturedMaterial));
 		}
 	}
@@ -469,9 +472,10 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 				msgs.dispatch();
 			}
 		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-				CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURER_ORGANIZATION, newManufacturerOrganization,
-				newManufacturerOrganization));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__MANUFACTURER_ORGANIZATION,
+					newManufacturerOrganization, newManufacturerOrganization));
 		}
 	}
 
@@ -498,8 +502,10 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 		boolean oldNullFlavorESet = nullFlavorESet;
 		nullFlavorESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__NULL_FLAVOR,
-				oldNullFlavor, nullFlavor, !oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__NULL_FLAVOR, oldNullFlavor, nullFlavor,
+					!oldNullFlavorESet));
 		}
 	}
 
@@ -514,8 +520,10 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 		nullFlavor = NULL_FLAVOR_EDEFAULT;
 		nullFlavorESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MANUFACTURED_PRODUCT__NULL_FLAVOR,
-				oldNullFlavor, NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.MANUFACTURED_PRODUCT__NULL_FLAVOR, oldNullFlavor,
+					NULL_FLAVOR_EDEFAULT, oldNullFlavorESet));
 		}
 	}
 
@@ -551,8 +559,10 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 		boolean oldClassCodeESet = classCodeESet;
 		classCodeESet = true;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__CLASS_CODE,
-				oldClassCode, classCode, !oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, CDAPackage.MANUFACTURED_PRODUCT__CLASS_CODE, oldClassCode, classCode,
+					!oldClassCodeESet));
 		}
 	}
 
@@ -567,8 +577,10 @@ public class ManufacturedProductImpl extends RoleImpl implements ManufacturedPro
 		classCode = CLASS_CODE_EDEFAULT;
 		classCodeESet = false;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CDAPackage.MANUFACTURED_PRODUCT__CLASS_CODE,
-				oldClassCode, CLASS_CODE_EDEFAULT, oldClassCodeESet));
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.UNSET, CDAPackage.MANUFACTURED_PRODUCT__CLASS_CODE, oldClassCode,
+					CLASS_CODE_EDEFAULT, oldClassCodeESet));
 		}
 	}
 
